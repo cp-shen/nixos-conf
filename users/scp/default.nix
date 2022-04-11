@@ -8,10 +8,11 @@
   };
 
   home-manager.users.scp = {
+    programs.gh.enable = true;
     programs.git.enable = true;
     home.file.".gitconfig".source = ./config/gitconfig;
 
-    programs.gh.enable = true;
+    home.file.".xinitrc".source = ./config/xinitrc;
 
     programs.zsh = {
       enable = true;
