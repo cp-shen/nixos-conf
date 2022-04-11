@@ -99,6 +99,7 @@
         et = "TERM=xterm-direct emacsclient -t";
         du = "du -h";
         gvim = "nvim-qt --no-ext-tabline";
+        grep = "grep --color"
         i3exit = "i3-msg exit";
         less = "less -R --use-color";
         m = "mkdir -p";
