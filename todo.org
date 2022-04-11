@@ -1,1 +1,7 @@
-* TODO add neovim config
+* DONE neovim config
+* TODO i3
+* TODO i3status-rust
+* TODO picom
+* DONE nitrogen
+* TODO emacs
+* TODO zsh promt, vi-mode, auto-suggestion

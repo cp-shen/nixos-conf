@@ -14,8 +14,11 @@
 
     home.file.".xinitrc".source = ./config/xinitrc;
 
-    xdg.configFile."alacritty/alacritty.yml".source = ./config/alacritty.yml;
+    xdg.configFile."alacritty".source = ./config/alacritty;
     xdg.configFile."nvim".source = ./config/nvim;
+
+    xdg.configFile."nitrogen".source = ./config/nitrogen;
+    xdg.configFile."picom".source = ./config/picom;
 
     programs.mpv.enable = true;
     programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
@@ -27,6 +30,7 @@
 
     programs.zsh = {
       enable = true;
+      enableAutosuggestions = true;
       shellAliases = {
         l   = "ls --color -hF";
         ll  = "ls --color -hF -l";
@@ -60,6 +64,7 @@
       alacritty
       arandr
       clash
+      cloc
       firefox
       fd
       glances
