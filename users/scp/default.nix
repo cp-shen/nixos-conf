@@ -14,6 +14,9 @@
 
     home.file.".xinitrc".source = ./config/xinitrc;
 
+    programs.mpv.enable = true;
+    programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
+
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -55,6 +58,7 @@
       glances
       nitrogen
       picom
+      pulsemixer
       ripgrep
       termdown
       unclutter
