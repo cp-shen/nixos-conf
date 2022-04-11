@@ -15,6 +15,7 @@
     home.file.".xinitrc".source = ./config/xinitrc;
 
     xdg.configFile."alacritty/alacritty.yml".source = ./config/alacritty.yml;
+    xdg.configFile."nvim".source = ./config/nvim;
 
     programs.mpv.enable = true;
     programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
