@@ -11,6 +11,8 @@
     programs.git.enable = true;
     home.file.".gitconfig".source = ./config/gitconfig;
 
+    programs.gh.enable = true;
+
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -48,9 +50,12 @@
       clash
       firefox
       fzf
+      fd
+      glances
       nitrogen
       picom
       ripgrep
+      termdown
       unclutter
     ];
   };
