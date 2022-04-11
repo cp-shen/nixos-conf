@@ -1,7 +1,7 @@
 * DONE neovim config
 * TODO i3
 * TODO i3status-rust
-* TODO picom
+* DONE picom
 * DONE nitrogen
 * TODO emacs
-* TODO zsh promt, vi-mode, auto-suggestion
+* DONE zsh promt, vi-mode, auto-suggestion, syntax highlight
