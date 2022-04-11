@@ -19,6 +19,11 @@
     programs.mpv.enable = true;
     programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
 
+    programs.fzf.enable = true;
+    programs.fzf.defaultCommand = "fd --no-ignore --hidden -E .cache -E .git -E tags -tf -td -- . ./";
+    programs.fzf.fileWidgetCommand = config.home-manager.users.scp.programs.fzf.defaultCommand;
+    programs.fzf.changeDirWidgetCommand = "fd --no-ignore --hidden -E .cache -E .git -E tags -td -- . $HOME";
+
     programs.zsh = {
       enable = true;
       shellAliases = {
@@ -55,7 +60,6 @@
       arandr
       clash
       firefox
-      fzf
       fd
       glances
       nitrogen
