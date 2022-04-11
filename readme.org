@@ -1,0 +1,2 @@
+* My NixOS config
+(with flake and home-manager) 
