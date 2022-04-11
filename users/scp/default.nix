@@ -8,10 +8,8 @@
   };
 
   home-manager.users.scp = {
-    programs.git = {
-      enable = true;
-      userName = "scp@${config.networking.hostName}.${config.networking.domain}";
-    };
+    programs.git.enable = true;
+    home.file.".gitconfig".source = ./config/gitconfig;
 
     programs.zsh = {
       enable = true;
