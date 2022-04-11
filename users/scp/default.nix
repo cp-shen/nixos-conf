@@ -8,6 +8,10 @@
   };
 
   home-manager.users.scp = {
+    programs.i3status-rust.enable = true;
+    programs.i3status-rust.bars = {};
+    xdg.configFile."i3status-rust".source = ./config/i3status-rust;
+
     programs.gh.enable = true;
     programs.git.enable = true;
     home.file.".gitconfig".source = ./config/gitconfig;
@@ -90,10 +94,12 @@
 
       shellAliases = {
         l   = "ls --color -hF";
+        ls  = "ls --color -hF";
         ll  = "ls --color -hF -l";
         la  = "ls --color -hF -a";
         lla = "ls --color -hF -al";
 
+        "..." = "cd ../../";
         ala = "alacritty";
         ec = "emacsclient -c";
         et = "TERM=xterm-direct emacsclient -t";
@@ -133,6 +139,12 @@
       termdown
       unclutter
     ];
+
+    xsession.windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
+    xdg.configFile."i3".source = ./config/i3;
   };
 
 }
