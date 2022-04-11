@@ -13,7 +13,7 @@
       fsType = "ext4";
     };
 
-    "/mnt" = {
+    "/mnt1" = {
       device = "/dev/disk/by-uuid/72ed0876-b136-4b4b-9d99-e16173b459fc";
       fsType = "ext4";
     };
