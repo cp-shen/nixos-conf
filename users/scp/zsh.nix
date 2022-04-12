@@ -8,6 +8,19 @@
     enableSyntaxHighlighting = true;
     autocd = true;
     defaultKeymap = "viins";
+
+    envExtra = ''
+      typeset -U PATH path
+     #path=("$path[@]" "$HOME/.scripts")
+      path=("$path[@]" "$HOME/.local/bin")
+      path=("$path[@]" "$HOME/.emacs.d/bin")
+      path=("$path[@]" "$HOME/.ghcup/bin")
+      path=("$path[@]" "$HOME/.cargo/bin")
+
+      export PATH
+      export EDITOR=nvim
+    '';
+
     initExtra = ''
       setopt AUTO_PUSHD
       setopt PUSHD_IGNORE_DUPS

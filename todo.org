@@ -1,16 +1,17 @@
-* DONE picom, nitrogen
-* DONE zsh promt, vi-mode, auto-suggestion, syntax-highlight
-* DONE fzf, rg, fd
-* DONE i3
-* DONE i3status-rust
-* DONE unfree google-chrome
-* DONE split user config
+* DONE manage picom, nitrogen
+* DONE manage zsh: promt, vi-mode, auto-suggestion, syntax-highlight
+* DONE manage fzf, rg, fd
+* DONE add i3
+* DONE add i3status-rust
+* DONE intsall unfree google-chrome
+* DONE split user config into hmModules
+* DONE remove trival hostName and userName
+* DONE nevoim outside nix
+* DONE doom-emacs outside nix
 
-* TODO clash user service
-* TODO xmonad, xmobar
-* TODO install starship prompt
-* TODO remove trival hostName and userName
-* TODO nevoim, doom-emacs, xmonad outside nix
+* TODO xmonad/xmobar outside nix
 
+* HOLD install starship prompt
+* HOLD add clash user service
 * HOLD add swap partition
-* HOLD firefox / chromium extensions
+* HOLD manage firefox / chromium extensions
