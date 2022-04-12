@@ -15,24 +15,24 @@
 
       "nixos4nuc10" = nixpkgs.lib.nixosSystem {
         modules = [
-	  { networking.hostName = "nixos4nuc10"; }
+          { networking.hostName = "nixos4nuc10"; }
           home-manager.nixosModule
 
           ./system
           ./system/machine-specific/nuc10
-	  ./users/scp
+          ./users/scp
         ];
         inherit system;
       };
 
       "nixos4b450i" = nixpkgs.lib.nixosSystem {
         modules = [
-	  { networking.hostName = "nixos4b450i"; }
+          { networking.hostName = "nixos4b450i"; }
           home-manager.nixosModule
 
           ./system
           ./system/machine-specific/b450i
-	  ./users/scp
+          ./users/scp
         ];
         inherit system;
       };

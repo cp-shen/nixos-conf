@@ -132,6 +132,7 @@
       firefox
       fd
       glances
+      google-chrome
       nitrogen
       picom
       pulsemixer

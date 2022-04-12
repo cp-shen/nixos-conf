@@ -1,9 +1,14 @@
 * DONE neovim config
-* DONE picom
-* DONE nitrogen
-* DONE zsh promt, vi-mode, auto-suggestion, syntax highlight
+* DONE picom, nitrogen
+* DONE zsh promt, vi-mode, auto-suggestion, syntax-highlight
+* DONE fzf, rg, fd
 * DONE i3
 * DONE i3status-rust
+* DONE unfree google-chrome
 
 * TODO emacs
+* TODO clash user service
+* TODO xmonad, xmobar
 * TODO split user config
+* TODO firefox / chromium extensions
+* TODO add swap partition
