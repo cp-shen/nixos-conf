@@ -7,36 +7,29 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, ... }: 
+  outputs = inputs @ { 
+    nixpkgs, 
+    home-manager, 
+    ... }: 
   let
     system = "x86_64-linux";
-  in {
-    nixosConfigurations = {
-
-      "nixos4nuc10" = nixpkgs.lib.nixosSystem {
-        modules = [
-          { networking.hostName = "nixos4nuc10"; }
-          home-manager.nixosModule
-
-          ./system
-          ./users/scp
-          ./machine-specific/nuc10
-        ];
-        inherit system;
-      };
-
-      "nixos4b450i" = nixpkgs.lib.nixosSystem {
-        modules = [
-          { networking.hostName = "nixos4b450i"; }
-          home-manager.nixosModule
-
-          ./system
-          ./users/scp
-          ./machine-specific/b450i
-        ];
-        inherit system;
-      };
-
+    myHostNames = {
+      "nixos4b450i" = {};
+      "nixos4nuc10" = {};
     };
-  };
+    myUserName = "scp";
+
+    mkSystem = userName: hostName: _:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          { networking.hostName = hostName; } 
+          ./system
+          (./. + "/machine-specific/${hostName}")
+          (./. + "/users/${userName}")
+        ];
+      };
+  in 
+  { nixosConfigurations = builtins.mapAttrs (mkSystem myUserName) myHostNames; };
 }

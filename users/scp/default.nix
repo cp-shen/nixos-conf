@@ -1,18 +1,23 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [ inputs.home-manager.nixosModule ];
+
   users.users.scp = {
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
   home-manager.users.scp = { pkgs, ... }: {
     imports = [
-      ./i3.nix
       ./fzf.nix
-      ./zsh.nix
+      ./i3.nix
       ./misc.nix
+      ./zsh.nix
     ];
 
     home.packages = with pkgs; [
@@ -26,6 +31,7 @@
       google-chrome
       nitrogen
       picom
+      procs
       pulsemixer
       ripgrep
       termdown

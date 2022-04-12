@@ -2,8 +2,6 @@
 
 {
   nixpkgs.config.allowUnfree = true;
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
