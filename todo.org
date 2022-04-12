@@ -5,10 +5,11 @@
 * DONE i3
 * DONE i3status-rust
 * DONE unfree google-chrome
+* DONE split user config
 
 * TODO emacs
 * TODO clash user service
 * TODO xmonad, xmobar
-* TODO split user config
-* TODO firefox / chromium extensions
-* TODO add swap partition
+
+* HOLD add swap partition
+* HOLD firefox / chromium extensions
