@@ -10,6 +10,8 @@
 * TODO emacs
 * TODO clash user service
 * TODO xmonad, xmobar
+* TODO install starship prompt
 
 * HOLD add swap partition
 * HOLD firefox / chromium extensions
+* HOLD migrate neovim config to home-manager

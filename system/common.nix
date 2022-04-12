@@ -44,6 +44,11 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [ wget ];
 
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   # Enable the OpenSSH daemon
   # services.openssh.enable = true;
 

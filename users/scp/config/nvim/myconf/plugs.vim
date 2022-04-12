@@ -26,5 +26,7 @@ let g:onedark_config = {
     \ 'style': 'dark',
 \}
 
+Plug 'LnL7/vim-nix'
+
 call plug#end()
 
