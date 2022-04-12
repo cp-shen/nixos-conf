@@ -19,8 +19,8 @@
           home-manager.nixosModule
 
           ./system
-          ./system/machine-specific/nuc10
           ./users/scp
+          ./machine-specific/nuc10
         ];
         inherit system;
       };
@@ -31,8 +31,8 @@
           home-manager.nixosModule
 
           ./system
-          ./system/machine-specific/b450i
           ./users/scp
+          ./machine-specific/b450i
         ];
         inherit system;
       };
