@@ -2,6 +2,13 @@
 
 {
   programs.gh.enable = true;
+  programs.gh.enableGitCredentialHelper = true;
+  programs.gh.settings.git_protocol = "https";
+
+  programs.git.enable = true;
+  programs.git.lfs.enable = true;
+  programs.gitui.enable = true;
+
   home.file.".gitconfig".source = ./config/gitconfig;
 
   xdg.configFile."alacritty".source = ./config/alacritty;
