@@ -8,9 +8,22 @@
 * DONE remove trival hostName and userName
 * DONE nevoim outside nix
 * DONE doom-emacs outside nix
-
+* DONE neovim config not working
+CLOSED: [2022-04-13 Wed 16:26]
+use ~neovim-unwrapped~, remove ~programs.neovim.enable~
+* DONE emacs vterm not usable
+CLOSED: [2022-04-13 Wed 16:44]
+See doom emacs vterm readme
 * TODO xmonad/xmobar outside nix
-
+:LOGBOOK:
+CLOCK: [2022-04-13 Wed 02:30]--[2022-04-13 Wed 13:00] => 10:30
+CLOCK: [2022-04-13 Wed 02:24]--[2022-04-13 Wed 02:29] =>  0:05
+:END:
+:Refs:
+[[https://trycatchchris.co.uk/post/view/How-to-install-a-custom-XMonad-as-a-nix-package-in-Nixos]]
+[[https://functor.tokyo/blog/2018-02-16-setup-xmonad-on-nixos]]
+:END:
+* TODO emacs haskell lsp not working?
 * HOLD install starship prompt
 * HOLD add clash user service
 * HOLD add swap partition

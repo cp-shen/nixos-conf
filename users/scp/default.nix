@@ -21,21 +21,18 @@
     ];
 
     home.packages = with pkgs; [
-      alacritty
-      arandr
-      clash
-      cloc
-      firefox
-      fd
-      glances
-      google-chrome
-      nitrogen
-      picom
-      procs
-      pulsemixer
-      ripgrep
-      termdown
-      unclutter
+      ghc stack cabal-install haskell-language-server # haskell toolchains
+      arandr unclutter nitrogen picom # desktop environment
+      alacritty kitty # terminals
+      firefox google-chrome # browsers
+      termdown cloc # CLI tools
+      clash # network proxy
+      glances # sys monitor
+      pulsemixer # audio tools
+      glxinfo # opengl test tools
+
+      # xmonad build and runtime deps
+      # pkgconf xorg.xmessage xorg.libX11 xorg.libXft xorg.libXinerama xorg.libXrandr
     ];
   };
 }

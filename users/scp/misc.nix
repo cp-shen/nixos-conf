@@ -11,6 +11,9 @@
   programs.mpv.enable = true;
   programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
 
-  programs.emacs.enable = true;
   services.emacs.enable = true;
+  programs.emacs = {
+    enable = true;
+    extraPackages = epkgs: [ epkgs.vterm ];
+  };
 }
