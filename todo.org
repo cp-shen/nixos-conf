@@ -26,13 +26,12 @@ CLOSED: [2022-04-14 Thu 02:27]
 CLOSED: [2022-04-14 Thu 01:21]
 * DONE emacs haskell lsp not working?
 CLOSED: [2022-04-14 Thu 03:02]
+* DONE try polybar
+CLOSED: [2022-04-14 Thu 19:26]
 * TODO re-orgnize files
 * TODO manage picom and unclutter
 * TODO [#D] mouse cursor theme
 * TODO [#D] add stack config
-* TODO [#B] try polybar
-* TODO fix unclutter
 * HOLD install starship prompt
 * HOLD add clash user service
-* HOLD add swap partition
 * HOLD manage firefox / chromium extensions

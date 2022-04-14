@@ -24,6 +24,7 @@ modules-center = window_title
 modules-right = pulseaudio cpu memory filesystem date
 tray-position = right
 override-redirect = true
+enable-ipc = true
 separator = "|"
 module-margin = 2
 
@@ -76,8 +77,8 @@ label-foreground = ${colors.blue}
 [module/filesystem]
 type = internal/fs
 mount-0 = /
-# mount-1 = /qqww
+; mount-1 = /qqww
 interval = 10
-label-mounted = %mountpoint% has %free%%
-label-unmounted = %mountpoint% not mounted
+label-mounted = ( %mountpoint% ) %used%/%total%
+label-unmounted = ( %mountpoint% ) not mounted
 label-unmounted-foreground = ${colors.red}
