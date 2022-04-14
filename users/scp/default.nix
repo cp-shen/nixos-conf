@@ -14,6 +14,7 @@
 
   home-manager.users.scp = { pkgs, ... }: {
     imports = [
+      ./desktop.nix
       ./fzf.nix
       ./i3.nix
       ./misc.nix
@@ -34,6 +35,7 @@
       glances # sys monitor
       pulsemixer # audio tools
       glxinfo # opengl test tools
+      qbittorrent
 
       # xmonad build and runtime deps
       # pkgconf xorg.xmessage xorg.libX11 xorg.libXft xorg.libXinerama xorg.libXrandr
