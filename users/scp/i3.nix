@@ -20,7 +20,7 @@
     unclutter &
     picom &
     alacritty &
-    exec i3
+    exec ~/.xmonad/xmonad-x86_64-linux
   '';
 }
 

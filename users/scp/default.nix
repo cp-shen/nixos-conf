@@ -17,11 +17,15 @@
       ./fzf.nix
       ./i3.nix
       ./misc.nix
+      ./polybar.nix
       ./zsh.nix
     ];
 
     home.packages = with pkgs; [
-      ghc stack cabal-install haskell-language-server # haskell toolchains
+      # haskell toolchains
+      ghc stack cabal-install haskell-language-server
+      haskellPackages.implicit-hie haskellPackages.hoogle
+
       arandr unclutter nitrogen picom # desktop environment
       alacritty kitty # terminals
       firefox google-chrome # browsers
