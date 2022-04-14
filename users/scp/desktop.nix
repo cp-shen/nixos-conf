@@ -1,10 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = [ pkgs.dconf ];
+
   xsession.pointerCursor = {
     defaultCursor = "left_ptr";
     package = pkgs.numix-cursor-theme;
-    name = "Numix-Cursor-Light";
+    name = "Numix-Cursor";
     size = 16;
   };
   gtk = {
@@ -16,6 +18,13 @@
     theme = {
       package = pkgs.numix-gtk-theme;
       name = "Numix";
+    };
+  };
+  qt = {
+    enable = true;
+    style = {
+      package = pkgs.adwaita-qt;
+      name = "adwaita-dark";
     };
   };
 }

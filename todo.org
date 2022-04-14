@@ -30,7 +30,7 @@ CLOSED: [2022-04-14 Thu 03:02]
 CLOSED: [2022-04-14 Thu 19:26]
 * TODO re-orgnize files
 * TODO manage picom and unclutter
-* TODO [#D] mouse cursor theme, icon theme
+* TODO [#D] mouse cursor theme, icon theme, gtk/qt theme
 * TODO [#D] add stack config
 * HOLD install starship prompt
 * HOLD add clash user service
