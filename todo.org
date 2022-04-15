@@ -34,10 +34,11 @@ CLOSED: [2022-04-15 Fri 12:31]
 CLOSED: [2022-04-15 Fri 12:31]
 * DONE [#D] add stack config
 CLOSED: [2022-04-15 Fri 15:16]
-* TODO manage picom and unclutter
-* TODO install starship prompt
+* DONE install starship prompt
+CLOSED: [2022-04-15 Fri 17:12]
 ** DONE install nerdfonts
 CLOSED: [2022-04-15 Fri 16:07]
+* TODO manage picom and unclutter
 * TODO add clash user service
 * TODO wine wechat
 * TODO multi head

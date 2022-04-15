@@ -1,6 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 
 {
+  home.packages = [ pkgs.starship ];
+  xdg.configFile."starship".source = ./config/starship;
+  home.sessionVariables.STARSHIP_CONFIG="$HOME/.config/starship/starship.toml";
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -11,7 +15,7 @@
 
     envExtra = ''
       typeset -U PATH path
-     #path=("$path[@]" "$HOME/.scripts")
+      # path=("$path[@]" "$HOME/.scripts")
       path=("$path[@]" "$HOME/.local/bin")
       path=("$path[@]" "$HOME/.emacs.d/bin")
       path=("$path[@]" "$HOME/.ghcup/bin")
@@ -58,27 +62,29 @@
       bindkey '^[[Z' reverse-menu-complete # enable shift-tab
 
       # enable git prompt
-      autoload -Uz vcs_info
-      precmd_vcs_info() { vcs_info }
-      precmd_functions+=( precmd_vcs_info )
-      setopt prompt_subst
-      zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
-      zstyle ':vcs_info:*' enable git
+      # autoload -Uz vcs_info
+      # precmd_vcs_info() { vcs_info }
+      # precmd_functions+=( precmd_vcs_info )
+      # setopt prompt_subst
+      # zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
+      # zstyle ':vcs_info:*' enable git
 
       # setup my custom prompt theme
-      prompt_mytheme_setup() {
-          PS1="%F{red}%B%(?..[%?] )%b%f%n@%F{magenta}%5d%f %# "
-          RPS1=\$vcs_info_msg_0_
-      }
-      prompt_themes+=( mytheme )
-      prompt mytheme
+      # prompt_mytheme_setup() {
+      #     PS1="%F{red}%B%(?..[%?] )%b%f%n@%F{magenta}%5d%f %# "
+      #     RPS1=\$vcs_info_msg_0_
+      # }
+      # prompt_themes+=( mytheme )
+      # prompt mytheme
+
+      eval "$(starship init zsh)"
     '';
 
     shellAliases = {
-      l   = "ls --color -hF";
-      ls  = "ls --color -hF";
-      ll  = "ls --color -hF -l";
-      la  = "ls --color -hF -a";
+      l = "ls --color -hF";
+      ls = "ls --color -hF";
+      ll = "ls --color -hF -l";
+      la = "ls --color -hF -a";
       lla = "ls --color -hF -al";
 
       "..." = "cd ../../";
@@ -92,8 +98,8 @@
       less = "less -R --use-color";
       m = "mkdir -p";
       nv = "nvim";
-    # psuser = "ps -F -u $USER";
-    # psroot = "ps -F -u root";
+      # psuser = "ps -F -u $USER";
+      # psroot = "ps -F -u root";
       psuser = "procs $USER";
       psroot = "procs root";
       ran = "ranger";
@@ -102,7 +108,7 @@
       szshrc = "source ~/.zshrc";
       t = "touch";
       which = "which -as";
-      xo =" xdg-open";
+      xo = "xdg-open";
     };
   };
 }
