@@ -1,7 +1,7 @@
 {
   imports = [
     ./boot.nix
-    ./common.nix
+    ./misc.nix
     ./networking.nix
     ./programs.nix
     ./xserver.nix

@@ -45,7 +45,7 @@
     aria curl wget # download tools
     gcc gnumake cmake libtool # basic toolchains
     parted gparted # partitioning tools
-    htop file fd procs ripgrep tree # system tools
+    htop file fd procs ripgrep tree # system utilities
   ];
 
   environment.variables = {
