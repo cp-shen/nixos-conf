@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    arandr dconf gnome.gnome-screenshot nitrogen picom polybarFull unclutter
+    arandr dconf xfce.xfce4-screenshooter nitrogen picom polybarFull unclutter
     # systray utils
     pasystray networkmanagerapplet
   ];
