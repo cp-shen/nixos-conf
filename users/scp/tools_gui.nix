@@ -9,7 +9,7 @@
     # bt downloader
     qbittorrent
     # misc
-    pasystray rhythmbox network-manager-applet gedit
+    rhythmbox gnome.gedit
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;

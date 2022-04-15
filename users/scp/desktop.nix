@@ -1,8 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = with pkgs;
-  [ arandr dconf nitrogen picom polybarFull unclutter ];
+  home.packages = with pkgs; [
+    arandr dconf gnome.gnome-screenshot nitrogen picom polybarFull unclutter
+    # systray utils
+    pasystray networkmanagerapplet
+  ];
 
   # config for desktop utilities
   xdg.configFile."nitrogen".source = ./config/nitrogen;
