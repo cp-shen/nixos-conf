@@ -4,7 +4,7 @@
   home.packages = with pkgs;
   [ arandr dconf nitrogen picom polybarFull unclutter ];
 
-  # config for desktop utilitied
+  # config for desktop utilities
   xdg.configFile."nitrogen".source = ./config/nitrogen;
   xdg.configFile."picom".source = ./config/picom;
 
@@ -33,7 +33,7 @@
   programs.i3status-rust.bars = {};
   xdg.configFile."i3status-rust".source = ./config/i3status-rust;
 
-  # xcursot theme
+  # xcursor theme
   xsession.pointerCursor = {
     defaultCursor = "left_ptr";
     package = pkgs.numix-cursor-theme;
