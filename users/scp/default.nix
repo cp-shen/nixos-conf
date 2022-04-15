@@ -15,10 +15,11 @@
   home-manager.users.scp = { pkgs, ... }: {
     imports = [
       ./desktop.nix
-      ./fzf.nix
-      ./i3.nix
+      ./dev_haskell.nix
+      ./dev_rust.nix
       ./misc.nix
-      ./polybar.nix
+      ./tools_cli.nix
+      ./tools_gui.nix
       ./zsh.nix
     ];
   };
