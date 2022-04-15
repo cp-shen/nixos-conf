@@ -17,6 +17,7 @@
       ./desktop.nix
       ./dev_haskell.nix
       ./dev_rust.nix
+      ./fonts.nix
       ./misc.nix
       ./tools_cli.nix
       ./tools_gui.nix

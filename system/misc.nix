@@ -12,16 +12,7 @@
     keyMap = "us";
   };
 
-  fonts.fonts = with pkgs; [
-    fira-code
-    fira-code-symbols
-    font-awesome
-    material-icons
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    ubuntu_font_family
-  ];
+  fonts.fonts = with pkgs; []; # fonts installed by home-manager
 
   # nix settings
   nix = {
@@ -40,22 +31,10 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  # List packages installed in system profile
-  environment.systemPackages = with pkgs; [
-    neovim-unwrapped # editor
-    aria curl wget # download tools
-    gcc gnumake cmake libtool # basic toolchains
-    parted gparted # partitioning tools
-    htop file fd procs ripgrep tree # system utilities
-  ];
-
   environment.variables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
-
-  # Enable the OpenSSH daemon
-  # services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

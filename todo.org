@@ -36,6 +36,8 @@ CLOSED: [2022-04-15 Fri 12:31]
 CLOSED: [2022-04-15 Fri 15:16]
 * TODO manage picom and unclutter
 * TODO install starship prompt
+** DONE install nerdfonts
+CLOSED: [2022-04-15 Fri 16:07]
 * TODO add clash user service
 * TODO wine wechat
 * TODO multi head
