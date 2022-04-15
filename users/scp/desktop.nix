@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  home.packages = [ pkgs.dconf ];
+  home.packages = with pkgs;
+  [ dconf arandr unclutter nitrogen picom ];
 
   xsession.pointerCursor = {
     defaultCursor = "left_ptr";

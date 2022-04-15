@@ -16,6 +16,7 @@
     fira-code
     fira-code-symbols
     font-awesome
+    material-icons
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
