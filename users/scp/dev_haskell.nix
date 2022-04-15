@@ -7,4 +7,12 @@
     haskellPackages.implicit-hie haskellPackages.hoogle
     cabal2nix
   ];
+
+  home.file.".stack/config.yaml".text = ''
+    # system-ghc: true
+    # install-ghc: false
+
+    ghc-options:
+      '$everything': -haddock
+  '';
 }

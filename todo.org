@@ -28,10 +28,15 @@ CLOSED: [2022-04-14 Thu 01:21]
 CLOSED: [2022-04-14 Thu 03:02]
 * DONE try polybar
 CLOSED: [2022-04-14 Thu 19:26]
-* TODO re-orgnize files
+* DONE re-orgnize files
+CLOSED: [2022-04-15 Fri 12:31]
+* DONE [#D] mouse cursor theme, icon theme, gtk/qt theme
+CLOSED: [2022-04-15 Fri 12:31]
+* DONE [#D] add stack config
+CLOSED: [2022-04-15 Fri 15:16]
 * TODO manage picom and unclutter
-* TODO [#D] mouse cursor theme, icon theme, gtk/qt theme
-* TODO [#D] add stack config
-* HOLD install starship prompt
-* HOLD add clash user service
+* TODO install starship prompt
+* TODO add clash user service
+* TODO wine wechat
+* TODO multi head
 * HOLD manage firefox / chromium extensions
