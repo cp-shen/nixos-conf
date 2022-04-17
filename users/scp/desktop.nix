@@ -2,8 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    arandr dconf xfce.xfce4-screenshooter nitrogen picom polybarFull unclutter
-    # systray utils
+    arandr dconf xfce.xfce4-screenshooter polybarFull
+    unclutter-xfixes picom nitrogen
     pasystray networkmanagerapplet
   ];
 
@@ -11,23 +11,29 @@
   xdg.configFile."nitrogen".source = ./config/nitrogen;
   xdg.configFile."picom".source = ./config/picom;
 
+  # related sevices (require graphical-seeison.target)
+  # services.unclutter.enable = true;
+  # services.picom.enable = true;
+  # services.picom.extraOptions = lib.readFile ./config/picom/picom.conf;
+  # services.network-manager-applet.enable = true;
+  # services.pasystray.enable = true;
+
   # xinit config
   home.file.".xinitrc".text = ''
     #!/bin/sh
     xsetroot -cursor_name left_ptr
     xset s off -dpms
+    xrdb -merge ~/.Xresources
+
     nitrogen --restore
+    nm-applet &
     unclutter &
     picom &
+
     alacritty &
-    exec ~/.xmonad/xmonad-x86_64-linux
+    exec $HOME/.xmonad/xmonad-x86_64-linux
   '';
 
-  # i3 window manager
-  xsession.windowManager.i3 = {
-    enable = true;
-    package = pkgs.i3-gaps;
-  };
   xdg.configFile."i3".source = ./config/i3;
 
   # status bar configs
@@ -48,14 +54,14 @@
   gtk = {
     enable = true;
     iconTheme = {
-      #package = pkgs.numix-icon-theme;
-      #name = "Numix";
+      # package = pkgs.numix-icon-theme;
+      # name = "Numix";
       package = pkgs.gnome.adwaita-icon-theme;
       name = "Adwaita";
     };
     theme = {
-      #package = pkgs.numix-gtk-theme;
-      #name = "Numix";
+      # package = pkgs.numix-gtk-theme;
+      # name = "Numix";
       package = pkgs.gnome.gnome-themes-extra;
       name = "Adwaita-dark";
     };

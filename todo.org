@@ -38,8 +38,10 @@ CLOSED: [2022-04-15 Fri 15:16]
 CLOSED: [2022-04-15 Fri 17:12]
 ** DONE install nerdfonts
 CLOSED: [2022-04-15 Fri 16:07]
-* TODO manage picom and unclutter
+* DONE screenshot shortcut
+CLOSED: [2022-04-15 Fri 17:37]
+* DONE manage unclutter using systemd
+CLOSED: [2022-04-15 Fri 19:50]
 * TODO add clash user service
 * TODO wine wechat
 * TODO multi head
-* HOLD manage firefox / chromium extensions
