@@ -10,13 +10,7 @@
   # config for desktop utilities
   xdg.configFile."nitrogen".source = ./config/nitrogen;
   xdg.configFile."picom".source = ./config/picom;
-
-  # related sevices (require graphical-seeison.target)
-  # services.unclutter.enable = true;
-  # services.picom.enable = true;
-  # services.picom.extraOptions = lib.readFile ./config/picom/picom.conf;
-  # services.network-manager-applet.enable = true;
-  # services.pasystray.enable = true;
+  xdg.configFile."i3".source = ./config/i3;
 
   # xinit config
   home.file.".xinitrc".text = ''
@@ -33,8 +27,6 @@
     alacritty &
     exec $HOME/.xmonad/xmonad-x86_64-linux
   '';
-
-  xdg.configFile."i3".source = ./config/i3;
 
   # status bar configs
   xdg.configFile."polybar".source = ./config/polybar;
