@@ -14,6 +14,7 @@
 
   home-manager.users.scp = { pkgs, ... }: {
     imports = [
+      ./clash.nix
       ./desktop.nix
       ./dev_haskell.nix
       ./dev_rust.nix

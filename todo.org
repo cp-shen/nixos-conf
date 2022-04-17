@@ -42,6 +42,7 @@ CLOSED: [2022-04-15 Fri 16:07]
 CLOSED: [2022-04-15 Fri 17:37]
 * DONE manage unclutter using systemd
 CLOSED: [2022-04-15 Fri 19:50]
-* TODO add clash user service
+* DONE add clash user service
+CLOSED: [2022-04-17 Sun 21:12]
 * TODO wine wechat
 * TODO multi head
