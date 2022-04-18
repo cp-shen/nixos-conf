@@ -7,7 +7,7 @@
     # browsers
     firefox google-chrome
     # bt downloader
-    qbittorrent
+    qbittorrent qbittorrent-nox
     # misc
     rhythmbox gnome.gedit
   ];
