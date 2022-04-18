@@ -44,5 +44,3 @@ CLOSED: [2022-04-15 Fri 17:37]
 CLOSED: [2022-04-15 Fri 19:50]
 * DONE add clash user service
 CLOSED: [2022-04-17 Sun 21:12]
-* TODO wine wechat
-* TODO multi head
