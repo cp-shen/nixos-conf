@@ -22,5 +22,15 @@
       device = "/dev/disk/by-uuid/2420C99120C96A7E";
       fsType = "ntfs";
     };
+
+    "/mnt3" = { 
+      device = "/dev/disk/by-uuid/263897C938979681";
+      fsType = "ntfs";
+    };
+
+    "/mnt4" = { 
+      device = "/dev/disk/by-uuid/E408E41708E3E710";
+      fsType = "ntfs";
+    };
   };
 }
