@@ -15,15 +15,19 @@
 
     envExtra = ''
       typeset -U PATH path
-      # path=("$path[@]" "$HOME/.scripts")
-      path=("$path[@]" "$HOME/.local/bin")
+
+      path=("$path[@]" "$HOME/.cargo/bin")
       path=("$path[@]" "$HOME/.emacs.d/bin")
       path=("$path[@]" "$HOME/.ghcup/bin")
-      path=("$path[@]" "$HOME/.cargo/bin")
+      path=("$path[@]" "$HOME/.local/bin")
+      # path=("$path[@]" "$HOME/.scripts")
 
       export PATH
+
       export EDITOR=nvim
+      export EMACS_SOCKET_NAME=/tmp/emacs1000/server
     '';
+    # FIXME: remove EMACS_SOCKET_NAME?
 
     initExtra = ''
       setopt AUTO_PUSHD

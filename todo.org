@@ -44,3 +44,10 @@ CLOSED: [2022-04-15 Fri 17:37]
 CLOSED: [2022-04-15 Fri 19:50]
 * DONE add clash user service
 CLOSED: [2022-04-17 Sun 21:12]
+* DONE Run fcitx in xinitrc
+CLOSED: [2022-09-17 Sat 00:43]
+* DONE fix emacs PATH
+CLOSED: [2022-09-17 Sat 01:12]
+* DONE fix emacs Magit
+CLOSED: [2022-09-17 Sat 01:12]
+* TODO Install and Configure VsCode

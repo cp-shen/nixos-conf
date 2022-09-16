@@ -18,7 +18,11 @@
   programs.mpv.enable = true;
   programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
 
-  services.emacs.enable = true;
+  services.emacs.enable = false;
+  # FIXME: emacs as daemon not usable now (with some environment error)
+  # magit complains about empty ident
+  # vterm can't init starship
+
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: [ epkgs.vterm ];
