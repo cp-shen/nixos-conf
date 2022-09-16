@@ -36,11 +36,15 @@
   xdg.configFile."i3status-rust".source = ./config/i3status-rust;
 
   # xcursor theme
-  xsession.pointerCursor = {
-    defaultCursor = "left_ptr";
+  home.pointerCursor = {
     package = pkgs.numix-cursor-theme;
     name = "Numix-Cursor";
     size = 16;
+
+    x11 = {
+      enable = true;
+      defaultCursor = "left_ptr";
+    };
   };
 
   # gtk theme and icon theme

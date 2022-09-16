@@ -13,6 +13,7 @@
   home-manager.useUserPackages = true;
 
   home-manager.users.scp = { pkgs, ... }: {
+    home.stateVersion = "21.11";
     imports = [
       ./clash.nix
       ./desktop.nix

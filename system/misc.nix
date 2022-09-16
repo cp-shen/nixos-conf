@@ -16,7 +16,8 @@
 
   # nix settings
   nix = {
-    binaryCaches = lib.mkBefore [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+    settings.substituters = lib.mkBefore [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
