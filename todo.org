@@ -50,4 +50,7 @@ CLOSED: [2022-09-17 Sat 00:43]
 CLOSED: [2022-09-17 Sat 01:12]
 * DONE fix emacs Magit
 CLOSED: [2022-09-17 Sat 01:12]
-* TODO Install and Configure VsCode
+* DONE Install and Configure VsCode
+CLOSED: [2022-09-18 Sun 13:29]
+* DONE Install TexLive
+CLOSED: [2022-09-18 Sun 13:29]

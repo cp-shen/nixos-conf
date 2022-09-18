@@ -10,6 +10,8 @@
     qbittorrent qbittorrent-nox
     # misc
     rhythmbox gnome.gedit
+    # latex
+    pkgs.texlive.combined.scheme-full
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;
@@ -26,5 +28,9 @@
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: [ epkgs.vterm ];
+  };
+
+  programs.vscode = {
+    enable = true;
   };
 }
