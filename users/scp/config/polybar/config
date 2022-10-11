@@ -39,6 +39,7 @@ font-2 = "Noto Color Emoji:scale=10:size=12;0"
 
 [module/workspace_list]
 type = internal/xworkspaces
+reverse-scroll = true
 label-active-foreground = ${colors.blue}
 label-occupied-foreground = ${colors.brightWhite}
 label-empty-foreground = ${colors.lowWhite}
