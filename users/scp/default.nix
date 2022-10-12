@@ -20,6 +20,7 @@
       ./dev_haskell.nix
       ./dev_rust.nix
       ./fonts.nix
+      ./inputmethod.nix
       ./misc.nix
       ./tools_cli.nix
       ./tools_gui.nix
