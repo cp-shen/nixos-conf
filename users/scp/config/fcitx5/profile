@@ -1,40 +1,40 @@
 [Groups/0]
 # Group Name
-Name=Jap
+Name=Default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=keyboard-us
+DefaultIM=rime
 
 [Groups/0/Items/0]
 # Name
-Name=mozc
+Name=keyboard-us
 # Layout
 Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=keyboard-us
+Name=rime
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name=Default
+Name=Jap
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=keyboard-us
+DefaultIM=mozc
 
 [Groups/1/Items/0]
 # Name
-Name=rime
+Name=keyboard-us
 # Layout
 Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=keyboard-us
+Name=mozc
 # Layout
 Layout=
 

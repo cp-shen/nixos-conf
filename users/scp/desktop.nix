@@ -40,7 +40,6 @@
     package = pkgs.numix-cursor-theme;
     name = "Numix-Cursor";
     size = 16;
-
     x11 = {
       enable = true;
       defaultCursor = "left_ptr";
@@ -51,26 +50,19 @@
   gtk = {
     enable = true;
     iconTheme = {
-      # package = pkgs.numix-icon-theme;
-      # name = "Numix";
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.libsForQt5.breeze-icons;
+      name = "Breeze";
     };
     theme = {
-      # package = pkgs.numix-gtk-theme;
-      # name = "Numix";
-      package = pkgs.gnome.gnome-themes-extra;
-      name = "Adwaita-dark";
+      package = pkgs.libsForQt5.breeze-gtk;
+      name = "Breeze";
     };
   };
 
   # qt theme
   qt = {
     enable = true;
-    platformTheme = "gnome";
-    style = {
-      package = pkgs.adwaita-qt;
-      name = "adwaita-dark";
-    };
+    style.name = "Breeze";
+    style.package = pkgs.libsForQt5.breeze-qt5;
   };
 }
