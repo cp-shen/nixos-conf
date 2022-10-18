@@ -7,6 +7,7 @@
     glances
     glxinfo
     nixfmt
+    nnn
     pulsemixer
     termdown
   ];
