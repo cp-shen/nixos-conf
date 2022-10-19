@@ -19,6 +19,11 @@
 
   programs.mpv.enable = true;
   programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
+  xdg.configFile."mpv/mpv.conf".text = ''
+    hwdec=auto-safe
+    vo=gpu
+    profile=gpu-hq
+  '';
 
   services.emacs.enable = false;
   # FIXME: emacs as daemon not usable now (with some environment error)
