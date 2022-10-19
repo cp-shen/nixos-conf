@@ -9,8 +9,8 @@
     # fcitx5.enableRimeData = true;
   };
 
-  xdg.configFile."fcitx5" = {
-    source = ./config/fcitx5;
-    recursive = true;
-  };
+  #xdg.configFile."fcitx5" = {
+  #  source = ./config/fcitx5;
+  #  recursive = true;
+  #};
 }
