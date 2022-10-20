@@ -54,3 +54,5 @@ CLOSED: [2022-09-17 Sat 01:12]
 CLOSED: [2022-09-18 Sun 13:29]
 * DONE Install TexLive
 CLOSED: [2022-09-18 Sun 13:29]
+* DONE Add Rofi Config
+CLOSED: [2022-10-20 Thu 15:16]

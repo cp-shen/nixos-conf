@@ -38,4 +38,14 @@
   programs.vscode = {
     enable = true;
   };
+
+  programs.rofi = {
+    enable = true;
+    cycle = true;
+    font = "Ubuntu 14";
+    location = "center";
+    terminal = "${pkgs.alacritty}/bin/alacritty";
+    theme = ./config/rofi/breeze-light.rasi;
+    yoffset = 0;
+  };
 }
