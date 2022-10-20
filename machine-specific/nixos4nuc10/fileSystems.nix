@@ -32,5 +32,20 @@
       device = "/dev/disk/by-uuid/E408E41708E3E710";
       fsType = "ntfs";
     };
+
+    #nfs root
+    "export/downloads" = {
+      device = "/home/scp/Downloads";
+      options = [ "bind" ];
+    };
+  };
+
+  services.nfs.server = {
+    enable = true;
+    exports =
+    ''
+      /export            *(fsid=0,sync,insecure,no_subtree_check)
+      /export/downloads  *(nohide,sync,insecure,no_subtree_check)
+    '';
   };
 }
