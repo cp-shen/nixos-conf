@@ -5,13 +5,15 @@
 
   home.packages = with pkgs; [
     # nerd patched fonts
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "Ubuntu" ]; })
+    (pkgs.nerdfonts.override {
+        fonts = [ "FiraCode" "Ubuntu" "CascadiaCode" "Hack"]; })
 
     # programming fonts
     fira-code
     fira-code-symbols
     hack-font
     dejavu_fonts
+    cascadia-code
 
     # other fonts
     noto-fonts
