@@ -53,8 +53,20 @@
       show-icons = true;
       sort = false;
       window-thumbnail = false;
+
       kb-clear-line = "Control+w";
       kb-cancel = "Escape,Control+g,Control+bracketleft";
+
+      kb-select-1  = "Control+1";
+      kb-select-2  = "Control+2";
+      kb-select-3  = "Control+3";
+      kb-select-4  = "Control+4";
+      kb-select-5  = "Control+5";
+      kb-select-6  = "Control+6";
+      kb-select-7  = "Control+7";
+      kb-select-8  = "Control+8";
+      kb-select-9  = "Control+9";
+      kb-select-10 = "Control+0";
     };
   };
 }
