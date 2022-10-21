@@ -10,6 +10,8 @@
     nnn
     pulsemixer
     termdown
+    xclip
+    unrar p7zip # zip util
   ];
 
   programs.fzf.enable = true;

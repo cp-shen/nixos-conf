@@ -18,7 +18,7 @@
         # chars: good-looking, not as sharp as fira code
         # height: small line spacing
         # ligaratures: yes, italics: yes, zero: dotted
-        jetbrains-mono
+        #jetbrains-mono
         # chars: really smooth and rounded
         # height: large line spacing
         # ligaratures: yes, italics: yes, zero: dotted
