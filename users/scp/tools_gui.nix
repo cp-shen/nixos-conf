@@ -41,11 +41,20 @@
 
   programs.rofi = {
     enable = true;
-    cycle = true;
     font = "Ubuntu 14";
-    location = "center";
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = ./config/rofi/breeze-light.rasi;
-    yoffset = 0;
+
+    extraConfig = {
+      case-sensitive = false;
+      click-to-exit = true;
+      cycle = true;
+      disable-history = true;
+      show-icons = true;
+      sort = false;
+      window-thumbnail = false;
+      kb-clear-line = "Control+w";
+      kb-cancel = "Escape,Control+g,Control+bracketleft";
+    };
   };
 }
