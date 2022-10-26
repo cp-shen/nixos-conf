@@ -55,7 +55,7 @@
       window-thumbnail = false;
 
       kb-clear-line = "Control+w";
-      kb-cancel = "Escape,Super+Delete,Super+Tab";
+      kb-cancel = "Escape,Super+Delete,Super+Tab,Control+g";
 
       kb-select-1  = "Control+1";
       kb-select-2  = "Control+2";
