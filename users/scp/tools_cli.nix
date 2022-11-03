@@ -9,6 +9,7 @@
     nixfmt
     nnn
     pulsemixer
+    pandoc
     termdown
     xclip
     unrar p7zip # zip util
