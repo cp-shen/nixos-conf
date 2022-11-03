@@ -17,6 +17,7 @@
     imports = [
       ./clash.nix
       ./desktop.nix
+      ./dev_python.nix
       ./dev_haskell.nix
       ./dev_rust.nix
       ./fonts.nix
