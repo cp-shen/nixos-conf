@@ -124,8 +124,8 @@
       # psroot = "ps -F -u root";
       psuser = "procs $USER";
       psroot = "procs root";
-      ran = "ranger";
-      rm = "rm -i";
+      # ran = "ranger";
+      # rm = "rm -i";
       sou = "source";
       szshrc = "source ~/.zshrc";
       t = "touch";
