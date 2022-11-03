@@ -10,6 +10,7 @@
     nnn
     pulsemixer
     pandoc
+    sage
     termdown
     xclip
     unrar p7zip # zip util
