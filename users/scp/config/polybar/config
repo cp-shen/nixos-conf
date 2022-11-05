@@ -12,6 +12,13 @@ white    = #abb2bf
 lowWhite = #828791
 brightWhite = #e6efff
 
+[pb_common]
+fill = "="
+empty = "="
+indicator = "o"
+indicator_fg = ${colors.blue}
+width = 6
+
 ; --- bar setting ---
 
 [bar/mybar]
@@ -21,7 +28,7 @@ radius = 0
 
 modules-left = workspace_list
 modules-center = window_title
-modules-right = pulseaudio cpu memory filesystem date
+modules-right = cpu memory fs vol temp date
 tray-position = right
 override-redirect = true
 enable-ipc = true
@@ -54,32 +61,81 @@ type = internal/xwindow
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = CPU:%percentage%%
+label = CPU %percentage%%
+format = CPU <bar-load>
+bar-load-width = ${pb_common.width}
+bar-load-fill = ${pb_common.fill}
+bar-load-empty = ${pb_common.empty}
+bar-load-indicator = ${pb_common.indicator}
+bar-load-indicator-foreground = ${pb_common.indicator_fg}
+bar-load-gradient = true
+bar-load-foreground-0 = ${colors.green}
+bar-load-foreground-1 = ${colors.green}
+bar-load-foreground-2 = ${colors.yellow}
+bar-load-foreground-3 = ${colors.yellow}
+bar-load-foreground-4 = ${colors.red}
 
 [module/memory]
 type = internal/memory
 interval = 2
-label = RAM:%gb_used%/%gb_total%
+label = RAM %gb_used%/%gb_total%
+format = RAM <bar-used>
+bar-used-width = ${pb_common.width}
+bar-used-fill = ${pb_common.fill}
+bar-used-empty = ${pb_common.empty}
+bar-used-indicator = ${pb_common.indicator}
+bar-used-indicator-foreground = ${pb_common.indicator_fg}
+bar-used-gradient = true
+bar-used-foreground-0 = ${colors.green}
+bar-used-foreground-1 = ${colors.green}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.yellow}
+bar-used-foreground-4 = ${colors.red}
 
-[module/pulseaudio]
+[module/vol]
 type = internal/pulseaudio
-label-volume = VOL:%percentage%%
-label-muted = VOL:🔇
-label-muted-foreground = ${colors.red}
+label-volume = VOL %percentage%%
+label-muted = MUT %percentage%%
+;label-muted = VOL 🔇
+format-volume-foreground = ${colors.magenta}
+format-muted-foreground = ${colors.red}
+
+[module/fs]
+type = internal/fs
+mount-0 = /
+;mount-1 = /testtt
+interval = 10
+label-mounted = [ %mountpoint% ] %used%/%total%
+label-unmounted = [ %mountpoint% ] not mounted
+label-unmounted-foreground = ${colors.red}
+format-mounted = DISK <bar-used>
+bar-used-width = ${pb_common.width}
+bar-used-fill = ${pb_common.fill}
+bar-used-empty = ${pb_common.empty}
+bar-used-indicator = ${pb_common.indicator}
+bar-used-indicator-foreground = ${pb_common.indicator_fg}
+bar-used-gradient = true
+bar-used-foreground-0 = ${colors.green}
+bar-used-foreground-1 = ${colors.green}
+bar-used-foreground-2 = ${colors.yellow}
+bar-used-foreground-3 = ${colors.yellow}
+bar-used-foreground-4 = ${colors.red}
 
 [module/date]
 type = internal/date
 date = %y-%m-%d
 time = %H:%M
 interval = 10
-label = %date% %time%
+label = "%date% %time%  "
 label-foreground = ${colors.blue}
 
-[module/filesystem]
-type = internal/fs
-mount-0 = /
-; mount-1 = /qqww
-interval = 10
-label-mounted = ( %mountpoint% ) %used%/%total%
-label-unmounted = ( %mountpoint% ) not mounted
-label-unmounted-foreground = ${colors.red}
+[module/temp]
+type = internal/temperature
+interval = 1
+;thermal-zone = 0
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+base-temperature = 0
+warn-temperature = 70
+units = true
+label-foreground = ${colors.green}
+label-warn-foreground = ${colors.red}
