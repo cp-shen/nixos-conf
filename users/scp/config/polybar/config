@@ -55,6 +55,7 @@ label-empty-foreground = ${colors.lowWhite}
 
 [module/window_title]
 type = internal/xwindow
+label-maxlen = 40
 
 ; --- right widgets ---
 
