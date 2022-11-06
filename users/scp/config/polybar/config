@@ -26,8 +26,8 @@ height = 2%
 width = 100%
 radius = 0
 
-modules-left = workspace_list
-modules-center = window_title
+modules-left = workspace_list window_title
+;modules-center = window_title
 modules-right = wired-network wireless-network cpu memory fs vol temp date
 tray-position = right
 override-redirect = true
@@ -55,7 +55,7 @@ label-empty-foreground = ${colors.lowWhite}
 
 [module/window_title]
 type = internal/xwindow
-label-maxlen = 40
+label-maxlen = 80
 
 ; --- right widgets ---
 
