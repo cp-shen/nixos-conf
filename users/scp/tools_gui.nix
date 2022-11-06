@@ -35,6 +35,10 @@
     extraPackages = epkgs: [ epkgs.vterm ];
   };
 
+  programs.obs-studio = {
+    enable = true;
+  };
+
   programs.vscode = {
     enable = true;
   };
