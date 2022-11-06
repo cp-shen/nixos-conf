@@ -28,7 +28,7 @@ radius = 0
 
 modules-left = workspace_list
 modules-center = window_title
-modules-right = cpu memory fs vol temp date
+modules-right = wired-network wireless-network cpu memory fs vol temp date
 tray-position = right
 override-redirect = true
 enable-ipc = true
@@ -139,3 +139,13 @@ warn-temperature = 70
 units = true
 label-foreground = ${colors.green}
 label-warn-foreground = ${colors.red}
+
+[module/wired-network]
+type = internal/network
+interface = eno1
+label-connected = %ifname% %downspeed:8%
+
+[module/wireless-network]
+type = internal/network
+interface = wlp0s20f3
+label-connected = %ifname% %downspeed:8%
