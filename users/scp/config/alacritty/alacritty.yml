@@ -48,3 +48,6 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0x828791'
 
+
+key_bindings:
+  - { key: N, mods: Control|Shift ,action: SpawnNewInstance}

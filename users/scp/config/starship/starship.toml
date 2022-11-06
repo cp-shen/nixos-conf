@@ -120,3 +120,6 @@ symbol = "sudo "
 
 [swift]
 symbol = "swift "
+
+[haskell]
+symbol = "hs "
