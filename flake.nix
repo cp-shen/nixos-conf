@@ -6,11 +6,14 @@
     #nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ { 
     nixpkgs, 
-    home-manager, 
+    home-manager,
+    rust-overlay,
     ... }: 
   let
     system = "x86_64-linux";
@@ -25,8 +28,15 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [ 
-          { networking.hostName = hostName; } 
           ./system
+
+          { networking.hostName = hostName; }
+
+          ({ pkgs, ... }: {
+            nixpkgs.overlays = [ rust-overlay.overlays.default ];
+            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+          })
+
           (./. + "/machine-specific/${hostName}")
           (./. + "/users/${userName}")
         ];
