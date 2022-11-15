@@ -10,37 +10,29 @@
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { 
-    nixpkgs, 
-    home-manager,
-    rust-overlay,
-    ... }: 
-  let
-    system = "x86_64-linux";
-    myHostNames = {
-      "nixos4b450i" = {};
-      "nixos4nuc10" = {};
-    };
-    myUserName = "scp";
-
-    mkSystem = userName: hostName: _:
-      nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs; };
-        modules = [ 
-          ./system
-
-          { networking.hostName = hostName; }
-
-          ({ pkgs, ... }: {
-            nixpkgs.overlays = [ rust-overlay.overlays.default ];
-            environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-          })
-
-          (./. + "/machine-specific/${hostName}")
-          (./. + "/users/${userName}")
-        ];
+  outputs = inputs@{ nixpkgs, home-manager, rust-overlay, ... }:
+    let
+      system = "x86_64-linux";
+      myHostNames = {
+        "nixos4b450i" = { };
+        "nixos4nuc10" = { };
       };
-  in 
-  { nixosConfigurations = builtins.mapAttrs (mkSystem myUserName) myHostNames; };
+      myUserName = "scp";
+
+      mkSystem = userName: hostName: _:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            { networking.hostName = hostName; }
+            { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
+
+            ./system
+            (./. + "/machine-specific/${hostName}")
+            (./. + "/users/${userName}")
+          ];
+        };
+    in {
+      nixosConfigurations = builtins.mapAttrs (mkSystem myUserName) myHostNames;
+    };
 }
