@@ -10,8 +10,6 @@
     qbittorrent qbittorrent-nox
     # misc
     rhythmbox gnome.gedit
-    # latex
-    pkgs.texlive.combined.scheme-full
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;
