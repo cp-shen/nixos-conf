@@ -2,18 +2,18 @@
 
 {
   home.packages = with pkgs; [
-    clash
-    cloc
-    glances
-    glxinfo
-    nixfmt
-    nnn
-    pulsemixer
-    pandoc
-    sage
-    termdown
-    xclip
-    unrar p7zip # zip util
+    # utils
+    termdown nnn cloc
+    clash glances pandoc
+    # sys utils
+    lm_sensors intel-gpu-tools glxinfo pulsemixer
+    xclip xorg.xmessage
+    # scripting
+    lua nodejs sage
+    # zip util
+    unrar p7zip
+    # latex
+    pkgs.texlive.combined.scheme-full
   ];
 
   programs.fzf.enable = true;

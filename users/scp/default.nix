@@ -17,8 +17,10 @@
     imports = [
       ./clash.nix
       ./desktop.nix
-      ./dev_python.nix
+      ./dev_cc.nix
       ./dev_haskell.nix
+      ./dev_nix.nix
+      ./dev_python.nix
       ./dev_rust.nix
       ./fonts.nix
       ./inputmethod.nix
