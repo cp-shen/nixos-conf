@@ -7,7 +7,7 @@
     # download tools
     aria curl wget
     # basic toolchains
-    gcc gnumake cmake libtool
+    gcc gcc_multi gnumake cmake libtool
     # partitioning tools
     parted gparted
     # system utilities
