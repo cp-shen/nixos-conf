@@ -16,7 +16,6 @@
   xdg.configFile."kitty".source = ./config/kitty;
 
   programs.mpv.enable = true;
-  programs.mpv.scripts = with pkgs; [ mpvScripts.mpv-playlistmanager ];
   xdg.configFile."mpv/mpv.conf".text = ''
     hwdec=auto-safe
     vo=gpu
