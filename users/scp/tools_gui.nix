@@ -21,6 +21,7 @@
     vo=gpu
     profile=gpu-hq
   '';
+  xdg.configFile."mpv/scripts".source = ./config/mpv-scripts;
 
   services.emacs.enable = false;
   # FIXME: emacs as daemon not usable now (with some environment error)
