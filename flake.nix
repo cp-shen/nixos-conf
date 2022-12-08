@@ -8,9 +8,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, rust-overlay, ... }:
+  outputs =
+    inputs@{ nixpkgs, home-manager, rust-overlay, neovim-nightly-overlay, ... }:
     let
       system = "x86_64-linux";
       myHostNames = {
@@ -24,9 +27,13 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            { networking.hostName = hostName; }
-            { nixpkgs.overlays = [ rust-overlay.overlays.default ]; }
-
+            {
+              networking.hostName = hostName;
+              nixpkgs.overlays = [
+                neovim-nightly-overlay.overlay
+                rust-overlay.overlays.default
+              ];
+            }
             ./system
             (./. + "/machine-specific/${hostName}")
             (./. + "/users/${userName}")
