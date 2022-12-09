@@ -48,6 +48,7 @@
     theme = ./config/rofi/breeze-light.rasi;
 
     extraConfig = {
+      modes = "window,windowcd,drun";
       case-sensitive = false;
       click-to-exit = true;
       cycle = true;
