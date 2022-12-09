@@ -14,6 +14,8 @@
     unrar p7zip
     # latex
     pkgs.texlive.combined.scheme-full
+    # aspell
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
   ];
 
   programs.fzf.enable = true;
