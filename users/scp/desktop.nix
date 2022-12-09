@@ -13,21 +13,7 @@
   xdg.configFile."i3".source = ./config/i3;
 
   # xinit config
-  home.file.".xinitrc".text = ''
-    #!/bin/sh
-    xsetroot -cursor_name left_ptr
-    xset s off -dpms
-    xrdb -merge ~/.Xresources
-
-    nitrogen --restore
-    nm-applet &
-    unclutter &
-    picom &
-    fcitx5 &
-    alacritty &
-
-    exec $HOME/.xmonad/xmonad-x86_64-linux
-  '';
+  home.file.".xinitrc".source = ./config/xinitrc;
 
   # status bar configs
   xdg.configFile."polybar".source = ./config/polybar;

@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#if [ "''${XDG_VTNR}" -eq 1 ]; then
+    #xhost +SI:localuser:$USER
+    #export _JAVA_AWT_WM_NONREPARENTING=1
+    #xsetroot -cursor_name left_ptr
+    #xset r rate 200 60
+
+    # Uncomment the following block to use the exwm-xim module.
+    #export XMODIFIERS=@im=exwm-xim
+    #export GTK_IM_MODULE=xim
+    #export QT_IM_MODULE=xim
+    #export CLUTTER_IM_MODULE=xim
+
+    # start some apps
+    #nm-applet &
+    #unclutter &
+
+    # Finally start Emacs
+    #exec emacs
+#fi
+
+
+xsetroot -cursor_name left_ptr
+xset s off -dpms
+xrdb -merge ~/.Xresources
+
+nitrogen --restore
+nm-applet &
+unclutter &
+picom &
+fcitx5 &
+alacritty &
+
+exec $HOME/.xmonad/xmonad-x86_64-linux
