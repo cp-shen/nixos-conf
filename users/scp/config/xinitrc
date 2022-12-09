@@ -30,6 +30,7 @@ nm-applet &
 unclutter &
 picom &
 fcitx5 &
-alacritty &
+#alacritty &
+emacs &
 
 exec $HOME/.xmonad/xmonad-x86_64-linux
