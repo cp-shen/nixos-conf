@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # utils
-    termdown nnn cloc
+    peaclock nnn cloc
     clash glances pandoc
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
@@ -31,4 +31,6 @@
   programs.git.lfs.enable = true;
   programs.gitui.enable = true;
   home.file.".gitconfig".source = ./config/gitconfig;
+
+  home.file.".peaclock/config".source = ./config/peaclock/config;
 }
