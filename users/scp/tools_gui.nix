@@ -30,6 +30,8 @@
 
   programs.emacs = {
     enable = true;
+    # package = pkgs.emacsUnstable;
+    package = pkgs.emacs;
     extraPackages = epkgs: [ epkgs.vterm ];
   };
 
