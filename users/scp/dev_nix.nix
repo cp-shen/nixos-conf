@@ -10,6 +10,8 @@
     binutils
     dpkg
     patchelf
+
+    cachix
   ];
 
   programs.direnv.enable = true;

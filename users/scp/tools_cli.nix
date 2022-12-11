@@ -3,13 +3,13 @@
 {
   home.packages = with pkgs; [
     # utils
-    peaclock nnn cloc
+    peaclock nnn cloc ffmpeg bottom
     clash glances pandoc
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage
     # scripting
-    lua nodejs sage
+    nodejs sage lua sumneko-lua-language-server
     # zip util
     unrar p7zip
     # latex

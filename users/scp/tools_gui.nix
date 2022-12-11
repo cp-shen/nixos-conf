@@ -9,7 +9,7 @@
     # bt downloader
     qbittorrent qbittorrent-nox
     # misc
-    rhythmbox gnome.gedit
+    rhythmbox gnome.gedit qdirstat
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;
