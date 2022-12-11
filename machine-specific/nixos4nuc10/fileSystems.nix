@@ -36,9 +36,15 @@
       options = ["rw" "uid=1000"];
     };
 
-    #nfs root
+    #nfs
     "export/downloads" = {
       device = "/home/scp/Downloads";
+      options = [ "bind" ];
+    };
+
+    #nfs
+    "export/mnt2" = {
+      device = "/mnt2/Users/Admin/Downloads/BtDownload";
       options = [ "bind" ];
     };
   };
@@ -49,6 +55,7 @@
     ''
       /export            *(fsid=0,sync,insecure,no_subtree_check)
       /export/downloads  *(nohide,sync,insecure,no_subtree_check)
+      /export/mnt2       *(nohide,sync,insecure,no_subtree_check)
     '';
   };
 }
