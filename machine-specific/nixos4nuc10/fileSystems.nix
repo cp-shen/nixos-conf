@@ -44,7 +44,7 @@
 
     #nfs
     "export/mnt2" = {
-      device = "/mnt2/Users/Admin/Downloads/BtDownload";
+      device = "/mnt2/Users/Admin/Downloads";
       options = [ "bind" ];
     };
   };
