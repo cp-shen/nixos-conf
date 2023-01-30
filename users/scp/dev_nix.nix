@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    nixos-option
     nix-ld
     nix-index
     nixfmt
