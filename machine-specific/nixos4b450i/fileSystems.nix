@@ -19,6 +19,20 @@
       options = [ "rw" "uid=1000" "gid=100" ];
     };
 
+    #nfs
+    "export/bt" = {
+      device = "/mnt1/BT";
+      options = [ "bind" ];
+    };
+
   };
 
+  services.nfs.server = {
+    enable = true;
+    exports =
+    ''
+      /export            *(fsid=0,sync,insecure,no_subtree_check)
+      /export/bt         *(nohide,sync,insecure,no_subtree_check)
+    '';
+  };
 }
