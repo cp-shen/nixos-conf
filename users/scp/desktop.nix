@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     arandr dconf xfce.xfce4-screenshooter polybarFull
-    unclutter-xfixes picom nitrogen
+    unclutter-xfixes picom nitrogen feh
     # pasystray
     networkmanagerapplet
     leftwm
