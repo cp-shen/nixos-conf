@@ -11,11 +11,11 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    leftwm.url = "github:leftwm/leftwm";
   };
 
   outputs =
-    inputs@{ nixpkgs, home-manager, rust-overlay,
-             emacs-overlay, neovim-nightly-overlay, ... }:
+    inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       myHostNames = {
@@ -32,9 +32,10 @@
             {
               networking.hostName = hostName;
               nixpkgs.overlays = [
-                neovim-nightly-overlay.overlay
-                rust-overlay.overlays.default
-                emacs-overlay.overlays.default
+                inputs.neovim-nightly-overlay.overlay
+                inputs.emacs-overlay.overlays.default
+                inputs.rust-overlay.overlays.default
+                inputs.leftwm.overlay
               ];
             }
             ./system

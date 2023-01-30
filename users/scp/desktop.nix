@@ -4,18 +4,19 @@
   home.packages = with pkgs; [
     arandr dconf xfce.xfce4-screenshooter polybarFull
     unclutter-xfixes picom nitrogen
-    pasystray networkmanagerapplet
+    # pasystray
+    networkmanagerapplet
+    leftwm
   ];
 
-  # config for desktop utilities
+  # linking config files
   xdg.configFile."nitrogen".source = ./config/nitrogen;
   xdg.configFile."picom".source = ./config/picom;
   xdg.configFile."i3".source = ./config/i3;
-
-  # xinit config
+  xdg.configFile."leftwm".source = ./config/leftwm;
   home.file.".xinitrc".source = ./config/xinitrc;
 
-  # status bar configs
+  # status bars
   xdg.configFile."polybar".source = ./config/polybar;
   programs.i3status-rust.enable = true;
   programs.i3status-rust.bars = {};

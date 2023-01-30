@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  # moved to user dir
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ mozc rime ];
+  };
 }
