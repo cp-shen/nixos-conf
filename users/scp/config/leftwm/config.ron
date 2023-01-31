@@ -60,13 +60,13 @@
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
-        # (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
+        // (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "r"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        # (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
+        // (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
@@ -109,6 +109,7 @@
         (command: Execute, value: "pulsemixer --toggle-mute", modifier: [], key: "XF86XK_AudioMute"),
         (command: Execute, value: "pulsemixer --change-volume -5", modifier: [], key: "XF86XK_AudioLowerVolume"),
         (command: Execute, value: "pulsemixer --change-volume +5", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+        // (command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
     ],
     state_path: None,
 )
