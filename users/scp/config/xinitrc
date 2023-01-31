@@ -16,5 +16,5 @@ if [ -f $HOME/.screenlayout/layout.sh ]; then
     $HOME/.screenlayout/layout.sh
 fi
 
-#exec $HOME/.xmonad/xmonad-x86_64-linux
 exec dbus-launch leftwm
+#exec $HOME/.xmonad/xmonad-x86_64-linux
