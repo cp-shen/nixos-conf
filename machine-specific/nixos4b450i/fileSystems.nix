@@ -20,7 +20,7 @@
     };
 
     #nfs
-    "export/bt" = {
+    "/export/bt" = {
       device = "/mnt1/BT";
       options = [ "bind" ];
     };

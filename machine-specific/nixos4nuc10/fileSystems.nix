@@ -37,13 +37,13 @@
     };
 
     #nfs
-    "export/downloads" = {
+    "/export/downloads" = {
       device = "/home/scp/Downloads";
       options = [ "bind" ];
     };
 
     #nfs
-    "export/mnt2" = {
+    "/export/mnt2" = {
       device = "/mnt2/Users/Admin/Downloads";
       options = [ "bind" ];
     };
