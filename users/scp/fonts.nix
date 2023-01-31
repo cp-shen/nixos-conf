@@ -31,8 +31,8 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    font-awesome
-    material-icons
     ubuntu_font_family
+    # font-awesome
+    # material-icons
   ];
 }
