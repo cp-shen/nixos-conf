@@ -50,8 +50,8 @@
       ( window_class: "Emacs", spawn_on_tag: 1 ),
       ( window_class: "Code", spawn_on_tag: 1 ),
 
-      ( window_class: "qBittorrent", spawn_on_tag: 4 ),
-      ( window_class: "mpv", spawn_on_tag: 5 ),
+      ( window_class: "mpv", spawn_on_tag: 4 ),
+      ( window_class: "qBittorrent", spawn_on_tag: 5 ),
     ],
     disable_current_tag_swap: false,
     disable_tile_drag: false,
