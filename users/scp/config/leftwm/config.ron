@@ -13,7 +13,7 @@
     mousekey: "Mod4",
     workspaces: [],
     tags: [
-    "代码", "终端", "网页", "下载", "娱乐", "其他"
+    "代码", "终端", "网页", "视频", "下载", "其他"
     ],
     max_window_width: None,
     layouts: [
