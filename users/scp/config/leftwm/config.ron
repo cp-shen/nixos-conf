@@ -61,7 +61,8 @@
     sloppy_mouse_follows_focus: true,
     keybind: [
         // manipulate windows and layouts
-        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
+        (command: FocusWindowTop, value: "", modifier: ["modkey"], key: "Return"),
+        (command: SwapWindowTop, value: "", modifier: ["modkey", "Control"], key: "Return"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
