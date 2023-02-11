@@ -60,9 +60,7 @@
     focus_new_windows: true,
     sloppy_mouse_follows_focus: true,
     keybind: [
-        (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
-        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
-        (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
+        // manipulate windows and layouts
         (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
@@ -102,8 +100,12 @@
         (command: Execute, value: "pulsemixer --change-volume +5", modifier: [], key: "XF86XK_AudioRaiseVolume"),
         (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "r"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
+        // other misc keybindings
         //(command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
         (command: ToggleFloating, value: "", modifier: ["modkey"], key: "t"),
+        (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
+        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+        (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
     ],
     state_path: None,
 )
