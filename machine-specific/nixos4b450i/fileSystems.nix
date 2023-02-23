@@ -25,6 +25,11 @@
       options = [ "bind" ];
     };
 
+    #nfs
+    "/export/bilibili" = {
+      device = "/mnt1/bilibili";
+      options = [ "bind" ];
+    };
   };
 
   services.nfs.server = {
@@ -33,6 +38,7 @@
     ''
       /export            *(fsid=0,sync,insecure,no_subtree_check)
       /export/bt         *(nohide,sync,insecure,no_subtree_check)
+      /export/bilibili   *(nohide,sync,insecure,no_subtree_check)
     '';
   };
 }
