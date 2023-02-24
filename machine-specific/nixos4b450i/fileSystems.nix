@@ -26,8 +26,8 @@
     };
 
     #nfs
-    "/export/bilibili" = {
-      device = "/mnt1/bilibili";
+    "/export/yt-dlp" = {
+      device = "/mnt1/yt-dlp";
       options = [ "bind" ];
     };
   };
@@ -38,7 +38,7 @@
     ''
       /export            *(fsid=0,sync,insecure,no_subtree_check)
       /export/bt         *(nohide,sync,insecure,no_subtree_check)
-      /export/bilibili   *(nohide,sync,insecure,no_subtree_check)
+      /export/yt-dlp     *(nohide,sync,insecure,no_subtree_check)
     '';
   };
 }
