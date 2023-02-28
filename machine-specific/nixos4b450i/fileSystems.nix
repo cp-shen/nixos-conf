@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  swapDevices = [
+    { device = "/dev/sda4"; }
+  ];
+
   fileSystems = {
 
     "/" = {
