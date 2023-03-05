@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-leftwm-command "FocusWindowUp"
+leftwm-command "SendWorkspaceToTag $1 $2" "FocusWindowUp"

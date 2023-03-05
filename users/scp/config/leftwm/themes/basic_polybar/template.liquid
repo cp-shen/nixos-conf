@@ -1,7 +1,7 @@
 {% for tag in workspace.tags %}
 {% if tag.mine %}
-%{A1:$SCRIPTPATH/focus_next_window:}
-%{A3:$SCRIPTPATH/focus_prev_window:}
+%{A1:$SCRIPTPATH/focus_next_window {{workspace.index}} {{tag.index}}:}
+%{A3:$SCRIPTPATH/focus_prev_window {{workspace.index}} {{tag.index}}:}
 %{F#61afef}  {{tag.name}}  %{F-}
 %{A}
 %{A}
