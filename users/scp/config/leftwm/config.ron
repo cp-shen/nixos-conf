@@ -58,7 +58,7 @@
     disable_window_snap: true,
     focus_behaviour: Sloppy,
     focus_new_windows: true,
-    sloppy_mouse_follows_focus: true,
+    sloppy_mouse_follows_focus: false,
     keybind: [
         // manipulate windows and layouts
         (command: FocusWindowTop, value: "", modifier: ["modkey"], key: "Return"),
