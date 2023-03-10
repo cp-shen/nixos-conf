@@ -2,7 +2,7 @@
 {% if tag.mine %}
 %{A1:$SCRIPTPATH/focus_next_window {{workspace.index}} {{tag.index}}:}
 %{A3:$SCRIPTPATH/focus_prev_window {{workspace.index}} {{tag.index}}:}
-%{F#61afef}  {{tag.name}}  %{F-}
+%{F#e6efff}  {{tag.name}}  %{F-}
 %{A}
 %{A}
 {% elsif tag.urgent %}
@@ -11,7 +11,7 @@
 %{A}
 {% elsif tag.visible  %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
-%{F#e6efff}  {{tag.name}}  %{F-}
+%{F#61afef}  {{tag.name}}  %{F-}
 %{A}
 {% elsif tag.busy %}
 %{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
