@@ -12,7 +12,7 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
 
-  home-manager.users.scp = { pkgs, ... }: {
+  home-manager.users.scp = {
     home.stateVersion = "21.11";
     imports = [
       ./clash.nix
@@ -23,12 +23,14 @@
       ./dev_python.nix
       ./dev_rust.nix
       ./fonts.nix
-      ./games.nix
       ./inputmethod.nix
       ./misc.nix
       ./tools_cli.nix
       ./tools_gui.nix
       ./zsh.nix
-    ];
+    ] ++ (if config.networking.hostName == "nixos4b450i" then
+      [ ./games.nix ]
+    else
+      [ ]);
   };
 }
