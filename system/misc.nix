@@ -42,7 +42,7 @@
   hardware.pulseaudio.enable = true;
 
   # Enable bluetooth
-  hardware.bluetooth.enable = true;
+  # hardware.bluetooth.enable = true;
 
   environment.variables = {
     EDITOR = "nvim";
