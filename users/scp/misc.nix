@@ -14,4 +14,14 @@
       "x-scheme-handler/unknown" = [ "firefox.desktop" ];
     };
   };
+
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+    "$HOME/.emacs.d/bin"
+    "$HOME/.ghcup/bin"
+    "$HOME/.local/bin"
+    "$HOME/go/bin"
+  ];
+
+  home.sessionVariables = { EDITOR = "nvim"; };
 }
