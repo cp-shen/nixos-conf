@@ -18,7 +18,7 @@
     max_window_width: None,
     layouts: [
         MainAndVertStack,
-        MainAndHorizontalStack,
+        // MainAndHorizontalStack,
         // MainAndDeck,
         // GridHorizontal,
         // EvenHorizontal,
@@ -69,6 +69,7 @@
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
         (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "k"),
         (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "j"),
+        (command: NextLayout, value: "", modifier: ["modkey"], key: "f"),
         (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "l"),
         (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "h"),
         (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "l"),
