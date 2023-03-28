@@ -23,6 +23,7 @@
       ./dev_nix.nix
       ./dev_python.nix
       ./dev_rust.nix
+      ./dev_scala.nix
       ./fonts.nix
       ./inputmethod.nix
       ./misc.nix
