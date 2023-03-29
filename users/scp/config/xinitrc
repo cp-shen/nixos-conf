@@ -7,25 +7,25 @@ xset s off -dpms
 alacritty &
 emacs &
 
-if [ -f $HOME/.screenlayout/layout.sh ]; then
-    $HOME/.screenlayout/layout.sh
+if [ -f "$HOME"/.screenlayout/layout.sh ]; then
+    "$HOME"/.screenlayout/layout.sh
 fi
 
-session=${1:-leftwm}
+session=${1:-xmonad}
 case $session in
 xmonad )
   nitrogen --restore
   nm-applet &
   unclutter &
   picom &
-  fcitx5 &
+  ibus-daemon &
   ;;
 esac
 
 case $session in
     i3|i3wm           ) exec i3;;
     xfce|xfce4        ) exec startxfce4;;
-    xmonad            ) exec $HOME/.xmonad/xmonad-x86_64-linux;;
+    xmonad            ) exec "$HOME"/.xmonad/xmonad-x86_64-linux;;
     leftwm            ) exec dbus-launch leftwm >> ~/.cache/leftwm.log 2>&1;;
     *                 ) exec $1;;
 esac
