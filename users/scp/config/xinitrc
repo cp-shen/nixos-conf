@@ -4,17 +4,28 @@ xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 xset s off -dpms
 
-# nitrogen --restore
-# nm-applet &
-# unclutter &
-# picom &
 alacritty &
-# fcitx5 &
 emacs &
 
 if [ -f $HOME/.screenlayout/layout.sh ]; then
     $HOME/.screenlayout/layout.sh
 fi
 
-exec dbus-launch leftwm >> ~/.cache/leftwm.log 2>&1
-#exec $HOME/.xmonad/xmonad-x86_64-linux
+session=${1:-leftwm}
+case $session in
+xmonad )
+  nitrogen --restore
+  nm-applet &
+  unclutter &
+  picom &
+  fcitx5 &
+  ;;
+esac
+
+case $session in
+    i3|i3wm           ) exec i3;;
+    xfce|xfce4        ) exec startxfce4;;
+    xmonad            ) exec $HOME/.xmonad/xmonad-x86_64-linux;;
+    leftwm            ) exec dbus-launch leftwm >> ~/.cache/leftwm.log 2>&1;;
+    *                 ) exec $1;;
+esac

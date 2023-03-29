@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     # utils
     peaclock nnn cloc ffmpeg bottom xplr
-    clash glances pandoc
+    clash glances pandoc shellcheck
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage

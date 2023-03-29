@@ -7,6 +7,7 @@
     # pasystray
     networkmanagerapplet
     leftwm
+    xmonad-mycfg
   ];
 
   # linking config files
@@ -16,10 +17,32 @@
   xdg.configFile."leftwm".source = ./config/leftwm;
   home.file.".xinitrc".source = ./config/xinitrc;
 
+  home.file.xmonadBuildScript = {
+    target = ".xmonad/build";
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+      set -e
+
+      XMDIR="$HOME/xmonad-mycfg"
+
+      cd "$XMDIR"
+      nix build
+
+
+      if [ "$#" -ne 0 ]; then
+         echo "linking to $1"
+         ln -s -f -T "$XMDIR/result/bin/xmonad" "$1"
+      else
+         echo "no linking needed"
+      fi
+    '';
+  };
+
   # status bars
   xdg.configFile."polybar".source = ./config/polybar;
   programs.i3status-rust.enable = true;
-  programs.i3status-rust.bars = {};
+  programs.i3status-rust.bars = { };
   xdg.configFile."i3status-rust".source = ./config/i3status-rust;
 
   # xcursor theme

@@ -75,6 +75,7 @@
       # prompt_themes+=( mytheme )
       # prompt mytheme
 
+      # nnn shortcut
       n ()
       {
           # Block nesting of nnn in subshells
