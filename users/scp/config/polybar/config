@@ -24,10 +24,12 @@ width = 6
 [bar/mybar1]
 inherit = bar/mybarbase
 monitor = HDMI-1
+tray-position = none
 
 [bar/mybar2]
 inherit = bar/mybarbase
 monitor = DP-1
+tray-position = right
 
 [bar/mybarbase]
 height = 2%
@@ -37,7 +39,6 @@ radius = 0
 modules-left = workspace_list window_title
 ;modules-center = window_title
 modules-right = wired-network wireless-network cpu memory fs vol temp date
-tray-position = right
 override-redirect = true
 enable-ipc = true
 separator = "|"
