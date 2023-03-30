@@ -11,10 +11,13 @@ if [ -f "$HOME"/.screenlayout/layout.sh ]; then
     "$HOME"/.screenlayout/layout.sh
 fi
 
+if [ -f "$HOME"/.fehbg ]; then
+    "$HOME"/.fehbg
+fi
+
 session=${1:-xmonad}
 case $session in
 xmonad )
-  nitrogen --restore
   nm-applet &
   unclutter &
   picom &
@@ -23,8 +26,8 @@ xmonad )
 esac
 
 case $session in
-    i3|i3wm           ) exec i3;;
-    xfce|xfce4        ) exec startxfce4;;
+    # i3|i3wm           ) exec i3;;
+    # xfce|xfce4        ) exec startxfce4;;
     xmonad            ) exec "$HOME"/.xmonad/xmonad-x86_64-linux;;
     leftwm            ) exec dbus-launch leftwm >> ~/.cache/leftwm.log 2>&1;;
     *                 ) exec $1;;
