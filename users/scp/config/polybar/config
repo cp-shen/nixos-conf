@@ -56,10 +56,17 @@ font-2 = "Noto Color Emoji:scale=10:size=12;0"
 [module/workspace_list]
 type = internal/xworkspaces
 reverse-scroll = true
+pin-workspaces = true
+
 label-active-foreground = ${colors.brightWhite}
 label-occupied-foreground = ${colors.blue}
+label-urgent-foreground = ${colors.red}
 label-empty-foreground = ${colors.lowWhite}
-pin-workspaces = true
+
+label-active   = " %index% %name%"
+label-occupied = " %index% %name%"
+label-urgent   = " %index% %name%"
+label-empty =
 
 ; --- center widgets ---
 
