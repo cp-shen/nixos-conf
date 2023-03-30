@@ -21,7 +21,15 @@ width = 6
 
 ; --- bar setting ---
 
-[bar/mybar]
+[bar/mybar1]
+inherit = bar/mybarbase
+monitor = HDMI-1
+
+[bar/mybar2]
+inherit = bar/mybarbase
+monitor = DP-1
+
+[bar/mybarbase]
 height = 2%
 width = 100%
 radius = 0
@@ -47,9 +55,10 @@ font-2 = "Noto Color Emoji:scale=10:size=12;0"
 [module/workspace_list]
 type = internal/xworkspaces
 reverse-scroll = true
-label-active-foreground = ${colors.blue}
-label-occupied-foreground = ${colors.brightWhite}
+label-active-foreground = ${colors.brightWhite}
+label-occupied-foreground = ${colors.blue}
 label-empty-foreground = ${colors.lowWhite}
+pin-workspaces = true
 
 ; --- center widgets ---
 
