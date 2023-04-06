@@ -18,6 +18,7 @@
       ./clash.nix
       ./desktop.nix
       ./dev_cc.nix
+      ./dev_dotnet.nix
       ./dev_go.nix
       ./dev_haskell.nix
       ./dev_nix.nix

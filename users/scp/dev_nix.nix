@@ -8,7 +8,7 @@
     nixfmt
 
     appimage-run
-    binutils
+    #binutils
     dpkg
     patchelf
 

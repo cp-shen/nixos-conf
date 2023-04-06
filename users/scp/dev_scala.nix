@@ -2,12 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    scala_3
-    scalafmt
-    scalafix
-    scala-cli
-    ammonite
-    sbt
-    metals
+    (scala-cli.override { jre = pkgs.jdk17; })
+    (coursier.override { jre = pkgs.jdk17; })
+    (sbt.override { jre = pkgs.jdk17; })
+    (mill.override { jre = pkgs.jdk17; })
+    clang
   ];
 }
