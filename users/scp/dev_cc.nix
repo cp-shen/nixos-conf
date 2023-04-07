@@ -2,8 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    ccls clang-tools
+    clang-tools clang
     gdb cgdb
     pkg-config
+    ccls
   ];
 }
