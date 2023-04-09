@@ -4,14 +4,14 @@
   home.packages = with pkgs; [
     # utils
     peaclock nnn cloc ffmpeg bottom xplr
-    clash glances pandoc shellcheck
+    clash glances pandoc
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage
     # scripting
-    nodejs sage lua5_4 sumneko-lua-language-server
+    nodejs sage lua5_4 sumneko-lua-language-server shellcheck
     # zip util
-    unrar p7zip
+    unrar p7zip zip gzip
     # latex
     pkgs.texlive.combined.scheme-full
     # aspell
