@@ -10,6 +10,8 @@
     qbittorrent qbittorrent-nox
     # misc
     rhythmbox gnome.gedit qdirstat
+    # jetbrains IDEs
+    jetbrains.idea-community
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;
