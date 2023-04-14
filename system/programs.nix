@@ -14,6 +14,8 @@
     htop file fd procs ripgrep tree unzip
   ];
 
+  services.qbittorrent.enable = true;
+
   programs = {
     git.enable = true;
     less.enable = true;
