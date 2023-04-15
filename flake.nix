@@ -16,7 +16,7 @@
     xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       myHostNames = {
@@ -24,28 +24,31 @@
         "nixos4nuc10" = { };
       };
       myUserName = "scp";
+      myOverlays = [
+        self.overlays.default
+        inputs.neovim-nightly-overlay.overlay
+        inputs.emacs-overlay.overlays.default
+        inputs.leftwm.overlay
+        inputs.xmonad-mycfg.overlay
+        #inputs.rust-overlay.overlays.default
+      ];
 
-      mkSystem = userName: hostName: _:
+      mySystem = userName: hostName: _:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
-          modules = [
-            {
-              networking.hostName = hostName;
-              nixpkgs.overlays = [
-                inputs.neovim-nightly-overlay.overlay
-                inputs.emacs-overlay.overlays.default
-                inputs.leftwm.overlay
-                inputs.xmonad-mycfg.overlay
-                #inputs.rust-overlay.overlays.default
-              ];
-            }
-            ./system
-            (./. + "/machine-specific/${hostName}")
-            (./. + "/users/${userName}")
-          ];
+          modules = [{
+            networking.hostName = hostName;
+            nixpkgs.overlays = myOverlays;
+            imports = [
+              ./system
+              (./. + "/machine-specific/${hostName}")
+              (./. + "/users/${userName}")
+            ];
+          }];
         };
     in {
-      nixosConfigurations = builtins.mapAttrs (mkSystem myUserName) myHostNames;
+      overlays.default = import ./overlay.nix;
+      nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
     };
 }

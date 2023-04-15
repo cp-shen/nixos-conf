@@ -1,6 +1,7 @@
 {
   imports = [
     ./boot.nix
+    ./clash.nix
     ./inputmethod.nix
     ./lightdm.nix
     ./misc.nix

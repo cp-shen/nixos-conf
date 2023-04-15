@@ -15,7 +15,6 @@
   home-manager.users.scp = {
     home.stateVersion = "21.11";
     imports = [
-      ./clash.nix
       ./desktop.nix
       ./dev_cc.nix
       ./dev_dotnet.nix

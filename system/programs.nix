@@ -15,6 +15,7 @@
   ];
 
   services.qbittorrent.enable = true;
+  services.clash.enable = true;
 
   programs = {
     git.enable = true;
