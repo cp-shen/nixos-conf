@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [
     # utils
-    peaclock nnn cloc ffmpeg bottom xplr
-    clash glances pandoc
+    peaclock cloc ffmpeg xplr
+    clash glances
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage
@@ -17,6 +17,10 @@
     # aspell
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
   ];
+  programs.yt-dlp.enable = true;
+  programs.nnn.enable = true;
+  programs.bottom.enable = true;
+  programs.pandoc.enable = true;
 
   programs.fzf.enable = true;
   programs.fzf.fileWidgetCommand = config.programs.fzf.defaultCommand;
