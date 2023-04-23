@@ -6,6 +6,7 @@
     nix-ld
     nix-index
     nixfmt
+    nixpkgs-fmt
 
     appimage-run
     #binutils
