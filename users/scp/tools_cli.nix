@@ -16,6 +16,7 @@
     pkgs.texlive.combined.scheme-full
     # aspell
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
+    tree-sitter
   ];
   programs.yt-dlp.enable = true;
   programs.nnn.enable = true;
@@ -32,6 +33,7 @@
   programs.gh.settings.git_protocol = "https";
 
   programs.git.enable = true;
+  programs.lazygit.enable = true;
   programs.git.lfs.enable = true;
   programs.gitui.enable = true;
   home.file.".gitconfig".source = ./config/gitconfig;

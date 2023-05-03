@@ -12,6 +12,8 @@
     rhythmbox gnome.gedit qdirstat
     # jetbrains IDEs
     jetbrains.idea-community
+    # editor
+    neovide
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;

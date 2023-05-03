@@ -29,7 +29,7 @@
         inputs.neovim-nightly-overlay.overlay
         inputs.emacs-overlay.overlays.default
         inputs.leftwm.overlay
-        inputs.xmonad-mycfg.overlay
+        inputs.xmonad-mycfg.overlays.default
         #inputs.rust-overlay.overlays.default
       ];
 
