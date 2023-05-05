@@ -16,8 +16,8 @@
     qdirstat
     # jetbrains IDEs
     jetbrains.idea-community
-    # editor
-    neovide
+    # guit editors
+    #neovide gnvim neovim-qt
   ];
 
   xdg.configFile."alacritty".source = ./config/alacritty;
