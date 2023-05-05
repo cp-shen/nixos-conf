@@ -16,6 +16,7 @@
   };
 
   home.sessionPath = [
+    "$HOME/.npm-global/bin"
     "$HOME/.cargo/bin"
     "$HOME/.emacs.d/bin"
     "$HOME/.ghcup/bin"
