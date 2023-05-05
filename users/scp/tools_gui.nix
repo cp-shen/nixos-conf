@@ -3,13 +3,17 @@
 {
   home.packages = with pkgs; [
     # terminals
-    alacritty kitty
+    alacritty
+    kitty
     # browsers
-    firefox google-chrome
+    firefox
+    google-chrome
     # bt downloader
     #qbittorrent qbittorrent-nox
     # misc
-    rhythmbox gnome.gedit qdirstat
+    rhythmbox
+    gnome.gedit
+    qdirstat
     # jetbrains IDEs
     jetbrains.idea-community
     # editor
@@ -43,9 +47,27 @@
     enable = true;
   };
 
-  programs.vscode = {
-    enable = true;
-  };
+  programs.vscode =
+    let
+      myPython = pkgs.python310;
+      lldb-plugin = pkgs.vscode-extensions.vadimcn.vscode-lldb.override {
+        python3 = myPython;
+      };
+      lldb-plugin-wrapped = lldb-plugin.overrideAttrs (oldAttrs: {
+        postFixup = ''
+          wrapProgram $out/$installPrefix/adapter/codelldb \
+            --prefix PATH : "${myPython}/bin" \
+            --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
+            --set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
+        '';
+      });
+    in
+    {
+      enable = true;
+      extensions = [
+        lldb-plugin-wrapped
+      ];
+    };
 
   programs.rofi = {
     enable = true;
