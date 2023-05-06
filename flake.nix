@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.11";
     #nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     home-manager.url = "github:nix-community/home-manager";
@@ -16,7 +17,7 @@
     xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }:
     let
       system = "x86_64-linux";
       myHostNames = {
@@ -24,15 +25,21 @@
         "nixos4nuc10" = { };
       };
       myUserName = "scp";
+      overlay-stable = final: prev: {
+        stable = import nixpkgs-stable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
       myOverlays = [
         self.overlays.default
+        overlay-stable
         inputs.neovim-nightly-overlay.overlay
         inputs.emacs-overlay.overlays.default
         inputs.leftwm.overlay
         inputs.xmonad-mycfg.overlays.default
         #inputs.rust-overlay.overlays.default
       ];
-
       mySystem = userName: hostName: _:
         nixpkgs.lib.nixosSystem {
           inherit system;
@@ -47,7 +54,8 @@
             ];
           }];
         };
-    in {
+    in
+    {
       overlays.default = import ./overlay.nix;
       nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
     };
