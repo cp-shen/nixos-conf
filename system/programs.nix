@@ -15,6 +15,8 @@
   ];
 
   services.qbittorrent.enable = true;
+  services.qbittorrent.user = "scp";
+  services.qbittorrent.group = "users";
   services.clash.enable = true;
 
   programs = {

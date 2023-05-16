@@ -94,9 +94,7 @@ in
             --profile=${configDir} \
             --webui-port=${toString cfg.port}
         '';
-        # To prevent "Quit & shutdown daemon" from working; we want systemd to
-        # manage it!
-        Restart = "on-success";
+        Restart = "no";
         User = cfg.user;
         Group = cfg.group;
         UMask = "0002";
