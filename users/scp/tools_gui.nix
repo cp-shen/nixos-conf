@@ -28,6 +28,7 @@
     hwdec=auto-safe
     vo=gpu
     profile=gpu-hq
+    volume=60
   '';
   xdg.configFile."mpv/scripts".source = ./config/mpv-scripts;
 
