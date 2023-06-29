@@ -27,6 +27,11 @@
     # java.package = pkgs.jdk17;
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableOnBoot = true;
+
+  users.users.scp.extraGroups = [ "docker" ];
+
   # environment.variables.JAVA_HOME = "${config.programs.java.package.home}";
   # environment.variables.JAVA_OPTS =
   #   "-Xmx2048m -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=7890 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=7890";

@@ -26,6 +26,7 @@
 
   services.nginx = {
     enable = true;
+    enableReload = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
   };
@@ -34,6 +35,16 @@
     # forceSSL = true;
     locations."/" = {
       proxyPass = "http://127.0.0.1:8091";
+      proxyWebsockets = true;
+      extraConfig = "proxy_ssl_server_name on;"
+        + "proxy_pass_header Authorization;";
+    };
+  };
+  services.nginx.virtualHosts."bitbucket.lan" = {
+    # enableACME = true;
+    # forceSSL = true;
+    locations."/" = {
+      proxyPass = "http://127.0.0.1:7990";
       proxyWebsockets = true;
       extraConfig = "proxy_ssl_server_name on;"
         + "proxy_pass_header Authorization;";
