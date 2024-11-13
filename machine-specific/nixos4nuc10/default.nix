@@ -5,5 +5,6 @@
     ./hardware-configuration.nix
     ./jira.nix
     ./networking.nix
+    ./redmine.nix
   ];
 }
