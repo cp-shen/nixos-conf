@@ -7,7 +7,7 @@
     kitty
     # browsers
     firefox
-    google-chrome
+    pkgs.nixos24.google-chrome
     # bt downloader
     #qbittorrent qbittorrent-nox
     # misc

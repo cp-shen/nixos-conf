@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs24.url = "github:nixos/nixpkgs/nixos-24.05";
     #nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     home-manager.url = "github:nix-community/home-manager";
@@ -31,9 +32,16 @@
           config.allowUnfree = true;
         };
       };
+      overlay24 = final: prev: {
+        nixos24 = import inputs.nixpkgs24 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
       myOverlays = [
         self.overlays.default
         overlay-stable
+        overlay24
         inputs.neovim-nightly-overlay.overlay
         inputs.emacs-overlay.overlays.default
         inputs.leftwm.overlay
