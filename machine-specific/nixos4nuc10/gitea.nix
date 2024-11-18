@@ -5,6 +5,7 @@ let
 in {
   services.gitea = rec {
     enable = true;
+    package = pkgs.nixos24.gitea;
     lfs.enable = true;
     domain = "gitea.lan";
     httpPort = 8093;
