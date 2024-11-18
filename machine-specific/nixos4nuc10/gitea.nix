@@ -5,7 +5,7 @@ let
 in {
   services.gitea = rec {
     enable = true;
-    package = pkgs.nixos24.gitea;
+    # package = pkgs.nixos24.gitea;
     lfs.enable = true;
     domain = "gitea.lan";
     httpPort = 8093;
@@ -13,7 +13,7 @@ in {
     rootUrl = "http://" + domain;
     database = {
       type = "postgres";
-      passwordFile = "/run/keys/gitea-dbpassword";
+      passwordFile = "/keys/gitea-dbpassword";
       createDatabase = true;
     };
   };
