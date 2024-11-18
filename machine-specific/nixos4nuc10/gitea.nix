@@ -5,12 +5,16 @@ let
 in {
   services.gitea = rec {
     enable = true;
-    # package = pkgs.nixos24.gitea;
+    package = pkgs.nixos24.gitea;
     lfs.enable = true;
     domain = "gitea.lan";
     httpPort = 8093;
     httpAddress = "127.0.0.1";
     rootUrl = "http://" + domain;
+    extraConfig = ''
+    [packages]
+    CHUNKED_UPLOAD_PATH = "${config.services.gitea.stateDir}/tmp/package-upload";
+    '';
     database = {
       type = "postgres";
       passwordFile = "/keys/gitea-dbpassword";
