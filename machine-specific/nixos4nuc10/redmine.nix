@@ -38,7 +38,7 @@
         done
 
         key=$(cat /keys/redmine-repo-service-key)
-        wget "http://redmine.lan/sys/fetch_changesets?key=$key"
+        wget --no-proxy -O - "http://redmine.lan/sys/fetch_changesets?key=$key"
       '';
     };
 
