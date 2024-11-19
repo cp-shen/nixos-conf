@@ -14,7 +14,11 @@
   systemd.services."redmine-update-git-repos" =
     let cfg = config.services.redmine;
     in {
-      path = [ pkgs.git ];
+      path = [
+        pkgs.wget
+        pkgs.git
+        cfg.package
+      ];
       serviceConfig = {
         Type = "oneshot";
         User = cfg.user;
@@ -23,12 +27,18 @@
       };
       script = ''
         mkdir -p git_repos
+
         cd git_repos
+
         dirlist=$(find -mindepth 1 -maxdepth 1 -type d)
+
         for dir in $dirlist
         do
           git -C $dir fetch --prune --all
         done
+
+        key=$(cat /keys/redmine-repo-service-key)
+        wget "http://redmine.lan/sys/fetch_changesets?key=$key"
       '';
     };
 
