@@ -647,8 +647,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1731519987,
-        "narHash": "sha256-LE9v5KvXoCyscDoR7pM2sGEuI413qQQjeL/KG8J+Gzg=",
+        "lastModified": 1731909454,
+        "narHash": "sha256-FryU/L2qxwITxDFNBpu79Te2g4iejrLVZ49g98wsnOs=",
         "path": "/home/scp/xmonad-mycfg",
         "type": "path"
       },
