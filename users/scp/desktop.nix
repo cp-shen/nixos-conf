@@ -6,7 +6,7 @@
     unclutter-xfixes picom nitrogen feh
     # pasystray
     networkmanagerapplet
-    leftwm
+    # leftwm
     xmonad-mycfg
   ];
 

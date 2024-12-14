@@ -22,13 +22,21 @@ let
         default = 3333;
         description = "Port for YACD dashboard to listen on.";
       };
+
+      stateDir = mkOption {
+        default = "/var/lib/clash";
+        type = types.str;
+        description = "Clash system user dir";
+      };
     };
   };
 in {
-  options.services.clash = mkOption {
-    type = clashModule;
-    default = { };
-    description = "Clash system service related configurations";
+  options = {
+    services.clash = mkOption {
+      type = clashModule;
+      default = { };
+      description = "Clash system service related configurations";
+    };
   };
 
   config = mkIf (cfg.enable) {
@@ -42,6 +50,7 @@ in {
       description = "Clash deamon user";
       isSystemUser = true;
       group = "clash";
+      home = "/var/lib/clash";
     };
     users.groups.${clashGroupName} = { };
 
@@ -53,8 +62,9 @@ in {
       serviceConfig = {
         Type = "exec";
         User = clashUserName;
-        ExecStart = "${pkgs.clash}/bin/clash -d /etc/clash";
+        ExecStart = "${pkgs.clash-rs}/bin/clash -d ${cfg.stateDir}";
         Restart = "on-abort";
+        WorkingDirectory = cfg.stateDir;
       };
     };
 

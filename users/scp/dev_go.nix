@@ -4,12 +4,12 @@
   programs.go.enable = true;
   programs.go.goPath = "go";
 
-  home.packages = with pkgs; [
-    gore
-    gocode
-    gotests
-    gomodifytags
-    gotools
-    gopls
-  ];
+  # home.packages = with pkgs; [
+  #   gore
+  #   gocode
+  #   gotests
+  #   gomodifytags
+  #   gotools
+  #   gopls
+  # ];
 }

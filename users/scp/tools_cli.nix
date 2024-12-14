@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [
     # utils
-    peaclock cloc ffmpeg xplr
-    clash glances
+    peaclock cloc ffmpeg xplr yazi
+    clash-rs glances
     # sys utils
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage

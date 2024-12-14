@@ -14,7 +14,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     leftwm.url = "github:leftwm/leftwm";
-    xmonad-mycfg.url = "path:/home/scp/xmonad-mycfg";
+    xmonad-mycfg.url = "git+file:/home/scp/xmonad-mycfg";
     xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -42,28 +42,42 @@
         self.overlays.default
         overlay-stable
         overlay24
-        inputs.neovim-nightly-overlay.overlay
+        inputs.neovim-nightly-overlay.overlays.default
         inputs.emacs-overlay.overlays.default
-        inputs.leftwm.overlay
+        inputs.leftwm.overlays.default
         inputs.xmonad-mycfg.overlays.default
         #inputs.rust-overlay.overlays.default
       ];
       mySystem = userName: hostName: _:
         nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [{
-            networking.hostName = hostName;
-            nixpkgs.overlays = myOverlays;
-            imports = [
-              ./system
-              (./. + "/machine-specific/${hostName}")
-              (./. + "/users/${userName}")
-            ];
-          }];
+          specialArgs = {
+            inherit inputs;
+            inherit userName;
+          };
+          modules = [
+            {
+              networking.hostName = hostName;
+              nixpkgs.overlays = myOverlays;
+            }
+
+            home-manager.nixosModule
+
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+            }
+
+            {
+              imports = [
+                ./user.nix
+                ./system
+                (./. + "/machine-specific/${hostName}")
+              ];
+            }
+          ];
         };
-    in
-    {
+    in {
       overlays.default = import ./overlay.nix;
       nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
     };

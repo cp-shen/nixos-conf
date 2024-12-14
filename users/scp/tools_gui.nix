@@ -1,27 +1,28 @@
 { config, lib, pkgs, ... }:
 
-{
+let
+  mkLink = config.lib.file.mkOutOfStoreSymlink;
+  nixConfDir = "${config.home.homeDirectory}/nixos/users/${config.home.username}/config";
+in {
   home.packages = with pkgs; [
     # terminals
     alacritty
     kitty
     # browsers
     firefox
-    pkgs.nixos24.google-chrome
+    pkgs.google-chrome
     # bt downloader
     #qbittorrent qbittorrent-nox
     # misc
-    rhythmbox
-    gnome.gedit
     qdirstat
-    # jetbrains IDEs
-    jetbrains.idea-community
-    # guit editors
+    # IDEs and gui editors
+    # jetbrains.idea-community
+    # jetbrains.rider
     neovide
   ];
 
-  xdg.configFile."alacritty".source = ./config/alacritty;
-  xdg.configFile."kitty".source = ./config/kitty;
+  xdg.configFile."alacritty".source = mkLink "${nixConfDir}/alacritty";
+  xdg.configFile."kitty".source = mkLink "${nixConfDir}/kitty";
 
   programs.mpv.enable = true;
   xdg.configFile."mpv/mpv.conf".text = ''
