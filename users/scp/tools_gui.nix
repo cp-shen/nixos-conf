@@ -16,8 +16,8 @@ in {
     # misc
     qdirstat
     # IDEs and gui editors
-    # jetbrains.idea-community
-    # jetbrains.rider
+    jetbrains.idea-community
+    jetbrains.rider
     neovide
   ];
 
