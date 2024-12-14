@@ -7,15 +7,15 @@
     #   user = "scp";
     # };
     lightdm = {
-      enable = true;
-      greeters.gtk = {
-        enable = true;
-        cursorTheme = {
-          package = pkgs.numix-cursor-theme;
-          name = "Numix-Cursor";
-          size = 16;
-        };
-      };
+      enable = false;
+      # greeters.gtk = {
+      #   enable = true;
+      #   cursorTheme = {
+      #     package = pkgs.numix-cursor-theme;
+      #     name = "Numix-Cursor";
+      #     size = 16;
+      #   };
+      # };
     };
     # defaultSession = "none+xmonad-mycfg";
     # sessionCommands = ''
