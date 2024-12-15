@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
 
 {
   home.packages = with pkgs; [
@@ -36,7 +36,7 @@
   programs.lazygit.enable = true;
   programs.git.lfs.enable = true;
   programs.gitui.enable = true;
-  home.file.".gitconfig".source = ./config/gitconfig;
+  home.file.".gitconfig".source = mkOutLink "${userConfDir}/gitconfig";
 
-  home.file.".peaclock/config".source = ./config/peaclock/config;
+  home.file.".peaclock".source = mkOutLink "${userConfDir}/peaclock";
 }

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,11 +11,11 @@
   ];
 
   # linking config files
-  xdg.configFile."nitrogen".source = ./config/nitrogen;
-  xdg.configFile."picom".source = ./config/picom;
-  xdg.configFile."i3".source = ./config/i3;
-  xdg.configFile."leftwm".source = ./config/leftwm;
-  home.file.".xinitrc".source = ./config/xinitrc;
+  xdg.configFile."nitrogen".source = mkOutLink "${userConfDir}/nitrogen";
+  xdg.configFile."picom".source = mkOutLink "${userConfDir}/picom";
+  xdg.configFile."i3".source = mkOutLink "${userConfDir}/i3";
+  xdg.configFile."leftwm".source = mkOutLink "${userConfDir}/leftwm";
+  home.file.".xinitrc".source = mkOutLink "${userConfDir}/xinitrc";
 
   home.file.xmonadBuildScript = {
     target = ".xmonad/build";
@@ -40,10 +40,10 @@
   };
 
   # status bars
-  xdg.configFile."polybar".source = ./config/polybar;
+  xdg.configFile."polybar".source = mkOutLink "${userConfDir}/polybar";
   programs.i3status-rust.enable = true;
   programs.i3status-rust.bars = { };
-  xdg.configFile."i3status-rust".source = ./config/i3status-rust;
+  xdg.configFile."i3status-rust".source = mkOutLink "${userConfDir}/i3status-rust";
 
   # xcursor theme
   home.pointerCursor = {

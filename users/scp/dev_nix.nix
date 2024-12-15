@@ -8,6 +8,9 @@
     nixfmt
     nixpkgs-fmt
 
+    nixd
+    nil
+
     appimage-run
     #binutils
     dpkg

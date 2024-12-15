@@ -1,9 +1,6 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
 
-let
-  mkLink = config.lib.file.mkOutOfStoreSymlink;
-  nixConfDir = "${config.home.homeDirectory}/nixos/users/${config.home.username}/config";
-in {
+{
   home.packages = with pkgs; [
     # terminals
     alacritty
@@ -15,13 +12,10 @@ in {
     #qbittorrent qbittorrent-nox
     # misc
     qdirstat
-    # IDEs and gui editors
-    jetbrains.idea-community
-    jetbrains.rider
   ];
 
-  xdg.configFile."alacritty".source = mkLink "${nixConfDir}/alacritty";
-  xdg.configFile."kitty".source = mkLink "${nixConfDir}/kitty";
+  xdg.configFile."alacritty".source = mkOutLink "${userConfDir}/alacritty";
+  xdg.configFile."kitty".source = mkOutLink "${userConfDir}/kitty";
 
   programs.mpv.enable = true;
   xdg.configFile."mpv/mpv.conf".text = ''
@@ -30,45 +24,11 @@ in {
     profile=gpu-hq
     volume=60
   '';
-  xdg.configFile."mpv/scripts".source = ./config/mpv-scripts;
-
-  services.emacs.enable = false;
-  # FIXME: emacs as daemon not usable now (with some environment error)
-  # magit complains about empty ident
-  # vterm can't init starship
-
-  programs.emacs = {
-    enable = true;
-    # package = pkgs.emacsUnstable;
-    package = pkgs.emacs;
-    extraPackages = epkgs: [ epkgs.vterm ];
-  };
+  xdg.configFile."mpv/scripts".source = mkOutLink "${userConfDir}/mpv-scripts";
 
   programs.obs-studio = {
     enable = true;
   };
-
-  programs.vscode =
-    let
-      myPython = pkgs.python310;
-      lldb-plugin = pkgs.vscode-extensions.vadimcn.vscode-lldb.override {
-        python3 = myPython;
-      };
-      lldb-plugin-wrapped = lldb-plugin.overrideAttrs (oldAttrs: {
-        postFixup = ''
-          wrapProgram $out/$installPrefix/adapter/codelldb \
-            --prefix PATH : "${myPython}/bin" \
-            --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
-            --set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
-        '';
-      });
-    in
-    {
-      enable = true;
-      extensions = [
-        lldb-plugin-wrapped
-      ];
-    };
 
   programs.rofi = {
     enable = true;

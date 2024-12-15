@@ -1,8 +1,8 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, lib, mkOutLink, userConfDir, ... }:
 
 {
   home.packages = [ pkgs.starship ];
-  xdg.configFile."starship".source = ./config/starship;
+  xdg.configFile."starship".source = mkOutLink "${userConfDir}/starship";
   home.sessionVariables.STARSHIP_CONFIG="$HOME/.config/starship/starship.toml";
 
   programs.zsh = {
