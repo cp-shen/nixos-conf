@@ -12,6 +12,7 @@
     ./dev_python.nix
     ./dev_rust.nix
     ./dev_scala.nix
+    ./editors.nix
     ./fonts.nix
     ./inputmethod.nix
     ./misc.nix

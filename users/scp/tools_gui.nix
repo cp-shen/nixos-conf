@@ -18,7 +18,6 @@ in {
     # IDEs and gui editors
     jetbrains.idea-community
     jetbrains.rider
-    neovide
   ];
 
   xdg.configFile."alacritty".source = mkLink "${nixConfDir}/alacritty";
