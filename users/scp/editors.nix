@@ -8,5 +8,6 @@ let
 in {
 
   xdg.configFile."nvim".source = mkLink "${nixConfDir}/nvim";
+  xdg.configFile."doom".source = mkLink "${nixConfDir}/doom";
 
 }
