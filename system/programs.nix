@@ -19,6 +19,18 @@
   services.qbittorrent.group = "users";
   services.clash.enable = true;
 
+  services.nginx = {
+    enable = true;
+    enableReload = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_13;
+  };
+
   programs = {
     git.enable = true;
     less.enable = true;

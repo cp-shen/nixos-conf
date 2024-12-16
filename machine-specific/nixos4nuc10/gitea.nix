@@ -27,11 +27,6 @@ in {
     };
   };
 
-  services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql_16;
-  };
-
   services.nginx.virtualHosts."gitea.lan" = {
     # enableACME = true;
     # forceSSL = true;

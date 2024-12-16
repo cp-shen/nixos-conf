@@ -24,12 +24,6 @@
     '';
   };
 
-  services.nginx = {
-    enable = true;
-    enableReload = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
-  };
   services.nginx.virtualHosts."jira.lan" = {
     # enableACME = true;
     # forceSSL = true;

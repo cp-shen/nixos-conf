@@ -5,7 +5,7 @@
     # Networking settings
     networkmanager.enable = true;
     proxy.default = "http://127.0.0.1:7890/";
-    proxy.noProxy = "127.0.0.1,localhost";
+    proxy.noProxy = "127.0.0.1,localhost,*.lan";
   
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
     # Per-interface useDHCP will be mandatory in the future, so this generated config
