@@ -13,23 +13,27 @@
       fsType = "ext4";
     };
 
-    "/mnt1" = {
-      device = "/dev/disk/by-uuid/72ed0876-b136-4b4b-9d99-e16173b459fc";
-      fsType = "ext4";
-    };
+    # arch linux root partition
+    # "/mnt1" = {
+    #   device = "/dev/disk/by-uuid/72ed0876-b136-4b4b-9d99-e16173b459fc";
+    #   fsType = "ext4";
+    # };
 
+    # windows system partition
     "/mnt2" = { 
       device = "/dev/disk/by-uuid/2420C99120C96A7E";
       fsType = "ntfs3";
       options = ["rw" "uid=1000" "gid=100"];
     };
 
+    # windows data partition
     "/mnt3" = { 
       device = "/dev/disk/by-uuid/263897C938979681";
       fsType = "ntfs3";
       options = ["rw" "uid=1000" "gid=100"];
     };
 
+    # windows data partition
     "/mnt4" = { 
       device = "/dev/disk/by-uuid/E408E41708E3E710";
       fsType = "ntfs3";
