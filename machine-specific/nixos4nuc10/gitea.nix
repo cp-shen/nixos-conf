@@ -34,14 +34,15 @@ in {
       recommendedProxySettings = false;
       proxyPass = "http://127.0.0.1:8093";
       proxyWebsockets = true;
-      extraConfig = "client_max_body_size 512M;"
-        + "proxy_set_header Connection $http_connection;"
-        + "proxy_set_header Upgrade $http_upgrade;"
-        + "proxy_set_header Host $host;"
-        + "proxy_set_header X-Real-IP $remote_addr;"
-        + "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;"
-        + "proxy_set_header X-Forwarded-Proto $scheme;"
-        + "proxy_headers_hash_max_size 1024;";
+      extraConfig =
+        "client_max_body_size 512M;\n"
+        + "proxy_set_header Connection $http_connection;\n"
+        + "proxy_set_header Upgrade $http_upgrade;\n"
+        + "proxy_set_header Host $host;\n"
+        + "proxy_set_header X-Real-IP $remote_addr;\n"
+        + "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n"
+        + "proxy_set_header X-Forwarded-Proto $scheme;\n";
+        # + "proxy_headers_hash_max_size 1024;\n";
     };
   };
 }
