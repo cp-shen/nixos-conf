@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # editor
-    stable.neovim-unwrapped #neovim-nightly
+    nixos24.neovim-unwrapped #neovim-nightly
     # download tools
     aria curl wget
     # basic toolchains

@@ -5,7 +5,7 @@
     enable = true;
     listenPort = 8091;
     listenAddress = "127.0.0.1";
-    jrePackage = pkgs.stable.temurin-bin-11;
+    jrePackage = pkgs.nixos24.temurin-bin-11;
     # proxy = {
     # enable = true;
     # secure = true;
