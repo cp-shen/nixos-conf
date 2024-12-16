@@ -1,2 +1,21 @@
 * My NixOS config
-(with flake and home-manager) 
+
+** Hardware Specs of My Computers
+1. Intel NUC10fnh
+2. Desktop PC with AMD 3700x and AMD 6600xt
+
+** Nix tutorials / manuals
+*** official documentation for Nix ecosystem
+https://nix.dev/
+*** NixOS manual
+https://nixos.org/manual/nixos/stable/
+*** Nixpkgs manual
+https://nixos.org/manual/nixpkgs/stable/
+*** Nix Pill (tour guide)
+https://nixos.org/guides/nix-pills/
+*** NixOS wiki
+https://wiki.nixos.org/wiki/NixOS_Wiki
+*** tutorials by ryan4yin (Chinese and English)
+https://github.com/ryan4yin/nixos-and-flakes-book
+*** tutorials by NixOS-CN (Chinese)
+https://nixos-cn.org/manual/
