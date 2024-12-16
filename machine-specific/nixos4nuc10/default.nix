@@ -4,7 +4,7 @@
     ./gitea.nix
     ./gpu.nix
     ./hardware-configuration.nix
-    ./jira.nix
+    #./jira.nix # deprecated
     ./networking.nix
     ./redmine.nix
   ];

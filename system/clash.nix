@@ -48,9 +48,10 @@ in {
 
     users.users.${clashUserName} = {
       description = "Clash deamon user";
-      isSystemUser = true;
       group = "clash";
       home = "/var/lib/clash";
+      isSystemUser = true;
+      createHome = true;
     };
     users.groups.${clashGroupName} = { };
 
