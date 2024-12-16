@@ -9,7 +9,8 @@
 * UI and appearance
 #+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec
-                 :family "CaskaydiaCove Nerd Font"
+                 ;; :family "CaskaydiaCove Nerd Font"
+                 :family "JetBrainsMono Nerd Font"
                  :size 18 :weight 'normal))
 
 (setq doom-theme 'doom-one)

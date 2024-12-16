@@ -2,6 +2,7 @@
       user-mail-address "scp@archlinuxscp.dev")
 
 (setq doom-font (font-spec
+                 ;; :family "CaskaydiaCove Nerd Font"
                  :family "JetBrainsMono Nerd Font"
                  :size 18 :weight 'normal))
 
