@@ -29,7 +29,7 @@
   programs.fzf.changeDirWidgetCommand = "fd --no-ignore --hidden -E .cache -E .git -E tags -td -- . $HOME";
 
   programs.gh.enable = true;
-  programs.gh.enableGitCredentialHelper = true;
+  programs.gh.gitCredentialHelper.enable = true;
   programs.gh.settings.git_protocol = "https";
 
   programs.git.enable = true;

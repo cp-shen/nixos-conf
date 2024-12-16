@@ -5,9 +5,14 @@ let
 in {
   services.gitea = rec {
     enable = true;
+    package = pkgs.nixos24.gitea;
     lfs.enable = true;
-    domain = "b450.lan";
-    httpPort = 3000;
-    rootUrl = "http://" + fqdn + ":" + (toString httpPort);
+
+    settings.server = rec {
+      DOMAIN = "b450.lan";
+      HTTP_PORT = 3000;
+      ROOT_URL = "http://" + fqdn + ":" + (toString HTTP_PORT);
+    };
+
   };
 }

@@ -12,7 +12,7 @@
     keyMap = "us";
   };
 
-  fonts.fonts = with pkgs; []; # fonts installed by home-manager
+  fonts.packages = with pkgs; []; # fonts are installed by home-manager
 
   nix = {
     settings = {

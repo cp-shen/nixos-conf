@@ -5,7 +5,7 @@
     nixos-option
     nix-ld
     nix-index
-    nixfmt
+    nixfmt-rfc-style
     nixpkgs-fmt
 
     nixd

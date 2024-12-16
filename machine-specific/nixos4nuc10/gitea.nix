@@ -7,19 +7,29 @@ in {
     enable = true;
     package = pkgs.nixos24.gitea;
     lfs.enable = true;
-    domain = "gitea.lan";
-    httpPort = 8093;
-    httpAddress = "127.0.0.1";
-    rootUrl = "http://" + domain;
-    extraConfig = ''
-    [packages]
-    CHUNKED_UPLOAD_PATH = "${config.services.gitea.stateDir}/tmp/package-upload";
-    '';
+
+    settings.server = rec {
+      DOMAIN = "gitea.lan";
+      HTTP_PORT = 8093;
+      HTTP_ADDR = "127.0.0.1";
+      ROOT_URL = "http://" + DOMAIN;
+    };
+
+    # extraConfig = ''
+    # [packages]
+    # CHUNKED_UPLOAD_PATH = "${config.services.gitea.stateDir}/tmp/package-upload";
+    # '';
+
     database = {
       type = "postgres";
       passwordFile = "/keys/gitea-dbpassword";
       createDatabase = true;
     };
+  };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_16;
   };
 
   services.nginx.virtualHosts."gitea.lan" = {

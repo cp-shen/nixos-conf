@@ -7,9 +7,11 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
     autocd = true;
     defaultKeymap = "viins";
 
