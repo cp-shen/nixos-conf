@@ -11,7 +11,7 @@ in {
     settings.server = rec {
       DOMAIN = "gitea.lan";
       HTTP_PORT = 8093;
-      HTTP_ADDR = "127.0.0.1";
+      # HTTP_ADDR = "127.0.0.1";
       ROOT_URL = "http://" + DOMAIN;
     };
 

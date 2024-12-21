@@ -11,7 +11,7 @@ in {
     settings.server = rec {
       DOMAIN = "b450.lan";
       HTTP_PORT = 3000;
-      ROOT_URL = "http://" + fqdn + ":" + (toString HTTP_PORT);
+      ROOT_URL = "http://" + DOMAIN + ":" + (toString HTTP_PORT);
     };
 
   };
