@@ -3,15 +3,28 @@
 {
   environment.systemPackages = with pkgs; [
     # editor
-    nixos24.neovim-unwrapped #neovim-nightly
+    nixos24.neovim-unwrapped # neovim-nightly
     # download tools
-    aria curl wget
+    aria
+    curl
+    wget
     # basic toolchains
-    gcc gcc_multi gnumake cmake libtool
+    gcc
+    gcc_multi
+    gnumake
+    cmake
+    libtool
     # partitioning tools
-    parted gparted
+    parted
+    gparted
     # system utilities
-    htop file fd procs ripgrep tree unzip
+    htop
+    file
+    fd
+    procs
+    ripgrep
+    tree
+    unzip
   ];
 
   services.qbittorrent.enable = true;
@@ -38,11 +51,6 @@
     # java.enable = true;
     # java.package = pkgs.jdk17;
   };
-
-  virtualisation.docker.enable = true;
-  virtualisation.docker.enableOnBoot = true;
-
-  users.users.scp.extraGroups = [ "docker" ];
 
   # environment.variables.JAVA_HOME = "${config.programs.java.package.home}";
   # environment.variables.JAVA_OPTS =

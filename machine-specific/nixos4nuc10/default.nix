@@ -1,10 +1,11 @@
 {
   imports = [
+    ./bitbucket.nix
     ./fileSystems.nix
     ./gitea.nix
     ./gpu.nix
     ./hardware-configuration.nix
-    #./jira.nix # deprecated
+    ./jira.nix
     ./networking.nix
     ./redmine.nix
   ];

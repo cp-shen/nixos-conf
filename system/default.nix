@@ -9,6 +9,7 @@
     ./programs.nix
     ./qbittorrent.nix
     ./ssh.nix
+    ./virtualisation.nix
     ./xserver.nix
   ];
 }
