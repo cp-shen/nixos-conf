@@ -7,9 +7,13 @@
     kitty
     # browsers
     firefox
-    pkgs.google-chrome
+    google-chrome
     # bt downloader
-    #qbittorrent qbittorrent-nox
+    # qbittorrent qbittorrent-nox
+    # proxy GUI frontend
+    # clash-nyanpasu
+    clash-verge-rev
+    gui-for-clash
     # misc
     qdirstat
   ];
