@@ -13,6 +13,8 @@
     prompt = true
 [mergetool "nvimmerge"]
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd w' -c 'wincmd J'
+[http]
+    #proxy = http://127.0.0.1:7890
 [alias]
     df = diff
     dt = difftool
