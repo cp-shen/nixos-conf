@@ -12,8 +12,8 @@
     # qbittorrent qbittorrent-nox
     # proxy GUI frontend
     # clash-nyanpasu
-    clash-verge-rev
-    gui-for-clash
+    # clash-verge-rev
+    # gui-for-clash
     # misc
     qdirstat
   ];
