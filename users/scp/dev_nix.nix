@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     nixos-option
     nix-ld
+    nix-tree
     nix-index
     nixfmt-rfc-style
     nixpkgs-fmt

@@ -63,7 +63,8 @@ in {
       serviceConfig = {
         Type = "exec";
         User = clashUserName;
-        ExecStart = "${pkgs.clash-rs}/bin/clash -d ${cfg.stateDir}";
+        # ExecStart = "${pkgs.clash-rs}/bin/clash -d ${cfg.stateDir}";
+        ExecStart = "${pkgs.mihomo}/bin/mihomo -d ${cfg.stateDir}";
         Restart = "on-abort";
         WorkingDirectory = cfg.stateDir;
       };

@@ -7,7 +7,7 @@
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
 
-  home.packages = with pkgs; [ jetbrains.idea-community jetbrains.rider ];
+  #home.packages = with pkgs; [ jetbrains.idea-community jetbrains.rider ];
 
   programs.emacs = {
     enable = true;
@@ -32,8 +32,8 @@
           wrapProgram $out/$installPrefix/adapter/codelldb \
             --prefix PATH : "${myPython}/bin" \
             --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
-            --set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
         '';
+            #--set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
       });
     in
     {

@@ -54,7 +54,7 @@
               nixpkgs.overlays = myOverlays;
             }
 
-            home-manager.nixosModule
+            home-manager.nixosModules.home-manager
 
             {
               home-manager.useGlobalPkgs = true;
