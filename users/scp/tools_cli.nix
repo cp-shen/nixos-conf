@@ -9,11 +9,11 @@
     lm_sensors intel-gpu-tools glxinfo pulsemixer
     xclip xorg.xmessage
     # scripting
-    nodejs sage lua5_4 sumneko-lua-language-server shellcheck sqlite
+    nodejs lua5_4 sumneko-lua-language-server shellcheck sqlite
     # zip util
     unrar p7zip zip gzip
-    # latex
-    pkgs.texlive.combined.scheme-full
+    # latex and math
+    # pkgs.texlive.combined.scheme-full sage
     # aspell
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
     tree-sitter
