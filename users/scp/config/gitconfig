@@ -23,3 +23,5 @@
     st = status --short
 [init]
 	defaultBranch = master
+[http "http://gitea.lan/"]
+	proxy = ""
