@@ -139,11 +139,13 @@
       ec = "emacsclient -c";
       et = "TERM=xterm-direct emacsclient -t";
       du = "du -h";
+      du10 = "du --block-size=1048576 -d1 | sort -n -r | head -n 10";
       gvim = "nvim-qt --no-ext-tabline";
       grep = "grep --color";
       i3exit = "i3-msg exit";
       less = "less -R --use-color";
       m = "mkdir -p";
+      nix-ls-gclinks = "find -H /nix/var/nix/gcroots/auto -type l | xargs -I {} sh -c 'readlink {}; realpath {}; echo'";
       nv = "nvim";
       # psuser = "ps -F -u $USER";
       # psroot = "ps -F -u root";
