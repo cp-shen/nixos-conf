@@ -1,6 +1,13 @@
 # read: https://gist.github.com/nat-418/d76586da7a5d113ab90578ed56069509
 
-{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  mkOutLink,
+  userConfDir,
+  ...
+}:
 
 {
 
@@ -33,13 +40,14 @@
             --prefix PATH : "${myPython}/bin" \
             --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
         '';
-            #--set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
+        #--set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
       });
     in
     {
       enable = true;
       extensions = [
-        lldb-plugin-wrapped
+        #lldb-plugin-wrapped
+        pkgs.nixos25.vscode-extensions.vadimcn.vscode-lldb
       ];
     };
 }
