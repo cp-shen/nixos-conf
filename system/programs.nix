@@ -14,6 +14,7 @@
     gcc_multi
     gnumake
     cmake
+    ninja
     libtool
     # partitioning tools
     parted
