@@ -14,5 +14,5 @@
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
 }
