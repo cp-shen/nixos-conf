@@ -57,6 +57,14 @@
     VISUAL = "nvim";
   };
 
+  environment.systemPackages = with pkgs; [ gtk3 ];
+
+  environment.variables = {
+    GSETTINGS_SCHEMA_DIR="${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+  };
+
+  programs.dconf.enable = true;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
