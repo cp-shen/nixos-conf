@@ -20,6 +20,6 @@
     ./tools_cli.nix
     ./tools_gui.nix
     ./zsh.nix
-    # ./games.nix
+    ./games.nix
   ];
 }
