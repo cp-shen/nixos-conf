@@ -46,7 +46,8 @@
 
   # Enable sound
   # sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio.enable = true;
+  services.pulseaudio.package = pkgs.pulseaudioFull;
   services.pipewire.enable = false;
 
   # Enable bluetooth
