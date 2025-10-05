@@ -48,6 +48,7 @@
       extensions = [
         #lldb-plugin-wrapped
         pkgs.nixos25.vscode-extensions.vadimcn.vscode-lldb
+        pkgs.nixos25.vscode-extensions.sumneko.lua
       ];
     };
 }
