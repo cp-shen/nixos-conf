@@ -62,6 +62,10 @@
     bindsym $mod+Shift+w layout tabbed
     bindsym $mod+Shift+x layout toggle split
 
+    # split containers
+    bindsym $mod+v split toggle
+    bindsym $mod+Shift+v split none
+
 # volume control using pulsemixer
     bindsym XF86AudioMute        exec --no-startup-id pulsemixer --toggle-mute
     bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
