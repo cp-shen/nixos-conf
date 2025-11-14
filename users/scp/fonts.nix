@@ -18,7 +18,7 @@
     # chars: good-looking, not as sharp as fira code
     # height: small line spacing
     # ligaratures: yes, italics: yes, zero: dotted
-    #jetbrains-mono
+    jetbrains-mono
     # chars: really smooth and rounded
     # height: large line spacing
     # ligaratures: yes, italics: yes, zero: dotted
@@ -27,12 +27,18 @@
     # height: small line spacing
     # ligaratures: no, italics: yes, zero: dotted
 
-    # other fonts
+    # noto fonts
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-color-emoji
-    # ubuntu_font_family
-    # material-icons
+
+    # ubuntu fonts
+    ubuntu-classic
+    ubuntu-sans
+    ubuntu-sans-mono
+
+    # icons
+    material-icons
   ];
 }

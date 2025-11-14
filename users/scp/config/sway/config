@@ -2,16 +2,16 @@
     set $mod Mod4
     set $md mode "default"
     
-    set $ws1        1: terminal
-    set $ws2        2: browsers
-    set $ws3        3: monitors
-    set $ws4        4: music/vi
-    set $ws5        5: download
+    set $ws1        1: Terminal
+    set $ws2        2: Browsers
+    set $ws3        3: Monitors
+    set $ws4        4: Music/vi
+    set $ws5        5: Download
     set $ws6        6
     set $ws7        7
     set $ws8        8
     set $ws9        9
-    set $ws10       10: emacs
+    set $ws10       10: Emacs
     
     set $my_browser        firefox
     set $my_browser_class  "(?i)firefox"
@@ -69,9 +69,6 @@
     bindsym $mod+XF86AudioMute        exec --no-startup-id pulsemixer --toggle-mute
     bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
     bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5
-
-# Font setting
-    font pango:Ubuntu 10
 
 # floating window
     # toggle tiling / floating
@@ -169,11 +166,13 @@
         bindsym Escape $md
     }
 
+# font settings
+    font pango:JetBrainsMono Nerd Font 12
 
 # i3bar settings
 bar {
     binding_mode_indicator yes
-    font pango:Ubuntu, FontAwesome 10
+    font pango:JetBrainsMono Nerd Font 12
     mode hide
     modifier Mod4
     position bottom
@@ -199,10 +198,10 @@ bar {
 }
 
 # set window gaps and borders
-    for_window [all] border pixel 0
-    # smart_borders on
+    for_window [all] border pixel 4
+    smart_borders on
 
-    gaps inner 5
+    gaps inner 4
     gaps outer 0
     smart_gaps on
 
@@ -228,5 +227,18 @@ bar {
     focus_on_window_activation focus
     focus_follows_mouse no
 
+# monitors
+    output DP-1 {
+        mode 1920x1080@60.000Hz
+        scale 1.0
+        pos 0 0
+    }
 
+    output HDMI-A-1 {
+        mode 1920x1080@239.760Hz
+        scale 1.0
+        pos 1920 0
+    }
 
+# wallpaper
+    output * bg /home/scp/nixos/users/scp/config/nitrogen/wallpapers/forest.jpg fill

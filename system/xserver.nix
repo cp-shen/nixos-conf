@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  programs.sway.enable = true;
+  programs.waybar.enable = true;
+
   services.xserver = {
     enable = true;
     autorun = false;
