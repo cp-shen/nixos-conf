@@ -38,5 +38,5 @@ headphones_indicator = true
 block = "time"
 interval = 10
 timezone = "Asia/Shanghai"
-format = " $icon $timestamp.datetime(f:'%b %d, %I:%M %p')"
+format = " $icon $timestamp.datetime(f:'%b %d %a, %I:%M %p')"
 

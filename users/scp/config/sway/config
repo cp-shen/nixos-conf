@@ -173,7 +173,7 @@
 bar {
     binding_mode_indicator yes
     font pango:JetBrainsMono Nerd Font 12
-    mode hide
+    mode dock
     modifier Mod4
     position bottom
     status_command i3status-rs
@@ -199,14 +199,15 @@ bar {
 
 # set window gaps and borders
     for_window [all] border pixel 4
-    smart_borders on
+    default_border pixel 4
+    smart_borders off
 
     gaps inner 4
     gaps outer 0
-    smart_gaps on
+    smart_gaps off
 
 # border and title bar colors
-    # class                 border  backgr. text    indicator child_border
+    # class                   border    bg        text     indicator    child_border
     client.focused          #4c7899 #222222 #eeeeee #484e50   #4c7899
     client.focused_inactive #333333 #5f676a #eeeeee #292d2e   #222222
     client.unfocused        #333333 #222222 #888888 #292d2e   #222222
