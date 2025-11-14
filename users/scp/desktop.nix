@@ -41,8 +41,8 @@
 
   # status bars
   xdg.configFile."polybar".source = mkOutLink "${userConfDir}/polybar";
-  programs.i3status-rust.enable = true;
-  programs.i3status-rust.bars = { };
+  # programs.i3status-rust.enable = true;
+  # programs.i3status-rust.bars = { };
   xdg.configFile."i3status-rust".source = mkOutLink "${userConfDir}/i3status-rust";
 
   # xcursor theme

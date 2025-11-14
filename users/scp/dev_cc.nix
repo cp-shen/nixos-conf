@@ -5,6 +5,5 @@
     clang-tools clang
     gdb cgdb
     pkg-config
-    ccls
   ];
 }

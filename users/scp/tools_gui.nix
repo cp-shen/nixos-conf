@@ -30,9 +30,9 @@
   '';
   xdg.configFile."mpv/scripts".source = mkOutLink "${userConfDir}/mpv-scripts";
 
-  programs.obs-studio = {
-    enable = true;
-  };
+  # programs.obs-studio = {
+  #   enable = true;
+  # };
 
   programs.rofi = {
     enable = true;
