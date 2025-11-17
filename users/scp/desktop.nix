@@ -8,14 +8,15 @@
     networkmanagerapplet
     # leftwm
     xmonad-mycfg
+    fuzzel mako wlr-randr 
   ];
 
   # linking config files
   xdg.configFile."nitrogen".source = mkOutLink "${userConfDir}/nitrogen";
+  xdg.configFile."niri".source = mkOutLink "${userConfDir}/niri";
   xdg.configFile."picom".source = mkOutLink "${userConfDir}/picom";
   xdg.configFile."i3".source = mkOutLink "${userConfDir}/i3";
   xdg.configFile."sway".source = mkOutLink "${userConfDir}/sway";
-  xdg.configFile."bottom".source = mkOutLink "${userConfDir}/bottom";
   xdg.configFile."leftwm".source = mkOutLink "${userConfDir}/leftwm";
   home.file.".xinitrc".source = mkOutLink "${userConfDir}/xinitrc";
 
@@ -43,6 +44,7 @@
 
   # status bars
   xdg.configFile."polybar".source = mkOutLink "${userConfDir}/polybar";
+  xdg.configFile."waybar".source = mkOutLink "${userConfDir}/waybar";
   programs.i3status-rust.enable = true;
   programs.i3status-rust.bars = { };
   xdg.configFile."i3status-rust".source = mkOutLink "${userConfDir}/i3status-rust";

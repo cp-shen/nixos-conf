@@ -6,7 +6,9 @@
     nixpkgs24.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # date: Sep 9, 2025
-    nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe";
+    # nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe";
+
+    nixpkgs25.url = "github:nixos/nixpkgs/nixos-25.05";
 
     # nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";

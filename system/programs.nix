@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     # editor
     nixos24.neovim-unwrapped # neovim-nightly
-    nixos25.zed-editor-fhs
+    # nixos25.zed-editor-fhs
     # download tools
     aria
     curl

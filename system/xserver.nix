@@ -4,6 +4,11 @@
   programs.sway.enable = true;
   programs.waybar.enable = true;
 
+  programs.niri.enable = true;
+  programs.niri.package = pkgs.nixos25.niri;
+
+  programs.xwayland.enable = true; 
+
   services.xserver = {
     enable = true;
     autorun = false;
