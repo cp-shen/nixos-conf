@@ -1,4 +1,4 @@
-@define-color bg #181a1f;
+@define-color bg #1e2127;
 @define-color fg #abb2bf;
 
 @define-color black #181a1f;
@@ -44,7 +44,7 @@ window#waybar {
 
 #workspaces button.active {
     color: @purple;
-    background: @bg0;
+    background: @bg1;
 }
 
 #pulseaudio.muted {
