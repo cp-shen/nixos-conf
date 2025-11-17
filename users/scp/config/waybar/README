@@ -1,0 +1,6 @@
+refs:
+    https://github.com/Alexays/Waybar/wiki/Examples
+    https://github.com/soaddevgit/WaybarTheme
+
+one dark color patlette:
+    https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua

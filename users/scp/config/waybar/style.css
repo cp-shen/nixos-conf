@@ -1,0 +1,52 @@
+@define-color bg #181a1f;
+@define-color fg #abb2bf;
+
+@define-color black #181a1f;
+@define-color bg0 #282c34;
+@define-color bg1 #31353f;
+@define-color bg2 #393f4a;
+@define-color bg3 #3b3f4c;
+@define-color bg_d #21252b;
+@define-color bg_blue #73b8f1;
+@define-color bg_yellow #ebd09c;
+@define-color fg #abb2bf;
+@define-color purple #c678dd;
+@define-color green #98c379;
+@define-color orange #d19a66;
+@define-color blue #61afef;
+@define-color yellow #e5c07b;
+@define-color cyan #56b6c2;
+@define-color red #e86671;
+@define-color grey #5c6370;
+@define-color light_grey #848b98;
+@define-color dark_cyan #2b6f77;
+@define-color dark_red #993939;
+@define-color dark_yellow #93691d;
+@define-color dark_purple #8a3fa0;
+@define-color diff_add #31392b;
+@define-color diff_delete #382b2c;
+@define-color diff_change #1c3448;
+@define-color diff_text #2c5372;
+
+window#waybar {
+    color: @fg;
+    font-size: 14px;
+    background: @bg;
+}
+
+#workspaces button,
+#window,
+#clock,
+#pulseaudio,
+#cpu {
+    color: @fg;
+}
+
+#workspaces button.active {
+    color: @purple;
+    background: @bg0;
+}
+
+#pulseaudio.muted {
+    color: @red;
+}
