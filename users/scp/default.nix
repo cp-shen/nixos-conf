@@ -15,7 +15,6 @@
     ./dev_zig.nix
     ./editors.nix
     ./fonts.nix
-    ./inputmethod.nix
     ./misc.nix
     ./tools_cli.nix
     ./tools_gui.nix

@@ -87,11 +87,6 @@ spawn-at-startup "code" "--ozone-platform=wayland" "--enable-wayland-ime"
 
 prefer-no-csd
 
-environment {
-    ELECTRON_OZONE_PLATFORM_HINT "auto"
-    _JAVA_AWT_WM_NONREPARENTING "1"
-}
-
 cursor {
     hide-after-inactive-ms 1000
 }

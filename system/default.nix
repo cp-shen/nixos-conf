@@ -2,7 +2,7 @@
   imports = [
     ./boot.nix
     ./clash.nix
-    ./inputmethod.nix
+    ./desktop.nix
     ./lightdm.nix
     ./misc.nix
     ./networking.nix
@@ -10,6 +10,5 @@
     ./qbittorrent.nix
     ./ssh.nix
     ./virtualisation.nix
-    ./xserver.nix
   ];
 }
