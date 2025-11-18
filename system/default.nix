@@ -1,13 +1,10 @@
 {
   imports = [
     ./boot.nix
-    ./clash.nix
     ./desktop.nix
-    ./lightdm.nix
     ./misc.nix
     ./networking.nix
     ./programs.nix
-    ./qbittorrent.nix
     ./ssh.nix
     ./virtualisation.nix
   ];

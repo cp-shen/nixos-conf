@@ -8,12 +8,6 @@
     # browsers
     firefox
     google-chrome
-    # bt downloader
-    # qbittorrent qbittorrent-nox
-    # proxy GUI frontend
-    # clash-nyanpasu
-    # clash-verge-rev
-    # gui-for-clash
     # misc
     qdirstat
   ];

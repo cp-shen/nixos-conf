@@ -1,7 +1,7 @@
-# see:
-#   https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in
-#   https://raw.githubusercontent.com/hercules-ci/nixflk/template/modules/services/torrent/qbittorrent.nix
-#   https://wiki.archlinux.org/title/Systemd
+# REFS
+#   <https://github.com/qbittorrent/qBittorrent/blob/master/dist/unix/systemd/qbittorrent-nox%40.service.in>
+#   <https://raw.githubusercontent.com/hercules-ci/nixflk/template/modules/services/torrent/qbittorrent.nix>
+#   <https://wiki.archlinux.org/title/Systemd>
 
 { config, lib, pkgs, ... }:
 with lib;

@@ -1,14 +1,31 @@
-{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  mkOutLink,
+  userConfDir,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
-    arandr dconf xfce.xfce4-screenshooter polybarFull
-    unclutter-xfixes picom nitrogen feh
+    arandr
+    dconf
+    xfce.xfce4-screenshooter
+    polybarFull
+    waybar
+    unclutter-xfixes
+    picom
+    nitrogen
+    feh
     # pasystray
     networkmanagerapplet
     # leftwm
-    xmonad-mycfg
-    fuzzel mako wlr-randr wlrctl
+    # xmonad-mycfg
+    fuzzel
+    mako
+    wlr-randr
+    wlrctl
   ];
 
   # linking config files
@@ -54,6 +71,7 @@
     package = pkgs.numix-cursor-theme;
     name = "Numix-Cursor";
     size = 16;
+    gtk.enable = true;
     x11 = {
       enable = true;
       defaultCursor = "left_ptr";
@@ -63,12 +81,23 @@
   # gtk theme and icon theme
   gtk = {
     enable = true;
+    colorScheme = "dark";
+    cursorTheme = {
+      package = pkgs.numix-cursor-theme;
+      name = "Numix-Cursor";
+      size = 16;
+    };
+    font = {
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
+      size = 12;
+    };
     iconTheme = {
-      package = pkgs.libsForQt5.breeze-icons;
+      package = pkgs.kdePackages.breeze-icons;
       name = "Breeze";
     };
     theme = {
-      package = pkgs.libsForQt5.breeze-gtk;
+      package = pkgs.kdePackages.breeze-gtk;
       name = "Breeze";
     };
   };
@@ -77,6 +106,6 @@
   qt = {
     enable = true;
     style.name = "Breeze";
-    style.package = pkgs.libsForQt5.breeze-qt5;
+    style.package = pkgs.kdePackages.breeze;
   };
 }

@@ -6,7 +6,7 @@
     nixos24.neovim-unwrapped # neovim-nightly
     # nixos25.zed-editor-fhs
     # download tools
-    aria
+    aria2
     curl
     wget
     # basic toolchains
@@ -32,7 +32,10 @@
   services.qbittorrent.enable = true;
   services.qbittorrent.user = "scp";
   services.qbittorrent.group = "users";
-  services.clash.enable = true;
+
+  services.mihomo.enable = true;
+  services.mihomo.webui = pkgs.metacubexd;
+  services.mihomo.configFile = "/secrets/clash/config.yaml";
 
   services.nginx = {
     enable = true;

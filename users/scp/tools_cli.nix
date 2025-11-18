@@ -6,10 +6,10 @@
     peaclock cloc ffmpeg xplr yazi
     clash-rs glances
     # sys utils
-    lm_sensors intel-gpu-tools glxinfo pulsemixer
+    lm_sensors intel-gpu-tools pulsemixer
     xclip xorg.xmessage
     # scripting
-    nodejs lua5_4 sumneko-lua-language-server shellcheck sqlite
+    nodejs lua5_4 lua-language-server shellcheck sqlite
     # zip util
     unrar p7zip zip gzip
     # latex and math

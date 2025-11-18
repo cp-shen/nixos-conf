@@ -4,13 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs24.url = "github:nixos/nixpkgs/nixos-24.05";
-
+    nixpkgs25.url = "github:nixos/nixpkgs/nixos-25.05";
     # date: Sep 9, 2025
     # nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe";
 
-    nixpkgs25.url = "github:nixos/nixpkgs/nixos-25.05";
-
-    # nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,11 +17,17 @@
     # emacs-overlay.url = "github:nix-community/emacs-overlay";
     # leftwm.url = "github:leftwm/leftwm";
 
-    xmonad-mycfg.url = "git+file:/home/scp/xmonad-mycfg";
-    xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
+    # xmonad-mycfg.url = "git+file:/home/scp/xmonad-mycfg";
+    # xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       system = "x86_64-linux";
       myHostNames = {
@@ -46,15 +50,16 @@
       myOverlays = [
         overlay24
         overlay25
-        
-        inputs.xmonad-mycfg.overlays.default
+
+        # inputs.xmonad-mycfg.overlays.default
         # inputs.neovim-nightly-overlay.overlays.default
         # inputs.emacs-overlay.overlays.default
         # inputs.leftwm.overlays.default
         # inputs.rust-overlay.overlays.default
         self.overlays.default
       ];
-      mySystem = userName: hostName: _:
+      mySystem =
+        userName: hostName: _:
         nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
@@ -84,7 +89,8 @@
             }
           ];
         };
-    in {
+    in
+    {
       overlays.default = import ./overlay.nix;
       nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
     };

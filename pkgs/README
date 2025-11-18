@@ -1,0 +1,2 @@
+This directory contains reusable softwares packaged by Nix 
+using the `callPackage` pattern

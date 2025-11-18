@@ -1,0 +1,2 @@
+This directory contains reusable NixOS modules. 
+Most of them are deprecated and replaced by modules provided by Nixpkgs repo.

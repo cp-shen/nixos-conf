@@ -2,12 +2,14 @@
 
 {
   programs.sway.enable = true;
-  programs.waybar.enable = true;
-
   programs.niri.enable = true;
   programs.niri.package = pkgs.nixos25.niri;
-
   programs.xwayland.enable = true;
+
+  # services.displayManager.ly = {
+  #   enable = true;
+  #   x11Support = true;
+  # };
 
   services.xserver = {
     enable = true;
@@ -35,7 +37,24 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ vulkan-tools ];
+  environment.systemPackages = with pkgs; [
+    mesa-demos
+    vulkan-tools
+  ];
+
+  # REFS <https://yalter.github.io/niri/Important-Software.html#portals>
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+  };
+
+  security.polkit.enable = true;
+  security.soteria.enable = true;
 
   environment.sessionVariables = {
     XDG_SESSION_TYPE = "wayland";
