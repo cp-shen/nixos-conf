@@ -82,6 +82,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
+spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "google-chrome-stable" "--ozone-platform=wayland" "--enable-wayland-ime" 
 spawn-at-startup "code" "--ozone-platform=wayland" "--enable-wayland-ime" 
 
