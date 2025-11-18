@@ -8,7 +8,7 @@
     networkmanagerapplet
     # leftwm
     xmonad-mycfg
-    fuzzel mako wlr-randr 
+    fuzzel mako wlr-randr wlrctl
   ];
 
   # linking config files

@@ -25,6 +25,7 @@ output "HDMI-A-1" {
 layout {
     gaps 16
     center-focused-column "on-overflow"
+    always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -116,6 +117,26 @@ animations {
     // slowdown 3.0
 }
 
+workspace "Code" {
+    open-on-output "DP-1"
+}
+
+workspace "Web" {
+    open-on-output "HDMI-A-1"
+}
+
+window-rule {
+    match app-id="code" 
+    open-on-workspace "code"
+    open-focused true
+}
+
+window-rule {
+    match app-id="google-chrome" 
+    open-on-workspace "web"
+    open-focused true
+}
+
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
@@ -180,6 +201,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+Tab repeat=false { toggle-overview; }
+    Mod+O repeat=false { toggle-overview; }
 
     Mod+Q repeat=false { close-window; }
 
