@@ -2,17 +2,27 @@
 
 {
   programs.sway.enable = true;
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.nixos25.niri;
+  # programs.niri.enable = true;
+  # programs.niri.package = pkgs.nixos25.niri;
   programs.xwayland.enable = true;
 
-  # FIXME:
-  #   Using a display manager makes fcitx5 stop working.
-  #   Just start the desktop using `niri-session` or `sway`.
-  # services.displayManager.ly = {
-  #   enable = true;
-  #   x11Support = true;
-  # };
+  services.displayManager.ly = {
+    enable = true;
+    x11Support = false;
+  };
+
+  services.desktopManager.plasma6 = {
+    enable = true;
+    enableQt5Integration = true;
+  };
+
+  services.displayManager.environment = {
+    QT_QPA_PLATFORM = "wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    XDG_SESSION_TYPE = "wayland";
+    NIXOS_OZONE_WL = "1";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+  };
 
   services.xserver = {
     enable = true;
@@ -34,11 +44,24 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-rime
-    ];
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-rime
+      ];
+    };
   };
+
+  # REFS
+  #  <https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#TL.3BDR_Do_we_still_need_XMODIFIERS.2C_GTK_IM_MODULE_and_QT_IM_MODULE.3F>
+  #  <https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/i18n/input-method/fcitx5.nix>
+  # environment.variables = {
+    # XMODIFIERS = "@im=fcitx";
+    # GTK_IM_MODULE = "fcitx";
+    # QT_IM_MODULE = "fcitx";
+    # INPUT_METHOD = "fcitx";
+  # };
 
   environment.systemPackages = with pkgs; [
     mesa-demos
@@ -58,10 +81,10 @@
     wlr = {
       enable = true;
     };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      # xdg-desktop-portal-gnome # Recommended by niri, but not necessary for me
-    ];
+    # extraPortals = with pkgs; [
+      # xdg-desktop-portal-gtk
+      # xdg-desktop-portal-gnome # recommended by niri
+    # ];
     # REFS
     #   <https://github.com/YaLTeR/niri/blob/main/resources/niri-portals.conf>
     #   <https://github.com/NixOS/nixpkgs/blob/nixos-25.05/nixos/modules/programs/wayland/sway.nix>
@@ -79,18 +102,5 @@
   };
 
   security.polkit.enable = true;
-  security.soteria.enable = true;
-
-  environment.sessionVariables = {
-    XDG_SESSION_TYPE = "wayland";
-    XMODIFIERS = "@im=fcitx";
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-    QT_QPA_PLATFORM = "wayland";
-    INPUT_METHOD = "fcitx";
-    GLFW_IM_MODULE = "ibus"; # FIXME: to be verified
-    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
-    NIXOS_OZONE_WL = "1";
-    _JAVA_AWT_WM_NONREPARENTING = "1";
-  };
+  # security.soteria.enable = true;
 }

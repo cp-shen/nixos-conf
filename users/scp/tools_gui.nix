@@ -10,6 +10,7 @@
     google-chrome
     # misc
     qdirstat
+    gnome-chess
   ];
 
   xdg.configFile."alacritty".source = mkOutLink "${userConfDir}/alacritty";
