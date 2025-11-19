@@ -1,20 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  swapDevices = [
-    { device = "/dev/sda4"; }
-  ];
+  swapDevices = [ ];
 
   fileSystems = {
-
     "/" = {
-      device = "/dev/disk/by-uuid/0d6c4994-2940-41f1-bf1d-2f0aa2f6353c";
+      device = "/dev/disk/by-uuid/6b11fb39-209d-4bbc-b7d9-0b9071bc7271";
       fsType = "ext4";
     };
 
     "/boot" = {
-      device = "/dev/disk/by-uuid/436E-6809";
+      device = "/dev/disk/by-uuid/E7E7-1953";
       fsType = "vfat";
+    };
+
+    "/mnt" = {
+      device = "dev/disk/by-uuid/0d6c4994-2940-41f1-bf1d-2f0aa2f6353c";
+      fsType = "ext4";
     };
 
     "/mnt1" = {
