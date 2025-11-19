@@ -18,10 +18,7 @@
     picom
     nitrogen
     feh
-    # pasystray
     networkmanagerapplet
-    # leftwm
-    # xmonad-mycfg
     fuzzel
     mako
     wlr-randr

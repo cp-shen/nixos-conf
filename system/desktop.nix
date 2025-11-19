@@ -6,6 +6,9 @@
   programs.niri.package = pkgs.nixos25.niri;
   programs.xwayland.enable = true;
 
+  # FIXME:
+  #   Using a display manager makes fcitx5 stop working.
+  #   Just start the desktop using `niri-session` or `sway`.
   # services.displayManager.ly = {
   #   enable = true;
   #   x11Support = true;
@@ -42,15 +45,37 @@
     vulkan-tools
   ];
 
+  # REFS <https://github.com/flatpak/xdg-desktop-portal/issues/986>
+  # Using the default DBus impl makes waybar wait forerver to start.
+  services.dbus = {
+    implementation = "broker";
+  };
+
   # REFS <https://yalter.github.io/niri/Important-Software.html#portals>
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
     xdgOpenUsePortal = true;
+    wlr = {
+      enable = true;
+    };
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome
+      # xdg-desktop-portal-gnome # Recommended by niri, but not necessary for me
     ];
+    # REFS
+    #   <https://github.com/YaLTeR/niri/blob/main/resources/niri-portals.conf>
+    #   <https://github.com/NixOS/nixpkgs/blob/nixos-25.05/nixos/modules/programs/wayland/sway.nix>
+    config.niri = {
+      # Use xdg-desktop-portal-gtk for every portal interface...
+      default = [ "gtk" ];
+      # ... except for the ScreenCast, Screenshot and Secret
+      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+      "org.freedesktop.impl.portal.Screenshot" = "wlr";
+      # ignore inhibit bc gtk portal always returns as success,
+      # despite sway/the wlr portal not having an implementation,
+      # stopping firefox from using wayland idle-inhibit
+      "org.freedesktop.impl.portal.Inhibit" = "none";
+    };
   };
 
   security.polkit.enable = true;
