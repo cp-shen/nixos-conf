@@ -13,7 +13,6 @@
     nil
 
     appimage-run
-    #binutils
     dpkg
     patchelf
 

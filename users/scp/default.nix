@@ -5,13 +5,10 @@
   imports = [
     ./desktop.nix
     ./dev_cc.nix
-    ./dev_dotnet.nix
     ./dev_go.nix
-    ./dev_haskell.nix
     ./dev_nix.nix
     ./dev_python.nix
     ./dev_rust.nix
-    ./dev_scala.nix
     ./dev_zig.nix
     ./editors.nix
     ./fonts.nix
