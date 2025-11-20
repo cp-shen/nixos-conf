@@ -29,7 +29,11 @@ in
     wlrctl
   ];
 
-  # linking config files
+  # KDE Plasma config files
+  xdg.configFile."kglobalshortcutsrc".source = mkOutLink "${userConfDir}/kde/kglobalshortcutsrc";
+  xdg.configFile."kdeglobals".source = mkOutLink "${userConfDir}/kde/kdeglobals";
+
+  # desktop config files
   xdg.configFile."nitrogen".source = mkOutLink "${userConfDir}/nitrogen";
   xdg.configFile."niri".source = mkOutLink "${userConfDir}/niri";
   xdg.configFile."picom".source = mkOutLink "${userConfDir}/picom";

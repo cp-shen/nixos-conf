@@ -145,7 +145,7 @@
     "python.languageServer": "Default",
     "pyrefly.lspPath": "pyrefly",
     "python.pyrefly.displayTypeErrors": "force-on",
-    "workbench.iconTheme": "ayu",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
     "kdl.command": "kdl-lsp",
     // "lldb.adapterEnv": {
