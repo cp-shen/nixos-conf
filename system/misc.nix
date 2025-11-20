@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   nixpkgs.config.allowUnfree = true;
@@ -12,7 +17,7 @@
     keyMap = "us";
   };
 
-  fonts.packages = with pkgs; []; # fonts are installed by home-manager
+  fonts.packages = with pkgs; [ ]; # fonts are installed by home-manager
 
   nix = {
     settings = {
@@ -61,7 +66,7 @@
   environment.systemPackages = with pkgs; [ gtk3 ];
 
   environment.variables = {
-    GSETTINGS_SCHEMA_DIR="${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
   };
 
   programs.dconf.enable = true;

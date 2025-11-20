@@ -5,8 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs24.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs25.url = "github:nixos/nixpkgs/nixos-25.05";
-    # date: Sep 9, 2025
-    # nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe";
+    # nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe"; (Sep 9, 2025)
 
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
     home-manager.url = "github:nix-community/home-manager";
@@ -30,6 +29,7 @@
     }:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
       myHostNames = {
         "nixos4b450i" = { };
         "nixos4nuc10" = { };
@@ -68,16 +68,11 @@
           };
           modules = [
             {
-              networking.hostName = hostName;
-              nixpkgs.overlays = myOverlays;
-            }
-
-            home-manager.nixosModules.home-manager
-
-            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
+              networking.hostName = hostName;
+              nixpkgs.overlays = myOverlays;
             }
 
             {
@@ -85,6 +80,7 @@
                 ./user.nix
                 ./system
                 ./machine-specific/${hostName}
+                home-manager.nixosModules.home-manager
               ];
             }
           ];
@@ -93,5 +89,12 @@
     {
       overlays.default = import ./overlay.nix;
       nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
+      formatter.${system} = pkgs.${system}.nixfmt-tree;
+      devShells.${system}.default = pkgs.mkShellNoCC {
+        packages = with pkgs; [
+          nixfmt-rfc-style
+          nixfmt-tree
+        ];
+      };
     };
 }

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services.redmine = {
@@ -8,12 +13,16 @@
   };
 
   services.nginx.virtualHosts."redmine.lan" = {
-    locations."/" = { proxyPass = "http://127.0.0.1:8092"; };
+    locations."/" = {
+      proxyPass = "http://127.0.0.1:8092";
+    };
   };
 
   systemd.services."redmine-update-git-repos" =
-    let cfg = config.services.redmine;
-    in {
+    let
+      cfg = config.services.redmine;
+    in
+    {
       path = [
         pkgs.wget
         pkgs.git

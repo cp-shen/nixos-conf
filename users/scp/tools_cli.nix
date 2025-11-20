@@ -1,21 +1,49 @@
-{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  mkOutLink,
+  userConfDir,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
     # utils
-    peaclock cloc ffmpeg xplr yazi
-    clash-rs glances
+    peaclock
+    cloc
+    ffmpeg
+    xplr
+    yazi
+    clash-rs
+    glances
     # sys utils
-    lm_sensors intel-gpu-tools pulsemixer
-    xclip xorg.xmessage
+    lm_sensors
+    intel-gpu-tools
+    pulsemixer
+    xclip
+    xorg.xmessage
     # scripting
-    nodejs lua5_4 lua-language-server shellcheck sqlite
+    nodejs
+    lua5_4
+    lua-language-server
+    shellcheck
+    sqlite
     # zip util
-    unrar p7zip zip gzip
+    unrar
+    p7zip
+    zip
+    gzip
     # latex and math
     # pkgs.texlive.combined.scheme-full sage
     # aspell
-    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ]))
+    (aspellWithDicts (
+      dicts: with dicts; [
+        en
+        en-computers
+        en-science
+      ]
+    ))
     tree-sitter
   ];
   programs.yt-dlp.enable = true;

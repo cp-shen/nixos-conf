@@ -1,8 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   fqdn = config.networking.fqdn;
-in {
+in
+{
   services.gitea = rec {
     enable = true;
     package = pkgs.nixos24.gitea;

@@ -20,24 +20,36 @@
     # };
 
     # windows system partition
-    "/mnt2" = { 
+    "/mnt2" = {
       device = "/dev/disk/by-uuid/2420C99120C96A7E";
       fsType = "ntfs3";
-      options = ["rw" "uid=1000" "gid=100"];
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+      ];
     };
 
     # windows data partition
-    "/mnt3" = { 
+    "/mnt3" = {
       device = "/dev/disk/by-uuid/263897C938979681";
       fsType = "ntfs3";
-      options = ["rw" "uid=1000" "gid=100"];
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+      ];
     };
 
     # windows data partition
-    "/mnt4" = { 
+    "/mnt4" = {
       device = "/dev/disk/by-uuid/E408E41708E3E710";
       fsType = "ntfs3";
-      options = ["rw" "uid=1000" "gid=100"];
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+      ];
     };
 
     #nfs
@@ -55,8 +67,7 @@
 
   services.nfs.server = {
     enable = true;
-    exports =
-    ''
+    exports = ''
       /export            *(fsid=0,sync,insecure,no_subtree_check)
       /export/downloads  *(nohide,sync,insecure,no_subtree_check)
       /export/mnt2       *(nohide,sync,insecure,no_subtree_check)

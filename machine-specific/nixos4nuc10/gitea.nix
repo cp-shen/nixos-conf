@@ -1,8 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   fqdn = config.networking.fqdn;
-in {
+in
+{
   services.gitea = rec {
     enable = true;
     package = pkgs.nixos24.gitea;
@@ -42,7 +48,7 @@ in {
         + "proxy_set_header X-Real-IP $remote_addr;\n"
         + "proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n"
         + "proxy_set_header X-Forwarded-Proto $scheme;\n";
-        # + "proxy_headers_hash_max_size 1024;\n";
+      # + "proxy_headers_hash_max_size 1024;\n";
     };
   };
 }

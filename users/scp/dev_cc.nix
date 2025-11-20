@@ -1,9 +1,16 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
-    clang-tools clang
-    gdb cgdb
+    clang-tools
+    clang
+    gdb
+    cgdb
     pkg-config
   ];
 }

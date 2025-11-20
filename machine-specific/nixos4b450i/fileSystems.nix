@@ -22,7 +22,11 @@
     "/mnt1" = {
       device = "/dev/disk/by-uuid/3E3C68E73C689C21";
       fsType = "ntfs3";
-      options = [ "rw" "uid=1000" "gid=100" ];
+      options = [
+        "rw"
+        "uid=1000"
+        "gid=100"
+      ];
     };
 
     #nfs
@@ -40,8 +44,7 @@
 
   services.nfs.server = {
     enable = true;
-    exports =
-    ''
+    exports = ''
       /export            *(fsid=0,sync,insecure,no_subtree_check)
       /export/bt         *(nohide,sync,insecure,no_subtree_check)
       /export/yt-dlp     *(nohide,sync,insecure,no_subtree_check)

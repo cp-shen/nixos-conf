@@ -1,5 +1,10 @@
 # Credit: https://github.com/NixOS/nixos-hardware/blob/master/common/gpu/intel.nix
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   services.xserver.videoDrivers = lib.mkBefore [ "modesetting" ];

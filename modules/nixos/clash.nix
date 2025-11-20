@@ -2,7 +2,12 @@
 #   https://github.com/icebox-nix/netkit.nix
 #   https://wiki.archlinux.org/title/Systemd
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 let
@@ -30,7 +35,8 @@ let
       };
     };
   };
-in {
+in
+{
   options = {
     services.clash = mkOption {
       type = clashModule;

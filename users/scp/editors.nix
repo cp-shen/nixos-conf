@@ -29,7 +29,8 @@
   # vterm can't init starship
 
   xdg.configFile."Code/User/settings.json".source = mkOutLink "${userConfDir}/vscode/settings.json";
-  xdg.configFile."Code/User/keybindings.json".source = mkOutLink "${userConfDir}/vscode/keybindings.json";
+  xdg.configFile."Code/User/keybindings.json".source =
+    mkOutLink "${userConfDir}/vscode/keybindings.json";
 
   programs.vscode =
     let

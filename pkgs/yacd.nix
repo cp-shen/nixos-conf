@@ -1,12 +1,15 @@
-{ lib, fetchzip, stdenv }:
+{
+  lib,
+  fetchzip,
+  stdenv,
+}:
 
 stdenv.mkDerivation rec {
   pname = "yacd";
   version = "0.3.8";
 
   src = fetchzip {
-    url =
-      "https://github.com/haishanh/yacd/releases/download/v${version}/yacd.tar.xz";
+    url = "https://github.com/haishanh/yacd/releases/download/v${version}/yacd.tar.xz";
     sha256 = "sha256-YrqBRRyKtIKAzPTNp6YfTC8oGI4WTqQ1FohcaubD8XM=";
   };
 

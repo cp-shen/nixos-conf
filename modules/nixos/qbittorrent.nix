@@ -3,7 +3,12 @@
 #   <https://raw.githubusercontent.com/hercules-ci/nixflk/template/modules/services/torrent/qbittorrent.nix>
 #   <https://wiki.archlinux.org/title/Systemd>
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 let
   cfg = config.services.qbittorrent;
@@ -112,7 +117,10 @@ in
       };
     };
 
-    users.groups =
-      mkIf (cfg.group == "qbittorrent") { qbittorrent = { gid = null; }; };
+    users.groups = mkIf (cfg.group == "qbittorrent") {
+      qbittorrent = {
+        gid = null;
+      };
+    };
   };
 }

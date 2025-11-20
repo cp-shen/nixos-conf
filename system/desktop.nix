@@ -57,10 +57,10 @@
   #  <https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#TL.3BDR_Do_we_still_need_XMODIFIERS.2C_GTK_IM_MODULE_and_QT_IM_MODULE.3F>
   #  <https://github.com/NixOS/nixpkgs/blob/nixos-unstable/nixos/modules/i18n/input-method/fcitx5.nix>
   # environment.variables = {
-    # XMODIFIERS = "@im=fcitx";
-    # GTK_IM_MODULE = "fcitx";
-    # QT_IM_MODULE = "fcitx";
-    # INPUT_METHOD = "fcitx";
+  # XMODIFIERS = "@im=fcitx";
+  # GTK_IM_MODULE = "fcitx";
+  # QT_IM_MODULE = "fcitx";
+  # INPUT_METHOD = "fcitx";
   # };
 
   environment.systemPackages = with pkgs; [
@@ -82,8 +82,8 @@
       enable = true;
     };
     # extraPortals = with pkgs; [
-      # xdg-desktop-portal-gtk
-      # xdg-desktop-portal-gnome # recommended by niri
+    # xdg-desktop-portal-gtk
+    # xdg-desktop-portal-gnome # recommended by niri
     # ];
     # REFS
     #   <https://github.com/YaLTeR/niri/blob/main/resources/niri-portals.conf>

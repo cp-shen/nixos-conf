@@ -1,15 +1,23 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
     # nerd fonts
-    nerd-fonts.fira-code nerd-fonts.caskaydia-cove
-    nerd-fonts.hack nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.hack
+    nerd-fonts.jetbrains-mono
 
     # programming fonts
-    fira-code fira-code-symbols
+    fira-code
+    fira-code-symbols
     # chars: good-looking but sharp (has serif) (like 'g', 'r')
     # height: medium line spacing
     # (44 lines cascadia-code/hack -> 42 lines fira code -> 39 lines jb mono)

@@ -1,4 +1,11 @@
-{ config, lib, pkgs, mkOutLink, userConfDir, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  mkOutLink,
+  userConfDir,
+  ...
+}:
 
 {
   home.packages = with pkgs; [

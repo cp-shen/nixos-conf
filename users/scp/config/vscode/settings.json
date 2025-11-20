@@ -52,17 +52,19 @@
     "metals.scalafmtConfigPath": "/home/scp/.config/scalafmt/scalafmt.conf",
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nixd",
-    "nix.formatterPath": "nixpkgs-fmt",
+    "nix.formatterPath": "nixfmt",
     "nix.serverSettings": {
-
-        // settings for 'nil' LSP
-        "nil": {
-            //   "diagnostics": {
-            //     "ignored": ["unused_binding", "unused_with"]
-            //   },
+        "nixd": {
             "formatting": {
                 "command": [
-                    "nixpkgs-fmt"
+                    "nixfmt"
+                ]
+            }
+        },
+        "nil": {
+            "formatting": {
+                "command": [
+                    "nixfmt"
                 ]
             }
         }
