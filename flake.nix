@@ -89,7 +89,7 @@
     {
       overlays.default = import ./overlay.nix;
       nixosConfigurations = builtins.mapAttrs (mySystem myUserName) myHostNames;
-      formatter.${system} = pkgs.${system}.nixfmt-tree;
+      formatter.${system} = pkgs.nixfmt-tree;
       devShells.${system}.default = pkgs.mkShellNoCC {
         packages = with pkgs; [
           nixfmt-rfc-style
