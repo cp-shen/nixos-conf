@@ -84,7 +84,7 @@
               imports = [
                 ./user.nix
                 ./system
-                (./. + "/machine-specific/${hostName}")
+                ./machine-specific/${hostName}
               ];
             }
           ];

@@ -10,11 +10,12 @@ in {
   };
 
   home-manager.users."${userName}" = ({ config, lib, ... }: {
-    imports = [ (./. + "/users/${userName}") ];
+    imports = [ ./users/${userName} ];
     _module.args = {
       inherit userName;
       mkOutLink = config.lib.file.mkOutOfStoreSymlink;
       userConfDir = "${homeDir}/nixos/users/${userName}/config";
+      nixosConfig = config // { home-manager = null; };
     };
   });
 }

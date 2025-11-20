@@ -14,7 +14,7 @@
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
 
-  #home.packages = with pkgs; [ jetbrains.idea-community jetbrains.rider ];
+  home.packages = with pkgs; [ jetbrains.idea-community-bin ];
 
   programs.emacs = {
     enable = true;
@@ -27,6 +27,9 @@
   # FIXME: emacs as daemon not usable now (with some environment error)
   # magit complains about empty ident
   # vterm can't init starship
+
+  xdg.configFile."Code/User/settings.json".source = mkOutLink "${userConfDir}/vscode/settings.json";
+  xdg.configFile."Code/User/keybindings.json".source = mkOutLink "${userConfDir}/vscode/keybindings.json";
 
   programs.vscode =
     let
@@ -45,10 +48,39 @@
     in
     {
       enable = true;
-      extensions = [
-        #lldb-plugin-wrapped
-        pkgs.nixos25.vscode-extensions.vadimcn.vscode-lldb
-        pkgs.nixos25.vscode-extensions.sumneko.lua
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        ## C++ extensions
+        vadimcn.vscode-lldb
+        llvm-vs-code-extensions.vscode-clangd
+        xaver.clang-format
+        ms-vscode.hexeditor
+        ms-vscode.makefile-tools
+        ms-vscode.cmake-tools
+        mesonbuild.mesonbuild
+
+        ## containers
+        ms-azuretools.vscode-docker
+        ms-azuretools.vscode-containers
+
+        ## other languages
+        wgsl-analyzer.wgsl-analyzer
+        rust-lang.rust-analyzer
+        tamasfe.even-better-toml
+        ziglang.vscode-zig
+        jnoortheen.nix-ide
+        sumneko.lua
+        ms-python.python
+        ms-python.debugpy
+        charliermarsh.ruff
+
+        ## misc util extensions
+        vscodevim.vim
+        k--kato.intellij-idea-keybindings
+        bierner.docs-view
+        codezombiech.gitignore
+        zhuangtongfa.material-theme
+        github.github-vscode-theme
+        github.vscode-github-actions
       ];
     };
 }

@@ -4,9 +4,13 @@
   pkgs,
   mkOutLink,
   userConfDir,
+  nixosConfig,
   ...
 }:
 
+let
+  enableKDE = nixosConfig.services.desktopManager.plasma6.enable;
+in
 {
   home.packages = with pkgs; [
     arandr
@@ -65,6 +69,7 @@
 
   # xcursor theme
   home.pointerCursor = {
+    enable = !enableKDE;
     package = pkgs.numix-cursor-theme;
     name = "Numix-Cursor";
     size = 16;
@@ -77,7 +82,7 @@
 
   # gtk theme and icon theme
   gtk = {
-    enable = true;
+    enable = !enableKDE;
     colorScheme = "dark";
     cursorTheme = {
       package = pkgs.numix-cursor-theme;
@@ -101,7 +106,7 @@
 
   # qt theme
   qt = {
-    enable = true;
+    enable = !enableKDE;
     style.name = "Breeze";
     style.package = pkgs.kdePackages.breeze;
   };
