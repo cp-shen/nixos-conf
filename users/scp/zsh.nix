@@ -8,9 +8,6 @@
 }:
 
 {
-  home.packages = [ pkgs.starship ];
-  xdg.configFile."starship".source = mkOutLink "${userConfDir}/starship";
-  home.sessionVariables.STARSHIP_CONFIG = "$HOME/.config/starship/starship.toml";
 
   programs.zsh = {
     enable = true;
@@ -123,15 +120,13 @@
 
       flakify() {
         if [ ! -e flake.nix ]; then
-          nix flake new -t github:nix-community/nix-direnv .
+          nix flake new --template templates#utils-generic .
         elif [ ! -e .envrc ]; then
           echo "use flake" > .envrc
           direnv allow
         fi
         ''${EDITOR:-vim} flake.nix
       }
-
-      eval "$(starship init zsh)"
     '';
 
     shellAliases = {

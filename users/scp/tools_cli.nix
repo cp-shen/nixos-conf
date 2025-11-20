@@ -9,32 +9,30 @@
 
 {
   home.packages = with pkgs; [
-    # utils
+    # generic utils
     peaclock
     cloc
     ffmpeg
-    xplr
-    yazi
-    clash-rs
+    # system info utils
     glances
-    # sys utils
     lm_sensors
     intel-gpu-tools
+    # desktop integration CLI utils
     pulsemixer
     xclip
     xorg.xmessage
-    # scripting
+    # scripting utils
     nodejs
     lua5_4
     lua-language-server
     shellcheck
     sqlite
-    # zip util
+    # zip utils
     unrar
     p7zip
     zip
     gzip
-    # latex and math
+    # latex and math (extremely large!)
     # pkgs.texlive.combined.scheme-full sage
     # aspell
     (aspellWithDicts (
@@ -46,10 +44,29 @@
     ))
     tree-sitter
   ];
+
   programs.yt-dlp.enable = true;
   programs.nnn.enable = true;
   programs.bottom.enable = true;
   programs.pandoc.enable = true;
+
+  programs.yazi = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
+
+  xdg.configFile."yazi".source = mkOutLink "${userConfDir}/yazi";
+
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    configPath = "$HOME/.config/starship/starship.toml";
+  };
+
+  home.sessionVariables.STARSHIP_CONFIG = "$HOME/.config/starship/starship.toml";
+  xdg.configFile."starship".source = mkOutLink "${userConfDir}/starship";
 
   programs.fzf.enable = true;
   programs.fzf.fileWidgetCommand = config.programs.fzf.defaultCommand;
