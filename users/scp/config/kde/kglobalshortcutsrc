@@ -9,11 +9,11 @@ Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Switch to Next Keyboard Lay
 _k_friendly_name=Keyboard Layout Switcher
 
 [com.google.Chrome]
-2B5474CF1B4D3A2CFD64122FEE9DBBDE-addSite=,none,Toggle current site
-2B5474CF1B4D3A2CFD64122FEE9DBBDE-switchEngine=,none,Theme generation mode
-2B5474CF1B4D3A2CFD64122FEE9DBBDE-toggle=,none,Toggle extension
-7633DADE3E44F31F01EFE63E7B9CD6FB-devtools-remote=,none,Remote DevTools
-7633DADE3E44F31F01EFE63E7B9CD6FB-devtools-window=,none,DevTools window
+2B5474CF1B4D3A2CFD64122FEE9DBBDE-addSite=none,none,Toggle current site
+2B5474CF1B4D3A2CFD64122FEE9DBBDE-switchEngine=none,none,Theme generation mode
+2B5474CF1B4D3A2CFD64122FEE9DBBDE-toggle=none,none,Toggle extension
+7633DADE3E44F31F01EFE63E7B9CD6FB-devtools-remote=none,none,Remote DevTools
+7633DADE3E44F31F01EFE63E7B9CD6FB-devtools-window=none,none,DevTools window
 _k_friendly_name=Google Chrome
 
 [kaccess]
@@ -261,3 +261,6 @@ toggle do not disturb=none,,Toggle do not disturb
 
 [services][Alacritty.desktop]
 New=Meta+Shift+Return
+
+[services][org.kde.plasma-systemmonitor.desktop]
+_launch=none

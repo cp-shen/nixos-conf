@@ -79,9 +79,12 @@
         k--kato.intellij-idea-keybindings
         bierner.docs-view
         codezombiech.gitignore
+        github.vscode-github-actions
+
+        ## themes
         zhuangtongfa.material-theme
         github.github-vscode-theme
-        github.vscode-github-actions
+        vscode-icons-team.vscode-icons
       ];
     };
 }
