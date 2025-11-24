@@ -43,6 +43,7 @@
       ]
     ))
     tree-sitter
+    hugo
   ];
 
   programs.yt-dlp.enable = true;
