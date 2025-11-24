@@ -32,6 +32,10 @@
   xdg.configFile."Code/User/keybindings.json".source =
     mkOutLink "${userConfDir}/vscode/keybindings.json";
 
+  xdg.configFile."VSCodium/User/settings.json".source = mkOutLink "${userConfDir}/vscode/settings.json";
+  xdg.configFile."VSCodium/User/keybindings.json".source =
+    mkOutLink "${userConfDir}/vscode/keybindings.json";
+
   programs.vscode =
     let
       myPython = pkgs.python310;
@@ -49,6 +53,7 @@
     in
     {
       enable = true;
+      package = pkgs.vscodium;
       profiles.default.extensions = with pkgs.vscode-extensions; [
         ## C++ extensions
         vadimcn.vscode-lldb
@@ -73,6 +78,8 @@
         ms-python.python
         ms-python.debugpy
         charliermarsh.ruff
+        davidanson.vscode-markdownlint
+        myriad-dreamin.tinymist
 
         ## misc util extensions
         vscodevim.vim
