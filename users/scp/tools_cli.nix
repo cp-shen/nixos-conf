@@ -43,7 +43,9 @@
       ]
     ))
     tree-sitter
+    # static site generators
     hugo
+    zola
   ];
 
   programs.yt-dlp.enable = true;
