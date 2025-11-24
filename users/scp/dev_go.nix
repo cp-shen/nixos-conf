@@ -7,7 +7,7 @@
 
 {
   programs.go.enable = true;
-  programs.go.env.GOPATH = "go";
+  programs.go.env.GOPATH = "${config.home.homeDirectory}/go";
 
   # home.packages = with pkgs; [
   #   gore
