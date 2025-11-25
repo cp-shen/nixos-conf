@@ -33,6 +33,7 @@
     zip
     gzip
     # latex and math (extremely large!)
+    typst
     # pkgs.texlive.combined.scheme-full sage
     # aspell
     (aspellWithDicts (
