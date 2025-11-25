@@ -48,5 +48,10 @@
 
     # icons
     material-icons
+
+    # LXGW Chinese fonts
+    lxgw-neoxihei
+    lxgw-wenkai
+    lxgw-wenkai-tc
   ];
 }
