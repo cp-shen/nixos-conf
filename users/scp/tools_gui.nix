@@ -20,8 +20,15 @@
     gnome-chess
   ];
 
+  programs.wezterm = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true; 
+  };
+
   xdg.configFile."alacritty".source = mkOutLink "${userConfDir}/alacritty";
   xdg.configFile."kitty".source = mkOutLink "${userConfDir}/kitty";
+  xdg.configFile."wezterm".source = mkOutLink "${userConfDir}/wezterm";
 
   programs.mpv.enable = true;
   xdg.configFile."mpv/mpv.conf".text = ''

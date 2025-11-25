@@ -49,10 +49,10 @@
   ];
 
   programs.yt-dlp.enable = true;
-  programs.nnn.enable = true;
   programs.bottom.enable = true;
   programs.pandoc.enable = true;
 
+  programs.nnn.enable = true;
   programs.yazi = {
     enable = true;
     enableBashIntegration = true;
