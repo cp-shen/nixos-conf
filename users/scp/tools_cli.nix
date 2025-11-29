@@ -23,6 +23,7 @@
     xorg.xmessage
     # scripting utils
     nodejs
+    biome
     lua5_4
     lua-language-server
     shellcheck

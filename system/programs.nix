@@ -45,7 +45,7 @@
   };
 
   services.postgresql = {
-    enable = true;
+    enable = false;
     package = pkgs.postgresql_13;
     identMap = ''
       # ArbitraryMapName systemUser DBUser

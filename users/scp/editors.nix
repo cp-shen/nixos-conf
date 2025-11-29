@@ -53,7 +53,7 @@
     in
     {
       enable = true;
-      package = pkgs.vscodium;
+      package = pkgs.vscode-fhs;
       profiles.default.extensions = with pkgs.vscode-extensions; [
         ## C++ extensions
         vadimcn.vscode-lldb

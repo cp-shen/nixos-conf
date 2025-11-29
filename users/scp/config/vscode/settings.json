@@ -46,7 +46,8 @@
     "haskell.manageHLS": "PATH",
     "git.openRepositoryInParentFolders": "never",
     "files.associations": {
-        "*.sc": "scala"
+        "*.sc": "scala",
+        "*.lua": "lua",
     },
     "metals.millScript": "mill",
     "metals.scalafmtConfigPath": "/home/scp/.config/scalafmt/scalafmt.conf",
@@ -143,13 +144,22 @@
     },
     "extensions.ignoreRecommendations": true,
     "python.languageServer": "Default",
-    "pyrefly.lspPath": "pyrefly",
+    // "pyrefly.lspPath": "pyrefly",
     "python.pyrefly.displayTypeErrors": "force-on",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
     "kdl.command": "kdl-lsp",
     "markdown.preview.fontSize": 16,
     "markdown.preview.fontFamily": "\"Dejavu Sans\", \"Noto Sans\"",
+    "[typescript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
     // "lldb.adapterEnv": {
     //     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
     //     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
