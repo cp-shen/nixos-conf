@@ -120,7 +120,8 @@
         "**/__pycache__": true,
         "**/.direnv": true,
         "**/.ruff_cache": true,
-        "**/.venv": true
+        "**/.venv": true,
+        "**/.zig-cache": true
     },
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"

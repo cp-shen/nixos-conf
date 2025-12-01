@@ -9,13 +9,14 @@
 
 {
   home.packages = with pkgs; [
-    # terminals
+    ## terminals
     alacritty
-    kitty
-    # browsers
+    # ghostty
+    # kitty
+    ## browsers
     firefox
     google-chrome
-    # misc
+    ## misc
     qdirstat
     gnome-chess
   ];

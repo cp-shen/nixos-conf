@@ -7,9 +7,31 @@ config.font_size = 14
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
+config.enable_scroll_bar = false
+config.scrollback_lines = 5000
+
+config.mouse_bindings = {
+    {
+      event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+      action = wezterm.action.ScrollByLine(-3),
+    },
+    {
+      event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+      action = wezterm.action.ScrollByLine(3),
+    },
+}
+
+config.keys = {
+    {
+        key = 'F',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.Search({ CaseInSensitiveString = '' })
+    }
+}
+
 config.font = wezterm.font_with_fallback {
-  'JetBrains Mono',
-  -- 'Noto Sans CJK SC',
+  "JetBrains Mono",
+  "LXGW Neo XiHei",
 }
 
 config.window_padding = {
