@@ -69,6 +69,8 @@
         ms-azuretools.vscode-containers
 
         ## other languages
+        scalameta.metals
+        scala-lang.scala
         wgsl-analyzer.wgsl-analyzer
         rust-lang.rust-analyzer
         tamasfe.even-better-toml

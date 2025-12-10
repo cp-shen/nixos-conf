@@ -1,169 +1,157 @@
 {
-    "leetcode.workspaceFolder": "/home/scp/leetcode",
-    "leetcode.filePath": {
-        "golang": {
-            "folder": "go/solutions",
-            "filename": "lc_${id}.${ext}"
-        },
-        "rust": {
-            "folder": "rust/src",
-            "filename": "lc_${id}.${ext}"
-        },
-        "scala": {
-            "folder": "scala/solutions",
-            "filename": "lc_${id}.${ext}"
-        }
-    },
-    "leetcode.defaultLanguage": "scala",
-    "leetcode.endpoint": "leetcode-cn",
-    "leetcode.hint.configWebviewMarkdown": false,
-    "leetcode.hint.commentDescription": false,
-    "leetcode.hint.commandShortcut": false,
-    "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": false,
-    "update.mode": "none",
-    "syncing.separateKeybindings": false,
-    "syncing.extensions.autoUpdate": false,
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "metals.serverProperties": [
-        "-Xmx2048m",
-        // "-Dhttp.proxyHost=127.0.0.1",
-        // "-Dhttp.proxyPort=7890",
-        // "-Dhttps.proxyHost=127.0.0.1",
-        // "-Dhttps.proxyPort=7890"
-    ],
-    "metals.customRepositories": [
-        "https://maven.aliyun.com/repository/public"
-    ],
-    "editor.fontSize": 18,
-    "editor.fontLigatures": true,
-    "editor.guides.indentation": false,
-    "editor.minimap.enabled": false,
-    "haskell.manageHLS": "PATH",
-    "git.openRepositoryInParentFolders": "never",
-    "files.associations": {
-        "*.sc": "scala",
-        "*.lua": "lua",
-    },
-    "metals.millScript": "mill",
-    "metals.scalafmtConfigPath": "/home/scp/.config/scalafmt/scalafmt.conf",
-    "nix.enableLanguageServer": true,
-    "nix.serverPath": "nixd",
-    "nix.formatterPath": "nixfmt",
-    "nix.serverSettings": {
-        "nixd": {
-            "formatting": {
-                "command": [
-                    "nixfmt"
-                ]
-            }
-        },
-        "nil": {
-            "formatting": {
-                "command": [
-                    "nixfmt"
-                ]
-            }
-        }
-    },
-    "git.confirmSync": false,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "window.menuBarVisibility": "toggle",
-    // https://github.com/VSCodeVim/Vim/issues/8157
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "u"
-            ],
-            "commands": [
-                "undo"
-            ]
-        },
-        {
-            "before": [
-                "c-r"
-            ],
-            "commands": [
-                "redo"
-            ]
-        }
-    ],
-    "diffEditor.renderSideBySide": true,
-    "metals.showImplicitConversionsAndClasses": true,
-    "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
-    "lldb.suppressUpdateNotifications": true,
-    "editor.fontFamily": "\"JetBrainsMono Nerd Font\"",
-    "terminal.integrated.fontSize": 16,
-    "rust-analyzer.server.path": "rust-analyzer",
-    "zig.zls.enabled": "on",
-    "zig.path": "zig",
-    "zig.zls.path": "zls",
-    "window.commandCenter": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-        "rules": {
-            "*.mutable": {
-                "underline": false,
-            }
-        }
-    },
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-    "C_Cpp.intelliSenseEngine": "disabled",
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.direnv": true,
-        "**/.ruff_cache": true,
-        "**/.venv": true,
-        "**/.zig-cache": true
-    },
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
-    },
-    "git.blame.editorDecoration.enabled": false,
-    "mesonbuild.downloadLanguageServer": false,
-    "mesonbuild.languageServer": null,
-    "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
-    },
-    "elixirLS.mixEnv": "dev",
-    "mesonbuild.formatting.enabled": true,
-    "mesonbuild.formatting.provider": "meson",
-    "cppref.invertColorInDarkTheme": true,
-    "[meson]": {
-        "editor.defaultFormatter": "mesonbuild.mesonbuild"
-    },
-    "rubyLsp.rubyVersionManager": {
-        
-        "identifier": "auto"
-    },
-    "extensions.ignoreRecommendations": true,
-    "python.languageServer": "Default",
-    // "pyrefly.lspPath": "pyrefly",
-    "python.pyrefly.displayTypeErrors": "force-on",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "One Dark Pro",
-    "kdl.command": "kdl-lsp",
-    "markdown.preview.fontSize": 16,
-    "markdown.preview.fontFamily": "\"Dejavu Sans\", \"Noto Sans\"",
-    "[typescript]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "biomejs.biome"
-    },
-    // "lldb.adapterEnv": {
-    //     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
-    //     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
-    // },
-    // "lldb.library": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/liblldb.so"
+	"leetcode.workspaceFolder": "/home/scp/leetcode",
+	"leetcode.filePath": {
+		"golang": {
+			"folder": "go/solutions",
+			"filename": "lc_${id}.${ext}"
+		},
+		"rust": {
+			"folder": "rust/src",
+			"filename": "lc_${id}.${ext}"
+		},
+		"scala": {
+			"folder": "scala/solutions",
+			"filename": "lc_${id}.${ext}"
+		}
+	},
+	"leetcode.defaultLanguage": "scala",
+	"leetcode.endpoint": "leetcode-cn",
+	"leetcode.hint.configWebviewMarkdown": false,
+	"leetcode.hint.commentDescription": false,
+	"leetcode.hint.commandShortcut": false,
+	"extensions.autoCheckUpdates": false,
+	"extensions.autoUpdate": false,
+	"update.mode": "none",
+	"syncing.separateKeybindings": false,
+	"syncing.extensions.autoUpdate": false,
+	"files.watcherExclude": {
+		"**/.gems": true,
+		"**/.bloop": true,
+		"**/.metals": true,
+		"**/.ammonite": true
+	},
+	"files.exclude": {
+		"**/__pycache__": true,
+		"**/.direnv": true,
+		"**/.venv": true,
+		"**/.ruff_cache": true,
+		"**/.zig-cache": true
+		// "**/.gems": true
+	},
+	"metals.serverProperties": [
+		"-Xmx2048m"
+		// "-Dhttp.proxyHost=127.0.0.1",
+		// "-Dhttp.proxyPort=7890",
+		// "-Dhttps.proxyHost=127.0.0.1",
+		// "-Dhttps.proxyPort=7890"
+	],
+	"metals.customRepositories": ["https://maven.aliyun.com/repository/public"],
+	"editor.fontSize": 18,
+	"editor.fontLigatures": true,
+	"editor.guides.indentation": false,
+	"editor.minimap.enabled": false,
+	"haskell.manageHLS": "PATH",
+	"git.openRepositoryInParentFolders": "never",
+	"files.associations": {
+		"*.sc": "scala",
+		"*.lua": "lua"
+	},
+	"metals.millScript": "mill",
+	"metals.scalafmtConfigPath": "/home/scp/.config/scalafmt/scalafmt.conf",
+	"nix.enableLanguageServer": true,
+	"nix.serverPath": "nixd",
+	"nix.formatterPath": "nixfmt",
+	"nix.serverSettings": {
+		"nixd": {
+			"formatting": {
+				"command": ["nixfmt"]
+			}
+		},
+		"nil": {
+			"formatting": {
+				"command": ["nixfmt"]
+			}
+		}
+	},
+	"git.confirmSync": false,
+	"gitlens.codeLens.enabled": false,
+	"gitlens.hovers.enabled": false,
+	"window.menuBarVisibility": "toggle",
+	// https://github.com/VSCodeVim/Vim/issues/8157
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["u"],
+			"commands": ["undo"]
+		},
+		{
+			"before": ["c-r"],
+			"commands": ["redo"]
+		}
+	],
+	"diffEditor.renderSideBySide": true,
+	"metals.showImplicitConversionsAndClasses": true,
+	"rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+	"lldb.suppressUpdateNotifications": true,
+	"editor.fontFamily": "\"JetBrainsMono Nerd Font\"",
+	"terminal.integrated.fontSize": 16,
+	"rust-analyzer.server.path": "rust-analyzer",
+	"zig.zls.enabled": "on",
+	"zig.path": "zig",
+	"zig.zls.path": "zls",
+	"window.commandCenter": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+	"editor.semanticTokenColorCustomizations": {
+		"enabled": true,
+		"rules": {
+			"*.mutable": {
+				"underline": false
+			}
+		}
+	},
+	"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+	"C_Cpp.intelliSenseEngine": "disabled",
+	"[c]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"git.blame.editorDecoration.enabled": false,
+	"mesonbuild.downloadLanguageServer": false,
+	"mesonbuild.languageServer": null,
+	"[cpp]": {
+		"editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+	},
+	"elixirLS.mixEnv": "dev",
+	"mesonbuild.formatting.enabled": true,
+	"mesonbuild.formatting.provider": "meson",
+	"cppref.invertColorInDarkTheme": true,
+	"[meson]": {
+		"editor.defaultFormatter": "mesonbuild.mesonbuild"
+	},
+	"rubyLsp.rubyVersionManager": {
+		"identifier": "auto"
+	},
+	"extensions.ignoreRecommendations": true,
+	"python.languageServer": "Default",
+	// "pyrefly.lspPath": "pyrefly",
+	"python.pyrefly.displayTypeErrors": "force-on",
+	"workbench.iconTheme": "vscode-icons",
+	"workbench.colorTheme": "One Dark Pro",
+	"kdl.command": "kdl-lsp",
+	"markdown.preview.fontSize": 16,
+	"markdown.preview.fontFamily": "\"Dejavu Sans\", \"Noto Sans\"",
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[ruby]": {}
+	// "lldb.adapterEnv": {
+	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
+	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
+	// },
+	// "lldb.library": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/liblldb.so"
 }
