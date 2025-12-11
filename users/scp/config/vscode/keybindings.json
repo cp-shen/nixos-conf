@@ -186,5 +186,10 @@
         "key": "ctrl+t",
         "command": "-git.sync",
         "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
     }
 ]

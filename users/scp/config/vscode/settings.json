@@ -39,13 +39,15 @@
 		// "**/.gems": true
 	},
 	"metals.serverProperties": [
-		"-Xmx2048m"
-		// "-Dhttp.proxyHost=127.0.0.1",
-		// "-Dhttp.proxyPort=7890",
-		// "-Dhttps.proxyHost=127.0.0.1",
-		// "-Dhttps.proxyPort=7890"
+		"-Xmx2048m",
+		"-Dhttp.proxyHost=127.0.0.1",
+		"-Dhttp.proxyPort=7890",
+		"-Dhttps.proxyHost=127.0.0.1",
+		"-Dhttps.proxyPort=7890"
 	],
-	"metals.customRepositories": ["https://maven.aliyun.com/repository/public"],
+	"metals.customRepositories": [
+		"http://mirrors.cloud.tencent.com/nexus/repository/maven-public/"
+	],
 	"editor.fontSize": 18,
 	"editor.fontLigatures": true,
 	"editor.guides.indentation": false,
@@ -56,8 +58,6 @@
 		"*.sc": "scala",
 		"*.lua": "lua"
 	},
-	"metals.millScript": "mill",
-	"metals.scalafmtConfigPath": "/home/scp/.config/scalafmt/scalafmt.conf",
 	"nix.enableLanguageServer": true,
 	"nix.serverPath": "nixd",
 	"nix.formatterPath": "nixfmt",
@@ -148,7 +148,11 @@
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"[ruby]": {}
+	"[ruby]": {},
+	"metals.inlayHints.inferredTypes.enable": true,
+	"metals.inlayHints.implicitConversions.enable": true,
+	"metals.inlayHints.implicitArguments.enable": true,
+	"metals.inlayHints.hintsXRayMode.enable": true
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
