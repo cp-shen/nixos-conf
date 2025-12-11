@@ -53,6 +53,7 @@
   programs.yt-dlp.enable = true;
   programs.bottom.enable = true;
   programs.pandoc.enable = true;
+  programs.codex.enable = true;
 
   programs.nnn.enable = true;
   programs.yazi = {

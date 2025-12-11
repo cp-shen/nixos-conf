@@ -10,6 +10,7 @@
 }:
 
 {
+  programs.zed-editor.enable = true;
 
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
@@ -32,7 +33,8 @@
   xdg.configFile."Code/User/keybindings.json".source =
     mkOutLink "${userConfDir}/vscode/keybindings.json";
 
-  xdg.configFile."VSCodium/User/settings.json".source = mkOutLink "${userConfDir}/vscode/settings.json";
+  xdg.configFile."VSCodium/User/settings.json".source =
+    mkOutLink "${userConfDir}/vscode/settings.json";
   xdg.configFile."VSCodium/User/keybindings.json".source =
     mkOutLink "${userConfDir}/vscode/keybindings.json";
 
@@ -53,7 +55,7 @@
     in
     {
       enable = true;
-      package = pkgs.vscode-fhs;
+      package = pkgs.vscode;
       profiles.default.extensions = with pkgs.vscode-extensions; [
         ## C++ extensions
         vadimcn.vscode-lldb
@@ -89,6 +91,10 @@
         bierner.docs-view
         codezombiech.gitignore
         github.vscode-github-actions
+
+        ## LLM tools
+        # saoudrizwan.claude-dev
+        # continue.continue
 
         ## themes
         zhuangtongfa.material-theme
