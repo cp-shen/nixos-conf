@@ -140,7 +140,7 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "biomejs.biome"
@@ -161,7 +161,18 @@
 	"metals.inlayHints.implicitArguments.enable": true,
 	"metals.inlayHints.hintsXRayMode.enable": true,
 	"git.autofetch": true,
-	"editor.inlayHints.enabled": "offUnlessPressed"
+	"editor.inlayHints.enabled": "offUnlessPressed",
+	"continue.telemetryEnabled": false,
+	"telemetry.editStats.enabled": false,
+	"telemetry.feedback.enabled": false,
+	"gitlens.telemetry.enabled": false,
+	"gitlens.graph.layout": "editor",
+	"workbench.secondarySideBar.showLabels": false,
+	"workbench.activityBar.location": "top",
+	"[java]": {
+		"editor.defaultFormatter": "xaver.clang-format"
+	},
+	"redhat.telemetry.enabled": false,
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"

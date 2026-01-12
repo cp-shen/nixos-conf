@@ -58,11 +58,6 @@
   # Enable bluetooth
   # hardware.bluetooth.enable = true;
 
-  environment.variables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
   environment.systemPackages = with pkgs; [ gtk3 ];
 
   environment.variables = {

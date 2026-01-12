@@ -88,6 +88,9 @@
   programs.git.lfs.enable = true;
   programs.gitui.enable = true;
 
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
+
   xdg.configFile."bottom".source = mkOutLink "${userConfDir}/bottom";
   home.file.".gitconfig".source = mkOutLink "${userConfDir}/gitconfig";
   home.file.".peaclock".source = mkOutLink "${userConfDir}/peaclock";

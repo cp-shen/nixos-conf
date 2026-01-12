@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # editor
-    nixos24.neovim-unwrapped # neovim-nightly
     # download tools
     aria2
     curl

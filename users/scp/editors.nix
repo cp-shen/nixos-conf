@@ -10,12 +10,16 @@
 }:
 
 {
+  programs.helix.enable = true;
   programs.zed-editor.enable = true;
 
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
 
-  home.packages = with pkgs; [ jetbrains.idea-community-bin ];
+  home.packages = with pkgs; [
+    jetbrains.idea-community-bin
+    neovim-unwrapped
+  ];
 
   programs.emacs = {
     enable = true;
@@ -39,20 +43,20 @@
     mkOutLink "${userConfDir}/vscode/keybindings.json";
 
   programs.vscode =
-    let
-      myPython = pkgs.python310;
-      lldb-plugin = pkgs.vscode-extensions.vadimcn.vscode-lldb.override {
-        python3 = myPython;
-      };
-      lldb-plugin-wrapped = lldb-plugin.overrideAttrs (oldAttrs: {
-        postFixup = ''
-          wrapProgram $out/$installPrefix/adapter/codelldb \
-            --prefix PATH : "${myPython}/bin" \
-            --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
-        '';
-        #--set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
-      });
-    in
+    # let
+    #   myPython = pkgs.python310;
+    #   lldb-plugin = pkgs.vscode-extensions.vadimcn.vscode-lldb.override {
+    #     python3 = myPython;
+    #   };
+    #   lldb-plugin-wrapped = lldb-plugin.overrideAttrs (oldAttrs: {
+    #     postFixup = ''
+    #       wrapProgram $out/$installPrefix/adapter/codelldb \
+    #         --prefix PATH : "${myPython}/bin" \
+    #         --prefix LD_LIBRARY_PATH : "${myPython}/lib" \
+    #         --set PYTHONPATH "${oldAttrs.passthru.lldb.lib}/${myPython.sitePackages}"
+    #     '';
+    #   });
+    # in
     {
       enable = true;
       package = pkgs.vscode;
@@ -66,26 +70,41 @@
         ms-vscode.cmake-tools
         mesonbuild.mesonbuild
 
-        ## containers
-        ms-azuretools.vscode-docker
-        ms-azuretools.vscode-containers
-
-        ## other languages
-        scalameta.metals
-        scala-lang.scala
-        wgsl-analyzer.wgsl-analyzer
+        ## Rust, Zig, Golang extensions
         rust-lang.rust-analyzer
-        tamasfe.even-better-toml
         ziglang.vscode-zig
-        jnoortheen.nix-ide
-        sumneko.lua
+        golang.go
+
+        ## Java and Scala extensions
+        scala-lang.scala
+        scalameta.metals
+        redhat.java
+        vscjava.vscode-java-pack
+        vscjava.vscode-java-debug
+        vscjava.vscode-java-dependency
+        vscjava.vscode-java-test
+        vscjava.vscode-gradle
+        vscjava.vscode-maven
+
+        ## Lua and Python extensions
         ms-python.python
         ms-python.debugpy
         charliermarsh.ruff
+        sumneko.lua
+
+        ## Misc other languages
+        tamasfe.even-better-toml
+        wgsl-analyzer.wgsl-analyzer
+        jnoortheen.nix-ide
         davidanson.vscode-markdownlint
         myriad-dreamin.tinymist
+        biomejs.biome
 
-        ## misc util extensions
+        ## Containers
+        ms-azuretools.vscode-docker
+        ms-azuretools.vscode-containers
+
+        ## Utils
         vscodevim.vim
         k--kato.intellij-idea-keybindings
         bierner.docs-view
@@ -93,10 +112,9 @@
         github.vscode-github-actions
 
         ## LLM tools
-        # saoudrizwan.claude-dev
-        # continue.continue
+        continue.continue
 
-        ## themes
+        ## Themes
         zhuangtongfa.material-theme
         github.github-vscode-theme
         vscode-icons-team.vscode-icons
