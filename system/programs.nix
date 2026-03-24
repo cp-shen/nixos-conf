@@ -42,14 +42,19 @@
   };
 
   services.postgresql = {
-    enable = false;
-    package = pkgs.postgresql_13;
+    enable = true;
+    package = pkgs.postgresql_15;
     identMap = ''
       # ArbitraryMapName systemUser DBUser
       superuser_map      root      postgres
       superuser_map      postgres  postgres
       # Let other names login as themselves
       superuser_map      /^(.*)$   \1
+    '';
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database DBuser   auth-method
+      local all      postgres peer map=postgres
+      local all      all      scram-sha-256
     '';
   };
 

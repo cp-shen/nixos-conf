@@ -173,6 +173,7 @@
 		"editor.defaultFormatter": "xaver.clang-format"
 	},
 	"redhat.telemetry.enabled": false,
+	"continue.showInlineTip": false,
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
