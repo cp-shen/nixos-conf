@@ -18,6 +18,9 @@
 
     # xmonad-mycfg.url = "git+file:/home/scp/xmonad-mycfg";
     # xmonad-mycfg.inputs.nixpkgs.follows = "nixpkgs";
+
+    # zed-editor.url = "git+https://github.com/zed-industries/zed?rev=deb48ceb47125223df73902d1c3b72f2f442222b";
+    # v1.2.7
   };
 
   outputs =
@@ -56,6 +59,7 @@
         # inputs.emacs-overlay.overlays.default
         # inputs.leftwm.overlays.default
         # inputs.rust-overlay.overlays.default
+        # inputs.zed-editor.overlays.default
         self.overlays.default
       ];
       mySystem =

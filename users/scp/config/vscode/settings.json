@@ -53,7 +53,8 @@
 	"git.openRepositoryInParentFolders": "never",
 	"files.associations": {
 		"*.sc": "scala",
-		"*.lua": "lua"
+		"*.lua": "lua",
+		"README": "plaintext"
 	},
 	"nix.enableLanguageServer": true,
 	"nix.serverPath": "nixd",
@@ -137,7 +138,7 @@
 	"markdown.preview.fontSize": 16,
 	"markdown.preview.fontFamily": "\"Dejavu Sans\", \"Noto Sans\"",
 	"[typescript]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
 	"[jsonc]": {
 		"editor.defaultFormatter": "vscode.json-language-features"
@@ -174,6 +175,23 @@
 	},
 	"redhat.telemetry.enabled": false,
 	"continue.showInlineTip": false,
+	"svelte.enable-ts-plugin": true,
+	"go.testFlags": [
+		"-v"
+	],
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"go.inlayHints.assignVariableTypes": true,
+	"go.inlayHints.ignoredError": true,
+	"yaml.schemas": {
+		"file:///home/scp/.vscode/extensions/Continue.continue/config-yaml-schema.json": [
+			".continue/**/*.yaml"
+		]
+	},
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"

@@ -32,7 +32,7 @@
 
   services.mihomo.enable = true;
   services.mihomo.webui = pkgs.metacubexd;
-  services.mihomo.configFile = "/secrets/clash/config.yaml";
+  services.mihomo.configFile = "/home/scp/.config/mihomo/config.yaml";
 
   services.nginx = {
     enable = true;

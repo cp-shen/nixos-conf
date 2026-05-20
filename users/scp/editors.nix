@@ -11,7 +11,10 @@
 
 {
   programs.helix.enable = true;
-  programs.zed-editor.enable = true;
+  programs.zed-editor = {
+    enable = true;
+    package = pkgs.zed-editor;
+  };
 
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
