@@ -16,6 +16,7 @@ in
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "wireshark"
       "networkmanager"
     ];
     home = homeDir;

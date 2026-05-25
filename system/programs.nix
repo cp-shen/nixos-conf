@@ -24,6 +24,7 @@
     ripgrep
     tree
     unzip
+    wireshark-qt
   ];
 
   services.qbittorrent.enable = true;
@@ -59,6 +60,8 @@
   };
 
   programs = {
+    wireshark.enable = true;
+    wireshark.dumpcap.enable = true;
     git.enable = true;
     less.enable = true;
     zsh.enable = true;
