@@ -55,6 +55,7 @@
   programs.pandoc.enable = true;
   programs.codex.enable = true;
 
+  programs.bat.enable = true;
   programs.nnn.enable = true;
   programs.yazi = {
     enable = true;
@@ -94,4 +95,12 @@
   xdg.configFile."bottom".source = mkOutLink "${userConfDir}/bottom";
   home.file.".gitconfig".source = mkOutLink "${userConfDir}/gitconfig";
   home.file.".peaclock".source = mkOutLink "${userConfDir}/peaclock";
+
+  programs.zellij = {
+    enable = true;
+    enableBashIntegration = false;
+    enableZshIntegration = false;
+    attachExistingSession = false;
+    exitShellOnExit = false;
+  };
 }
