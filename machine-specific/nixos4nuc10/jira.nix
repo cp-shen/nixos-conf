@@ -31,6 +31,7 @@
   };
 
   virtualisation.oci-containers.containers.jira = {
+    autoStart = false;
     image = "atlassian/jira-software";
     volumes = [ "/var/lib/jira:/var/atlassian/application-data/jira" ];
     extraOptions = [ "--network=host" ];

@@ -18,6 +18,7 @@
 
   # ref: https://atlassian.github.io/data-center-helm-charts/containers/BITBUCKET/
   virtualisation.oci-containers.containers.bitbucket = {
+    autoStart = false;
     image = "atlassian/bitbucket";
     volumes = [ "/data/bitbucket:/var/atlassian/application-data/bitbucket" ];
     # ports = ["7990:7990" "7999:7999"];
