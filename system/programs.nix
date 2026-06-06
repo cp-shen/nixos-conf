@@ -60,6 +60,10 @@
   };
 
   programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
     wireshark.enable = true;
     wireshark.dumpcap.enable = true;
     git.enable = true;
