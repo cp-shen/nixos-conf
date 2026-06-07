@@ -17,6 +17,7 @@
     parted
     gparted
     # system utilities
+    go-task
     htop
     file
     fd

@@ -61,6 +61,7 @@
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
+    shellWrapperName = "y";
   };
 
   xdg.configFile."yazi".source = mkOutLink "${userConfDir}/yazi";
