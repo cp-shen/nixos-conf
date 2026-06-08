@@ -20,7 +20,7 @@
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
 
   home.packages = with pkgs; [
-    jetbrains.idea-community-bin
+    # jetbrains.idea-community-bin
     neovim-unwrapped
   ];
 
