@@ -39,11 +39,11 @@ bright_foreground = "0xe6efff"
 foreground = "0xabb2bf"
 
 [font]
-size = 14.0
+size = 15.0
 
 [font.normal]
-# family = "CaskaydiaCove Nerd Font"
-family = "JetBrainsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
+# family = "JetBrainsMono Nerd Font"
 
 [window]
 dynamic_title = false
