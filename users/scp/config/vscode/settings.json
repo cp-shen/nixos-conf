@@ -144,7 +144,7 @@
 		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[json]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[scala]": {
 		"editor.tabSize": 2,
@@ -195,6 +195,10 @@
 	"[dockercompose]": {
 		"editor.defaultFormatter": "ms-azuretools.vscode-containers"
 	},
+	"git.blame.statusBarItem.enabled": true,
+	"rust-analyzer.imports.preferPrelude": true,
+	"emmylua.ls.executablePath": "emmylua_ls",
+	"rust-analyzer.cargo.targetDir": true,
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"
