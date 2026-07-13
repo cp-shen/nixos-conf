@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs24.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs25.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs26.url = "github:nixos/nixpkgs/nixos-26.05";
     # nixpkgs25.url = "git+https://github.com/nixos/nixpkgs.git?ref=nixos-unstable&rev=b599843bad24621dcaa5ab60dac98f9b0eb1cabe"; (Sep 9, 2025)
 
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
@@ -50,9 +51,16 @@
           config.allowUnfree = true;
         };
       };
+      overlay26 = final: prev: {
+        nixos26 = import inputs.nixpkgs26 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      };
       myOverlays = [
         overlay24
         overlay25
+        overlay26
 
         # inputs.xmonad-mycfg.overlays.default
         # inputs.neovim-nightly-overlay.overlays.default

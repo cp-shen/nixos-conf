@@ -19,6 +19,7 @@
     ## misc
     qdirstat
     gnome-chess
+    nixos26.blender
   ];
 
   programs.wezterm = {
