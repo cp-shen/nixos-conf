@@ -20,7 +20,7 @@
 	"leetcode.hint.commentDescription": false,
 	"leetcode.hint.commandShortcut": false,
 	"extensions.autoCheckUpdates": false,
-	"extensions.autoUpdate": false,
+	"extensions.autoUpdate": "off",
 	"update.mode": "none",
 	"syncing.separateKeybindings": false,
 	"syncing.extensions.autoUpdate": false,
@@ -199,6 +199,16 @@
 	"rust-analyzer.imports.preferPrelude": true,
 	"emmylua.ls.executablePath": "emmylua_ls",
 	"rust-analyzer.cargo.targetDir": true,
+	"json.schemaDownload.trustedDomains": {
+		"https://schemastore.azurewebsites.net/": true,
+		"https://raw.githubusercontent.com/microsoft/vscode/": true,
+		"https://raw.githubusercontent.com/devcontainers/spec/": true,
+		"https://www.schemastore.org/": true,
+		"https://json.schemastore.org/": true,
+		"https://json-schema.org/": true,
+		"https://developer.microsoft.com/json-schemas/": true,
+		"https://biomejs.dev": true
+	},
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"

@@ -90,8 +90,11 @@
   programs.git.lfs.enable = true;
   programs.gitui.enable = true;
 
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    sideloadInitLua = true;
+  };
 
   xdg.configFile."bottom".source = mkOutLink "${userConfDir}/bottom";
   home.file.".gitconfig".source = mkOutLink "${userConfDir}/gitconfig";

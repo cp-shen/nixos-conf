@@ -32,12 +32,14 @@
     #nfs
     "/export/bt" = {
       device = "/mnt1/BT";
+      fsType = "none";
       options = [ "bind" ];
     };
 
     #nfs
     "/export/yt-dlp" = {
       device = "/mnt1/yt-dlp";
+      fsType = "none";
       options = [ "bind" ];
     };
   };

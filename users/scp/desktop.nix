@@ -12,22 +12,23 @@ let
   enableKDE = nixosConfig.services.desktopManager.plasma6.enable;
 in
 {
-  home.packages = with pkgs; [
-    arandr
-    dconf
-    xfce.xfce4-screenshooter
-    polybarFull
-    waybar
-    unclutter-xfixes
-    picom
-    nitrogen
-    feh
-    networkmanagerapplet
-    fuzzel
-    mako
-    wlr-randr
-    wlrctl
-  ];
+  home.packages =
+    with pkgs;
+    [
+      arandr
+      dconf
+      xfce.xfce4-screenshooter
+      polybarFull
+      waybar
+      unclutter-xfixes
+      feh
+      networkmanagerapplet
+      fuzzel
+      mako
+      wlr-randr
+      wlrctl
+    ]
+    ++ (if !enableKDE then [ picom ] else [ ]);
 
   # KDE Plasma config files
   xdg.configFile."kglobalshortcutsrc".source = mkOutLink "${userConfDir}/kde/kglobalshortcutsrc";
