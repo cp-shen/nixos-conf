@@ -28,6 +28,13 @@
     wireshark-qt
   ];
 
+  programs.steam = {
+    enable = true;
+  };
+  programs.gamemode = {
+    enable = true;
+  };
+
   services.flatpak.enable = true;
 
   services.qbittorrent.enable = true;
