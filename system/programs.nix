@@ -28,6 +28,8 @@
     wireshark-qt
   ];
 
+  services.flatpak.enable = true;
+
   services.qbittorrent.enable = true;
   services.qbittorrent.user = "scp";
   services.qbittorrent.group = "users";

@@ -54,7 +54,8 @@
 	"files.associations": {
 		"*.sc": "scala",
 		"*.lua": "lua",
-		"README": "plaintext"
+		"README": "plaintext",
+		".luaurc": "jsonc"
 	},
 	"nix.enableLanguageServer": true,
 	"nix.serverPath": "nixd",
@@ -209,6 +210,13 @@
 		"https://developer.microsoft.com/json-schemas/": true,
 		"https://biomejs.dev": true
 	},
+	"[lua]": {
+		"editor.defaultFormatter": "tangzx.emmylua"
+	},
+	"luau-lsp.server.path": "luau-lsp",
+	"luau-lsp.bytecode.vectorLib": "vector",
+	"luau-lsp.bytecode.vectorType": "vector",
+	"luau-lsp.platform.type": "standard",
 	// "lldb.adapterEnv": {
 	//     "PYTHONPATH": "/home/scp/.vscode/extensions/vadimcn.vscode-lldb/lldb/lib/python3.10/site-packages",
 	//     "LLDB_DEBUGSERVER_PATH": "/nix/store/zp0pj4m6pqfy73h8flf9nj03g6bkqb4h-lldb-14.0.6/bin/lldb-server"

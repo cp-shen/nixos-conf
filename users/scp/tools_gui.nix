@@ -21,12 +21,16 @@
     gnome-chess
     nixos26.blender
     nixos26.godot_4_7
+    ## tencent apps
+    wechat-uos
+    qqmusic
+    wemeet
   ];
 
   programs.wezterm = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = true; 
+    enableZshIntegration = true;
   };
 
   xdg.configFile."alacritty".source = mkOutLink "${userConfDir}/alacritty";

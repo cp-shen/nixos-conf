@@ -53,5 +53,15 @@
     lxgw-neoxihei
     lxgw-wenkai
     lxgw-wenkai-tc
+
+    # Source (Si Yuan) CJK fonts
+    source-han-sans
+    source-han-serif
+    source-han-mono
+
+    # Wen Quan Yi
+    # REFS <https://github.com/qier222/YesPlayMusic/issues/2121#issuecomment-1696012394>
+    wqy_zenhei
+    wqy_microhei
   ];
 }
