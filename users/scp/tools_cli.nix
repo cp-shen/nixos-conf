@@ -40,8 +40,8 @@
     (aspellWithDicts (
       dicts: with dicts; [
         en
-        en-computers
-        en-science
+        # en-computers
+        # en-science
       ]
     ))
     tree-sitter

@@ -11,10 +11,10 @@
 
 {
   programs.helix.enable = true;
-  programs.zed-editor = {
-    enable = true;
-    package = pkgs.zed-editor;
-  };
+  # programs.zed-editor = {
+  #   enable = true;
+  #   package = pkgs.zed-editor;
+  # };
 
   xdg.configFile."nvim".source = mkOutLink "${userConfDir}/nvim";
   xdg.configFile."doom".source = mkOutLink "${userConfDir}/doom";
@@ -24,12 +24,12 @@
     neovim-unwrapped
   ];
 
-  programs.emacs = {
-    enable = true;
+  # programs.emacs = {
+    # enable = true;
     # package = pkgs.emacsUnstable;
-    package = pkgs.emacs;
-    extraPackages = epkgs: [ epkgs.vterm ];
-  };
+    # package = pkgs.emacs;
+    # extraPackages = epkgs: [ epkgs.vterm ];
+  # };
 
   services.emacs.enable = false;
   # FIXME: emacs as daemon not usable now (with some environment error)

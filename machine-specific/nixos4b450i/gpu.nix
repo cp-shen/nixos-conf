@@ -7,6 +7,5 @@
   # hardware.graphics = {
     # enable = true;
     # enable32Bit = false;
-    # package = pkgs.nixos25.mesa;
   # };
 }

@@ -18,8 +18,8 @@ in
       arandr
       dconf
       xfce.xfce4-screenshooter
-      polybarFull
-      waybar
+      # polybarFull
+      # waybar
       unclutter-xfixes
       feh
       networkmanagerapplet
