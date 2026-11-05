@@ -19,8 +19,8 @@
     ## misc
     qdirstat
     gnome-chess
-    nixos26.blender
-    nixos26.godot_4_7
+    blender
+    godot_4_7
     ## tencent apps
     wechat-uos
     qqmusic
